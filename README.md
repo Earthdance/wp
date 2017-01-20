@@ -2,8 +2,8 @@
 
 
 ## Todo project setup
-- [ ] Migrate site to WPEngine
-- [ ] Setup git in WPEngine
+- [x] Migrate site to WPEngine
+- [x] Setup git in WPEngine
 - [ ] Codeship
 - [ ] Gulp
 
