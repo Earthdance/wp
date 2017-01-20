@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Hello from WP</h1>
+<h1>Hello</h1>
 
 
 </body>
