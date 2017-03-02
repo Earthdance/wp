@@ -1,8 +1,4 @@
-
-
-
-
-	<!doctype html>
+<!doctype html>
 	<html class="no-js" lang="">
 	    <head>
 	        <meta charset="utf-8">
@@ -19,6 +15,7 @@
 	    <body>
 
 				<!--header section-->
+
 				<div class="header__layer">
 				  <div class="header__container">
 				    <div class="header__item"><a class="header__logo">EarthDance
@@ -37,7 +34,8 @@
 				</div>
 
 				<!--feature section-->
-				<div class="feature__layer">
+
+				<!-- <div class="feature__layer">
 				  <div class="feature__container">
 				    <div class="feature__nav"><a class="feature__link">About</a><a class="feature__link">Food</a><a class="feature__link">Farmers</a><a class="feature__link">Community</a><a class="feature__link">Support</a><a class="feature__link">News</a><a class="feature__link">Jobs</a><a class="feature__link">Contact</a></div>
 				    <div class="feature__main">
@@ -53,10 +51,11 @@
 				      <h2 class="feature__tagline">organic farm school</h2>
 				    </div>
 				  </div>
-				</div>
+				</div> -->
 
 				<!--zipper section-->
-				<div class="zipper__layer">
+
+				<!-- <div class="zipper__layer">
 				  <div class="zipper__container">
 				    <h2 class="zipper__heading">We grow food, farmers and community</h2>
 				    <div class="zpper__columns">
@@ -93,4 +92,6 @@
 				      </div>
 				    </div>
 				  </div>
-				</div>
+				</div> -->
+			</body>
+</html>
