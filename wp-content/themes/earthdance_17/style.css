@@ -3,7 +3,57 @@ Theme Name:		Earthdance 2017
 Description:	Theme for Earthdance
 */
 body {
-  background-color: #ffc0cb;
+  background-color: #6e973f;
+  font-family: fira-sans;
+  font-size: 18px;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+.header__layer {
+  height: 100px;
+}
+.header__container {
+  align-items: center;
+  background-color: #6e973f;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 70%;
+}
+.header__logo {
+  align-items: center;
+  color: #392214;
+  display: flex;
+  font-family: ff-prater-script-web;
+  font-size: 2rem;
+}
+.header__logo svg {
+  margin-right: 0.75rem;
+  width: 60px;
+}
+.header__logo svg path {
+  fill: #392214;
+}
+.header__tagline {
+  color: #392214;
+  font-family: roboto condensed;
+  font-size: 1.5rem;
+}
+.header__social {
+  align-items: center;
+  display: flex;
+}
+.header__link {
+  color: #fff;
+  fill: #fff;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+.header__icon {
+  fill: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
