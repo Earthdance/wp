@@ -110,15 +110,24 @@
 <div class="believe__layer">
   <div class="believe__container">
     <div class="believe__columns">
-      <h2 class"believe__heading="class"believe__heading">We believe..</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2 class="believe__subheading">We believe..</h2>
+			<div class="believe__content">
+				<p>.. in seeding the change we seek every day.  Here, kids eat greens, beginning farmers learn soil stewardship, biodiversity thrives, and everyone has a hand in producing the food we grow. We prove that skilled growers and concerned consumers can work together to achieve a better food system</p>
+			</div>
     </div>
     <div class="believe__photo">
-			<img src="#" class="believe__image"/>
+			<div class="believe__image">
+			</div>
 			<a href="#" class="believe__button">check us out</a>
 		</div>
-    <div class="believe__slogan">
-      <h2 class="believe__heading">Planting for a better tomorrow</h2>
+	</div>
+</div>
+
+<!--support section-->
+<div class="support__layer">
+	<div class="support__container">
+		<div class="support__slogan">
+      <h2 class="support__heading">Planting for a better tomorrow</h2>
       <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 148.7 149.4">
         <style>.st0{fill:#231F20;}</style>
         <path d="M66 116.6c5-2.9 8.4-4.8 10.2-5.8-4.8-6.4-6.3-9.2-6.7-10.1-.1-.2-.2-.4-.3-.7-2.7 3.9-6.7 6.9-11.9 8.8-4.3 1.6-9.2 2.4-14.4 2.4-6.7 0-13.7-1.3-20.3-3.8 7.9 13.2 20.7 23.1 35.8 27.3l-.3-3.2c-.3-2-1.2-9.6 7.9-14.9z" class="st0"></path>
@@ -128,14 +137,12 @@
         <path d="M142.2 45.8C127.4 11.3 84-11.3 46.3 5.9 10.2 16.1-3.1 62.2.6 94.5 6 140.9 58.3 158 102.4 145.4c45-13 54.8-64.2 39.8-99.6zm-67.8 98.5C37 144.3 6.7 114 6.7 76.6 6.7 39.2 37 8.9 74.4 8.9s67.7 30.3 67.7 67.7c0 37.4-30.3 67.7-67.7 67.7z" class="st0"></path>
       </svg>
     </div>
-    <div class="beieve__support">
-      <h2 class="believe__heading">Support EarthDance</h2>
-    </div>
-    <div class="believe__options">
-			<a href="#" class="believe__button">Donate</a>
-			<a href="#" class="believe__button">Volunteer</a>
+		<h2 class="support__heading">Support EarthDance</h2>
+		<div class="support__options">
+			<a href="#" class="support__button">Donate</a>
+			<a href="#" class="support__button">Volunteer</a>
 		</div>
-  </div>
+	</div>
 </div>
 
 <?php get_footer(); ?>
