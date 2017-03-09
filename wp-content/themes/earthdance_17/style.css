@@ -2,14 +2,28 @@
 Theme Name:		Earthdance 2017
 Description:	Theme for Earthdance
 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 20px;
+}
 body {
   background-color: #6e973f;
   font-family: fira-sans;
-  font-size: 18px;
   line-height: 1.5;
+}
+img {
+  height: auto;
+  max-width: 100%;
 }
 a {
   text-decoration: none;
+}
+p {
+  padding-bottom: 1rem;
 }
 .header__layer {
   height: 100px;
@@ -41,6 +55,7 @@ a {
   color: #392214;
   font-family: roboto condensed;
   font-size: 1.5rem;
+  padding-bottom: 0;
 }
 .header__social {
   align-items: center;
@@ -96,6 +111,7 @@ a {
   display: flex;
   margin: 0 auto;
   width: 120px;
+  padding-bottom: 2.5rem;
 }
 .feature__main svg path {
   fill: #fff;
@@ -110,8 +126,81 @@ a {
   color: #fff;
   font-family: roboto condensed;
   font-size: 3rem;
-  margin-top: -4rem;
   text-shadow: -3px 3px 3px #000;
+}
+.grow__layer {
+  background-color: #fff;
+  height: 100%;
+}
+.grow__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  width: 70%;
+}
+.grow__heading {
+  font-family: ff-prater-script-web;
+  font-size: 6rem;
+  text-align: center;
+}
+.grow__heading span {
+  display: flex;
+}
+.grow__columns zipper {
+  display: flex;
+}
+.grow__pic {
+  border: 15px solid #6e973f;
+  flex: 1;
+}
+.grow__content {
+  flex: 1;
+}
+.stats__layer {
+  background-color: #392214;
+}
+.stats__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  width: 70%;
+}
+.stats__heading {
+  color: #fff;
+  font-family: ff-prater-script-web;
+  font-size: 6rem;
+  padding: 5rem;
+  text-align: center;
+}
+.stats__columns {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+.stats__item {
+  display: flex;
+  padding: 1rem;
+}
+.stats__subheading {
+  color: #fff;
+  font-family: ff-prater-script-web;
+  font-size: 4.5rem;
+  flex: 1;
+  text-align: center;
+}
+.stats__content {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex: 1;
+  padding-left: 1rem;
+}
+.stats__content span {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
