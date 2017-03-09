@@ -54,28 +54,34 @@
 <!--grow section-->
 <div class="grow__layer">
   <div class="grow__container">
-    <h2 class="grow__heading">We grow food, farmers and community</h2>
+		<h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
     <div class="grow__columns zipper">
-      <h3 class="grow__heading">Food</h3>
-      <div class="grow__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="#" class="grow__button">read more</a>
-      </div>
-    </div>
-    <div class="grow__columns">
-      <h3 class="grow__heading">Farmers</h3>
-      <div class="grow__content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="grow__pic">
+				<h3 class="grow__subheading">Food</h3>
+			</div>
+			<div class="grow__content">
+				<p>EarthDance grows Certified Organic fare enjoyed by shoppers at the Ferguson Farmers Market, diners at local farm-to-table establishments, and patrons of hunger relief agencies.</p>
 				<a href="#" class="grow__button">read more</a>
-      </div>
-    </div>
-    <div class="grow__columns">
-      <h3 class="grow__heading">Community</h3>
-      <div class="grow__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+		<div class="grow__columns zipper">
+			<div class="grow__pic">
+				<h3 class="grow__subheading">Farmers</h3>
+			</div>
+			<div class="grow__content">
+				<p>EarthDance provides beyond-the-basics education to meet the needs of aspiring farmers and enrich the lives of youth and agri-curious community members.</p>
 				<a href="#" class="grow__button">read more</a>
-      </div>
-    </div>
+			</div>
+		</div>
+		<div class="grow__columns zipper">
+			<div class="grow__pic">
+				<h3 class="grow__subheading">Community</h3>
+			</div>
+			<div class="grow__content">
+				<p>EarthDance Farm is a platform where emerging food leaders learn, connect, and grow the good food movement.  Our programs are designed cross-pollinate energy and knowledge, resulting in brand-new possibilities for our local food scene.</p>
+				<a href="#" class="grow__button">read more</a>
+			</div>
+		</div>
   </div>
 </div>
 
@@ -84,13 +90,19 @@
   <div class="stats__container">
     <h2 class="stats__heading">Did you know...</h2>
     <div class="stats__columns">
-      <h3 class="stats__subheading">28.6 billion</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <div class="stats__columns">
-      <h3 class="stats__subheading">78%</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+			<div class="stats__item">
+				<h3 class="stats__subheading">28.6 billion</h3>
+				<div class="stats__content">
+					<p>The U.S. organic industry grew by nearly 8% in 2010, to<span>reach $28.6 billion in sales (Organic Trade Association, 2011</span>Organic Industry Survey)</p>
+				</div>
+			</div>
+	    <div class="stats__item">
+	      <h3 class="stats__subheading">78%</h3>
+				<div class="stats__content">
+					<p>78% of U.S. families purchase at least some organic foods (Organic Trade Association, 2011 U.S. Families' Organic Attitudes and Beliefs Study)</p>
+				</div>
+	    </div>
+		</div>
   </div>
 </div>
 
