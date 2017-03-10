@@ -7,6 +7,24 @@
 - [ ] Codeship
 - [ ] Gulp
 
+## CSS Todo
+```CSS
+/*https://hackernoon.com/a-guide-to-cross-browser-testing-installing-all-the-things-6e56c2bd8182#.rce2y7da6*/
+/* the page should not change width as content is loaded */
+body {
+  overflow-y: scroll;
+}
+
+/* block scrolling without losing the scroll bar and shifting the page */
+/* add this class when a modal is open */
+body.block-scroll {
+  overflow: hidden;
+  overflow-y: scroll !important;
+  position: fixed;
+  width: 100%;
+}
+```
+
 ## Todo pre-launch
 - [ ] Uptime install
 - [ ] Add Google Analytics
