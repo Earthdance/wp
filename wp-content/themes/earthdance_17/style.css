@@ -41,6 +41,7 @@ p {
 }
 .header__layer {
   background-color: #6e973f;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
   height: 100px;
 }
 .header__container {
@@ -86,6 +87,17 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  position: relative;
+}
+.feature__layer:after {
+  content: '';
+  display: block;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .feature__container {
   align-items: center;
@@ -99,6 +111,7 @@ p {
   justify-content: space-around;
   padding-top: 1rem;
   width: 100%;
+  z-index: 1;
 }
 .feature__link {
   color: #fff;
