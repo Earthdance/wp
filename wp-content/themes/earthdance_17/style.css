@@ -21,6 +21,10 @@ img {
 }
 a {
   text-decoration: none;
+<<<<<<< HEAD
+=======
+  font-size: 1.5rem;
+>>>>>>> jesus
 }
 p {
   padding-bottom: 1rem;
@@ -48,7 +52,16 @@ p {
 }
 .header__container {
   align-items: center;
+<<<<<<< HEAD
   height: 100%;
+=======
+  background-color: #6e973f;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 70%;
+>>>>>>> jesus
 }
 .header__logo {
   align-items: center;
@@ -61,6 +74,10 @@ p {
   padding: 0 0.5rem;
 }
 .header__logo svg {
+<<<<<<< HEAD
+=======
+  margin-right: 0.75rem;
+>>>>>>> jesus
   width: 60px;
 }
 .header__logo svg path {
@@ -105,10 +122,20 @@ p {
 }
 .feature__container {
   align-items: center;
+<<<<<<< HEAD
   flex-direction: column;
   height: 100vh;
   justify-content: flex-start;
   text-align: center;
+=======
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+>>>>>>> jesus
 }
 .feature__nav {
   display: flex;
@@ -158,9 +185,18 @@ p {
 }
 .grow__container {
   align-items: center;
+<<<<<<< HEAD
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+=======
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 70%;
+>>>>>>> jesus
 }
 .grow__heading {
   color: #392214;
@@ -173,6 +209,10 @@ p {
   display: flex;
 }
 .grow__columns {
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> jesus
   padding: 5rem;
 }
 .grow__columns:nth-of-type(even) {
@@ -222,6 +262,10 @@ p {
 .grow__button {
   display: flex;
   background-color: #6e973f;
+<<<<<<< HEAD
+=======
+  border-radius: 5px;
+>>>>>>> jesus
   color: #fff;
   padding: 0.75rem 5rem;
 }
@@ -230,8 +274,16 @@ p {
 }
 .stats__container {
   align-items: center;
+<<<<<<< HEAD
   flex-direction: column;
   height: 100%;
+=======
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  width: 70%;
+>>>>>>> jesus
 }
 .stats__heading {
   color: #fff;
@@ -241,6 +293,10 @@ p {
   text-align: center;
 }
 .stats__columns {
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> jesus
   flex-direction: column;
   padding-bottom: 5rem;
 }
@@ -262,15 +318,33 @@ p {
   flex: 1;
   padding-left: 1rem;
 }
+<<<<<<< HEAD
+=======
+.stats__content span {
+  display: flex;
+}
+>>>>>>> jesus
 .believe__layer {
   height: 100%;
 }
 .believe__container {
+<<<<<<< HEAD
   flex-direction: column;
   height: 100%;
 }
 .believe__columns {
   align-items: center;
+=======
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  width: 70%;
+}
+.believe__columns {
+  align-items: center;
+  display: flex;
+>>>>>>> jesus
   padding: 5rem 0;
 }
 .believe__subheading {
@@ -303,7 +377,14 @@ p {
 }
 .believe__button {
   background-color: #392214;
+<<<<<<< HEAD
   color: #6e973f;
+=======
+  border: 1px solid #392214;
+  border-radius: 5px;
+  color: #6e973f;
+  font-family: roboto condensed;
+>>>>>>> jesus
   padding: 0.5rem 5.5rem;
   margin-right: 8rem;
   margin-top: 4rem;
@@ -316,9 +397,18 @@ p {
 }
 .support__container {
   align-items: center;
+<<<<<<< HEAD
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+=======
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 70%;
+>>>>>>> jesus
 }
 .support__slogan {
   display: flex;
@@ -356,7 +446,14 @@ p {
 }
 .support__button {
   background-color: #6e973f;
+<<<<<<< HEAD
   color: #fff;
+=======
+  border: 1px solid #6e973f;
+  border-radius: 5px;
+  color: #fff;
+  font-family: roboto condensed;
+>>>>>>> jesus
   padding: 1rem 3rem;
 }
 .footer__layer {
@@ -365,8 +462,16 @@ p {
 }
 .footer__container {
   align-items: center;
+<<<<<<< HEAD
   height: 100%;
   justify-content: space-between;
+=======
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+>>>>>>> jesus
 }
 .footer__item {
   align-items: center;
