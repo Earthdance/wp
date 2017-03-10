@@ -1,0 +1,74 @@
+.feature
+  &__layer
+    // background linear-gradient(-180deg, transparent, featureCover)
+    background-attachment fixed
+    background-image url(img/greenHouse.jpg)
+    // background-position center center
+    background-repeat no-repeat
+    background-size cover
+    height 100vh
+    position relative
+
+    &:after
+      content: ''
+      display block
+      height 100px
+      width 100%
+      background-image linear-gradient(hsla(0, 0, 0%, .4), trans)
+      position absolute
+      top 0
+      left 0
+
+  &__container
+    align-items center
+    display flex
+    flex-direction column
+    height 100vh
+    justify-content flex-start
+    margin 0 auto
+    text-align center
+    width 70%
+
+  &__nav
+    display flex
+    justify-content space-around
+    padding-top 1rem
+    width 100%
+    z-index 1
+
+
+  &__link
+    color white
+    display flex
+    font-family roboto condensed
+    font-size 2rem
+    text-shadow -4px 4px 4px black
+
+  &__main
+    display flex
+    flex-direction column
+    height 100%
+    justify-content center
+    padding-bottom 8rem
+
+
+  &__main svg
+    display flex
+    margin 0 auto
+    width 120px
+    padding-bottom 2.5rem
+
+    path
+      fill white
+
+  &__title
+    color white
+    font-family cursive
+    font-size 6rem
+    text-shadow -3px 3px 3px black
+
+  &__tagline
+    color white
+    font-family roboto condensed
+    font-size 3rem
+    text-shadow -3px 3px 3px black
