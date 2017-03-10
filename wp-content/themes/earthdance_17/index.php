@@ -54,34 +54,34 @@
 <!--grow section-->
 <div class="grow__layer">
   <div class="grow__container">
-		<h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
-    <div class="grow__columns zipper">
+    <h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
+    <div class="grow__zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Food</h3>
 			</div>
-			<div class="grow__content">
-				<p>EarthDance grows Certified Organic fare enjoyed by shoppers at the Ferguson Farmers Market, diners at local farm-to-table establishments, and patrons of hunger relief agencies.</p>
-				<a href="#" class="grow__button">read more</a>
-			</div>
-		</div>
-		<div class="grow__columns zipper">
+      <div class="grow__content">
+        <p>EarthDance grows Certified Organic fare enjoyed by shoppers at the Ferguson Farmers Market, diners at local farm-to-table establishments, and patrons of hunger relief agencies.</p>
+        <a href="#" class="grow__button">read more</a>
+      </div>
+    </div>
+    <div class="grow__zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Farmers</h3>
 			</div>
-			<div class="grow__content">
+      <div class="grow__content">
 				<p>EarthDance provides beyond-the-basics education to meet the needs of aspiring farmers and enrich the lives of youth and agri-curious community members.</p>
 				<a href="#" class="grow__button">read more</a>
-			</div>
-		</div>
-		<div class="grow__columns zipper">
+      </div>
+    </div>
+    <div class="grow__zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Community</h3>
 			</div>
-			<div class="grow__content">
-				<p>EarthDance Farm is a platform where emerging food leaders learn, connect, and grow the good food movement.  Our programs are designed cross-pollinate energy and knowledge, resulting in brand-new possibilities for our local food scene.</p>
+      <div class="grow__content">
+        <p>EarthDance Farm is a platform where emerging food leaders learn, connect, and grow the good food movement.  Our programs are designed cross-pollinate energy and knowledge, resulting in brand-new possibilities for our local food scene.</p>
 				<a href="#" class="grow__button">read more</a>
-			</div>
-		</div>
+      </div>
+    </div>
   </div>
 </div>
 
