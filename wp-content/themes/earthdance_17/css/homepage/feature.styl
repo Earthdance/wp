@@ -7,6 +7,17 @@
     background-repeat no-repeat
     background-size cover
     height 100vh
+    position relative
+
+    &:after
+      content: ''
+      display block
+      height 100px
+      width 100%
+      background-image linear-gradient(hsla(0, 0, 0%, .4), trans)
+      position absolute
+      top 0
+      left 0
 
   &__container
     align-items center
@@ -23,6 +34,7 @@
     justify-content space-around
     padding-top 1rem
     width 100%
+    z-index 1
 
 
   &__link
@@ -30,7 +42,7 @@
     display flex
     font-family roboto condensed
     font-size 2rem
-    text-shadow -4px 4px 4px black
+    text-shadow 1px 1px 0 black
 
   &__main
     display flex
@@ -53,10 +65,10 @@
     color white
     font-family cursive
     font-size 6rem
-    text-shadow -3px 3px 3px black
+    text-shadow 1px 1px 0 black
 
   &__tagline
     color white
     font-family roboto condensed
     font-size 3rem
-    text-shadow -3px 3px 3px black
+    text-shadow 1px 1px 0 black
