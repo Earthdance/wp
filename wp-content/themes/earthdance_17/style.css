@@ -21,22 +21,31 @@ img {
 }
 a {
   text-decoration: none;
-  font-size: 1.5rem;
 }
 p {
   padding-bottom: 1rem;
 }
+* {
+  border: solid #ff1fce 1px;
+}
+[class*="__columns"] {
+  display: flex;
+}
+[class*="__container"] {
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+}
+.header {
+  justify-content: space-around;
+}
 .header__layer {
+  background-color: #6e973f;
   height: 100px;
 }
 .header__container {
   align-items: center;
-  background-color: #6e973f;
-  display: flex;
   height: 100%;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 70%;
 }
 .header__logo {
   align-items: center;
@@ -80,13 +89,10 @@ p {
 }
 .feature__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: flex-start;
-  margin: 0 auto;
   text-align: center;
-  width: 70%;
 }
 .feature__nav {
   display: flex;
@@ -99,7 +105,7 @@ p {
   display: flex;
   font-family: roboto condensed;
   font-size: 2rem;
-  text-shadow: -4px 4px 4px #000;
+  text-shadow: 1px 1px 0 #000;
 }
 .feature__main {
   display: flex;
@@ -121,13 +127,13 @@ p {
   color: #fff;
   font-family: ff-prater-script-web;
   font-size: 6rem;
-  text-shadow: -3px 3px 3px #000;
+  text-shadow: 1px 1px 0 #000;
 }
 .feature__tagline {
   color: #fff;
   font-family: roboto condensed;
   font-size: 3rem;
-  text-shadow: -3px 3px 3px #000;
+  text-shadow: 1px 1px 0 #000;
 }
 .grow__layer {
   background-color: #fff;
@@ -135,12 +141,9 @@ p {
 }
 .grow__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
-  margin: 0 auto;
-  width: 70%;
 }
 .grow__heading {
   color: #392214;
@@ -152,26 +155,25 @@ p {
 .grow__heading span {
   display: flex;
 }
-.grow__zipper {
-  display: flex;
+.grow__columns {
   padding: 5rem;
 }
-.grow__zipper:nth-of-type(even) {
+.grow__columns:nth-of-type(even) {
   flex-direction: row-reverse;
 }
-.grow__zipper:nth-of-type(1) .grow__pic {
+.grow__columns:nth-of-type(1) .grow__pic {
   background-image: url("img/crateVeggies.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.grow__zipper:nth-of-type(2) .grow__pic {
+.grow__columns:nth-of-type(2) .grow__pic {
   background-image: url("img/fuzzyPlant.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.grow__zipper:nth-of-type(3) .grow__pic {
+.grow__columns:nth-of-type(3) .grow__pic {
   background-image: url("img/groupLockingArms.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -212,21 +214,17 @@ p {
 }
 .stats__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0 auto;
-  width: 70%;
 }
 .stats__heading {
   color: #fff;
   font-family: ff-prater-script-web;
-  font-size: 6rem;
+  font-size: 5rem;
   padding: 5rem;
   text-align: center;
 }
 .stats__columns {
-  display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
 }
@@ -248,22 +246,15 @@ p {
   flex: 1;
   padding-left: 1rem;
 }
-.stats__content span {
-  display: flex;
-}
 .believe__layer {
   height: 100%;
 }
 .believe__container {
-  display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0 auto;
-  width: 70%;
 }
 .believe__columns {
   align-items: center;
-  display: flex;
   padding: 5rem 0;
 }
 .believe__subheading {
@@ -312,12 +303,9 @@ p {
 }
 .support__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
-  margin: 0 auto;
-  width: 70%;
 }
 .support__slogan {
   display: flex;
@@ -336,7 +324,7 @@ p {
   font-family: ff-prater-script-web;
   font-size: 6rem;
   text-align: center;
-  text-shadow: -3px 3px 3px #000;
+  text-shadow: 1px 1px 0 #000;
 }
 .support__heading span {
   display: flex;
@@ -347,7 +335,7 @@ p {
   font-size: 6rem;
   padding-bottom: 3rem;
   text-align: center;
-  text-shadow: -3px 3px 3px #000;
+  text-shadow: 1px 1px 0 #000;
 }
 .support__options {
   display: flex;
@@ -367,11 +355,8 @@ p {
 }
 .footer__container {
   align-items: center;
-  display: flex;
   height: 100%;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 70%;
 }
 .footer__item {
   align-items: center;

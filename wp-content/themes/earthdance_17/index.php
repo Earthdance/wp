@@ -55,7 +55,7 @@
 <div class="grow__layer">
   <div class="grow__container">
     <h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
-    <div class="grow__zipper">
+    <div class="grow__columns zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Food</h3>
 			</div>
@@ -64,7 +64,7 @@
         <a href="#" class="grow__button">read more</a>
       </div>
     </div>
-    <div class="grow__zipper">
+    <div class="grow__columns zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Farmers</h3>
 			</div>
@@ -73,7 +73,7 @@
 				<a href="#" class="grow__button">read more</a>
       </div>
     </div>
-    <div class="grow__zipper">
+    <div class="grow__columns zipper">
 			<div class="grow__pic">
 				<h3 class="grow__subheading">Community</h3>
 			</div>
@@ -93,7 +93,7 @@
 			<div class="stats__item">
 				<h3 class="stats__subheading">28.6 billion</h3>
 				<div class="stats__content">
-					<p>The U.S. organic industry grew by nearly 8% in 2010, to<span>reach $28.6 billion in sales (Organic Trade Association, 2011</span>Organic Industry Survey)</p>
+					<p>The U.S. organic industry grew by nearly 8% in 2010, to reach $28.6 billion in sales (Organic Trade Association, 2011 Organic Industry Survey)</p>
 				</div>
 			</div>
 	    <div class="stats__item">
