@@ -4,8 +4,8 @@
 ## Todo project setup
 - [x] Migrate site to WPEngine
 - [x] Setup git in WPEngine
-- [ ] Codeship
-- [ ] Gulp
+- [x] Codeship
+- [x] Gulp
 
 ## CSS Todo
 ```CSS
