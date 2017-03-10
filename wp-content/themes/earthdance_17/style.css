@@ -188,6 +188,7 @@ p {
   padding: 4rem 0;
 }
 .grow__button {
+  display: flex;
   background-color: #6e973f;
   border-radius: 5px;
   color: #fff;
