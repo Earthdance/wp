@@ -313,5 +313,44 @@ p {
   font-family: roboto condensed;
   padding: 1rem 3rem;
 }
+.footer__layer {
+  background-color: #fff;
+  height: 100px;
+}
+.footer__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 70%;
+}
+.footer__item {
+  align-items: center;
+  display: flex;
+}
+.footer__item svg {
+  width: 60px;
+}
+.footer__item svg path {
+  fill: #392214;
+}
+.footer__heading {
+  color: #392214;
+  font-family: ff-prater-script-web;
+  font-size: 2rem;
+  padding: 0 0.75rem;
+}
+.footer__copyright {
+  color: #392214;
+  font-family: roboto condensed;
+  font-size: 1.5rem;
+}
+.footer__privacy {
+  color: #392214;
+  font-family: roboto condensed;
+  font-size: 2rem;
+  padding: 0 0.75rem;
+}
 
 /*# sourceMappingURL=style.css.map */
