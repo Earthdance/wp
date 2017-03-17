@@ -16,6 +16,6 @@
 					<link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" />
 	        <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
 	        <!-- Place favicon.ico in the root directory -->
-	        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	        <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script>
 	    </head>
 	    <body>

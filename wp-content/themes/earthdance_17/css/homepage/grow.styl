@@ -5,25 +5,33 @@
 
   &__container
     align-items center
+
     display flex
+
     flex-direction column
     height 100%
     justify-content space-around
-    margin 0 auto
+
+
+
     width 70%
+
 
   &__heading
     color brown
-    font-family cursive
+    font-family sans
     font-size 6rem
-    padding-top 5rem
+    padding-top 4rem
     text-align center
 
     span
       display flex
 
-  &__zipper
+  &__columns
+
+
     display flex
+
     padding 5rem
 
     &:nth-of-type(even)
@@ -38,21 +46,21 @@
 
     &:nth-of-type(2)
       .grow__pic
-        background-image url(img/fuzzyPlant.jpg)
+        background-image url(img/groupLockingArms.jpg)
         background-position center center
         background-repeat no-repeat
         background-size cover
 
     &:nth-of-type(3)
       .grow__pic
-        background-image url(img/groupLockingArms.jpg)
+        background-image url(img/kidsLearning.jpg)
         background-position center center
         background-repeat no-repeat
         background-size cover
 
   &__subheading
     color white
-    font-family cursive
+    font-family sans
     font-size 5rem
     text-align center
 
@@ -76,6 +84,9 @@
   &__button
     display flex
     background-color green
+
+
     border-radius 5px
+
     color white
     padding .75rem 5rem
