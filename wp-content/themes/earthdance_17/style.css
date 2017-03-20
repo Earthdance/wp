@@ -7,6 +7,10 @@ Description:	Theme for Earthdance
   margin: 0;
   padding: 0;
 }
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 :root {
   font-size: 20px;
 }
@@ -14,10 +18,7 @@ body {
   color: #392214;
   font-family: fira-sans;
   line-height: 1.5;
-}
-img {
-  height: auto;
-  max-width: 100%;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -31,7 +32,17 @@ p {
 [class*="__container"] {
   display: flex;
   margin: 0 auto;
-  width: 70%;
+  max-width: 1200px;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*="__container"] {
+    background-color: #ff0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  [class*="__container"] {
+    background-color: #ffa500;
+  }
 }
 [class*='__heading'] {
   color: #fff;
@@ -56,6 +67,19 @@ p {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
+img,
+iframe,
+embed {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.placeholders,
+.ph {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='100%' y1='0' x2='0' y2='100%' stroke='{green}' stroke-width='2'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='{green}' stroke-width='2'/></svg>");
+}
 [class*="__button"] {
   border-radius: 5px;
   box-shadow: -1px 1px 0 #000;
@@ -64,14 +88,25 @@ p {
   padding: 0.5rem 1rem;
   text-shadow: 1px 1px 0 #000;
 }
-.header__layer {
+.header__bg {
   background-color: #6e973f;
   border-bottom: 1px solid rgba(0,0,0,0.4);
-  height: 100px;
+}
+.header__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
 }
 .header__container {
   align-items: center;
-  height: 100%;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.header__logo-box {
+  align-items: center;
+  display: flex;
 }
 .header__logo {
   align-items: center;
@@ -92,9 +127,10 @@ p {
 }
 .header__tagline {
   color: #392214;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
   padding: 0 0.5rem;
+}
+.header__tagline font-size 1.5rem {
+  font-weight: 100;
 }
 .header__social {
   align-items: center;
@@ -103,11 +139,31 @@ p {
 .header__link {
   color: #fff;
   fill: #fff;
-  font-size: 1.5rem;
+  font-weight: 100;
   padding: 0 0.5rem;
 }
 .header__icon {
   fill: #fff;
+}
+.nav__container {
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+.nav__link {
+  color: #fff;
+  display: flex;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 #000;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .nav {
+    background-color: #ff0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .nav {
+    background-color: #ffa500;
+  }
 }
 .feature__layer {
   background-attachment: fixed;
@@ -124,7 +180,7 @@ p {
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,0.4), transparent);
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
 }
 .feature__container {
@@ -133,20 +189,6 @@ p {
   height: 100vh;
   justify-content: flex-start;
   text-align: center;
-}
-.feature__nav {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 1rem;
-  width: 100%;
-  z-index: 1;
-}
-.feature__link {
-  color: #fff;
-  display: flex;
-  font-family: roboto condensed;
-  font-size: 2rem;
-  text-shadow: 1px 1px 0 #000;
 }
 .feature__main {
   display: flex;
@@ -237,7 +279,7 @@ p {
 .grow__button {
   display: inline-block;
   background-color: #6e973f;
-  border: 3px solid transparent;
+  border: 3px solid #6e973f;
   color: #fff;
 }
 .grow__button:hover {
@@ -383,13 +425,13 @@ p {
   height: 100px;
 }
 .footer__container {
-  align-items: center;
   height: 100%;
   justify-content: space-between;
 }
 .footer__item {
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 .footer__item svg {
   width: 60px;
@@ -402,17 +444,13 @@ p {
   font-family: ff-prater-script-web;
   font-size: 2rem;
   padding: 0 0.75rem;
+  text-shadow: none;
 }
 .footer__copyright {
-  color: #392214;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
+  padding-bottom: 0;
 }
 .footer__privacy {
-  color: #392214;
-  font-family: roboto condensed;
-  font-size: 2rem;
-  padding: 0 0.75rem;
+  padding-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
