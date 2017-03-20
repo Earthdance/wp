@@ -57,29 +57,29 @@
     <h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
     <div class="grow__columns zipper">
 			<div class="grow__pic">
-				<h3 class="grow__subheading">Food</h3>
+				<h3 class="grow__title">Food</h3>
 			</div>
       <div class="grow__content">
         <p>EarthDance grows Certified Organic fare enjoyed by shoppers at the Ferguson Farmers Market, diners at local farm-to-table establishments, and patrons of hunger relief agencies.</p>
-        <a href="#" class="grow__button">read more</a>
+        <p><a href="#" class="grow__button">read more</a></p>
       </div>
     </div>
     <div class="grow__columns zipper">
 			<div class="grow__pic">
-				<h3 class="grow__subheading">Farmers</h3>
+				<h3 class="grow__title">Farmers</h3>
 			</div>
       <div class="grow__content">
 				<p>EarthDance provides beyond-the-basics education to meet the needs of aspiring farmers and enrich the lives of youth and agri-curious community members.</p>
-				<a href="#" class="grow__button">read more</a>
+				<p><p><a href="#" class="grow__button">read more</a></p></p>
       </div>
     </div>
     <div class="grow__columns zipper">
 			<div class="grow__pic">
-				<h3 class="grow__subheading">Community</h3>
+				<h3 class="grow__title">Community</h3>
 			</div>
       <div class="grow__content">
         <p>EarthDance Farm is a platform where emerging food leaders learn, connect, and grow the good food movement. Our programs are designed cross-pollinate energy and knowledge, resulting in brand-new possibilities for our local food scene.</p>
-				<a href="#" class="grow__button">read more</a>
+				<p><a href="#" class="grow__button">read more</a></p>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
 <div class="believe__layer">
   <div class="believe__container">
     <div class="believe__columns">
-      <h2 class="believe__subheading">We believe..</h2>
+      <h2 class="believe__heading">We believe..</h2>
 			<div class="believe__content">
 				<p>.. in seeding the change we seek every day.  Here, kids eat greens, beginning farmers learn soil stewardship, biodiversity thrives, and everyone has a hand in producing the food we grow. We prove that skilled growers and concerned consumers can work together to achieve a better food system</p>
 			</div>
@@ -137,7 +137,7 @@
       </svg>
     </div>
 		<div class="support__slogan">
-			<h2 class="support__subheading">Support EarthDance</h2>
+			<h2 class="support__heading">Support EarthDance</h2>
 			<div class="support__options">
 				<a href="#" class="support__button">Donate</a>
 				<a href="#" class="support__button">Volunteer</a>
