@@ -7,17 +7,18 @@ Description:	Theme for Earthdance
   margin: 0;
   padding: 0;
 }
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 :root {
   font-size: 20px;
 }
 body {
-  background-color: #6e973f;
+  color: #392214;
   font-family: fira-sans;
   line-height: 1.5;
-}
-img {
-  height: auto;
-  max-width: 100%;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -31,21 +32,85 @@ p {
 [class*="__container"] {
   display: flex;
   margin: 0 auto;
-  width: 70%;
+  max-width: 1200px;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*="__container"] {
+    background-color: #ff0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  [class*="__container"] {
+    background-color: #ffa500;
+  }
+}
+[class*='__heading'] {
+  color: #fff;
+  font-family: fira-sans;
+  font-size: 5rem;
+  line-height: 1;
+  padding: 5rem 0;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000;
+}
+[class*='__subheading'] {
+  color: #fff;
+  font-family: fira-sans;
+  font-size: 6rem;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000;
+}
+[class*='__title'] {
+  color: #fff;
+  font-family: fira-sans;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000;
+}
+img,
+iframe,
+embed {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.placeholders,
+.ph {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='100%' y1='0' x2='0' y2='100%' stroke='{green}' stroke-width='2'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='{green}' stroke-width='2'/></svg>");
 }
 [class*="__button"] {
+  border: 3px solid transparent;
   border-radius: 5px;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
+  box-shadow: -1px 1px 0 #000;
+  padding: 0.5rem 1rem;
+  text-shadow: 1px 1px 0 #000;
 }
-.header__layer {
+[class*="__button"]:hover {
+  border: 3px solid currentColor;
+  background-color: #fff;
+  color: currentColor;
+}
+.header__bg {
   background-color: #6e973f;
   border-bottom: 1px solid rgba(0,0,0,0.4);
-  height: 100px;
+}
+.header__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
 }
 .header__container {
   align-items: center;
-  height: 100%;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.header__logo-box {
+  align-items: center;
+  display: flex;
 }
 .header__logo {
   align-items: center;
@@ -66,9 +131,10 @@ p {
 }
 .header__tagline {
   color: #392214;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
   padding: 0 0.5rem;
+}
+.header__tagline font-size 1.5rem {
+  font-weight: 100;
 }
 .header__social {
   align-items: center;
@@ -77,11 +143,31 @@ p {
 .header__link {
   color: #fff;
   fill: #fff;
-  font-size: 1.5rem;
+  font-weight: 100;
   padding: 0 0.5rem;
 }
 .header__icon {
   fill: #fff;
+}
+.nav__container {
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+.nav__link {
+  color: #fff;
+  display: flex;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 #000;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .nav {
+    background-color: #ff0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .nav {
+    background-color: #ffa500;
+  }
 }
 .feature__layer {
   background-attachment: fixed;
@@ -98,32 +184,15 @@ p {
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,0.4), transparent);
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
 }
 .feature__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: flex-start;
-  margin: 0 auto;
   text-align: center;
-  width: 70%;
-}
-.feature__nav {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 1rem;
-  width: 100%;
-  z-index: 1;
-}
-.feature__link {
-  color: #fff;
-  display: flex;
-  font-family: roboto condensed;
-  font-size: 2rem;
-  text-shadow: 1px 1px 0 #000;
 }
 .feature__main {
   display: flex;
@@ -159,61 +228,49 @@ p {
 }
 .grow__container {
   align-items: center;
-  display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
-  width: 70%;
 }
 .grow__heading {
   color: #392214;
-  font-family: fira-sans;
-  font-size: 6rem;
-  padding-top: 4rem;
-  text-align: center;
 }
 .grow__heading span {
   display: flex;
 }
 .grow__columns {
-  display: flex;
-  padding: 5rem;
+  padding-bottom: 5rem;
+}
+.grow__columns:nth-of-type(odd) .grow__content {
+  padding-left: 2.5rem;
 }
 .grow__columns:nth-of-type(even) {
   flex-direction: row-reverse;
 }
+.grow__columns:nth-of-type(even) .grow__content {
+  padding-right: 2.5rem;
+}
 .grow__columns:nth-of-type(1) .grow__pic {
   background-image: url("img/crateVeggies.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .grow__columns:nth-of-type(2) .grow__pic {
   background-image: url("img/groupLockingArms.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .grow__columns:nth-of-type(3) .grow__pic {
   background-image: url("img/kidsLearning.jpg");
+}
+.grow__pic {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.grow__subheading {
+.grow__title {
   color: #fff;
-  font-family: fira-sans;
-  font-size: 5rem;
-  text-align: center;
 }
 .grow__content {
-  align-items: center;
-  color: #392214;
-  display: flex;
   flex: 1;
+  display: flex;
   flex-direction: column;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
   justify-content: center;
   padding: 0 1.5rem;
 }
@@ -221,14 +278,13 @@ p {
   border: 20px solid #6e973f;
   flex: 1;
   height: 100%;
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 .grow__button {
-  display: flex;
+  display: inline-block;
   background-color: #6e973f;
-  border-radius: 5px;
+  border: 3px solid #6e973f;
   color: #fff;
-  padding: 0.75rem 5rem;
 }
 .stats__layer {
   background-color: #392214;
@@ -287,7 +343,7 @@ p {
   align-items: center;
   padding: 5rem 0;
 }
-.believe__subheading {
+.believe__heading {
   color: #392214;
   font-family: fira-sans;
   font-size: 4.5rem;
@@ -313,14 +369,12 @@ p {
   background-size: cover;
   display: flex;
   height: 50vh;
+  margin-bottom: 1.5rem;
   width: 50vw;
 }
 .believe__button {
   background-color: #392214;
-  color: #6e973f;
-  padding: 0.5rem 5.5rem;
-  margin-right: 8rem;
-  margin-top: 4rem;
+  color: #fff;
 }
 .support__layer {
   background-image: url("img/girlAndGreens.jpg");
@@ -346,23 +400,8 @@ p {
 .support__slogan svg path {
   fill: #fff;
 }
-.support__heading {
-  color: #fff;
-  font-family: fira-sans;
-  font-size: 6rem;
-  text-align: center;
-  text-shadow: 1px 1px 0 #000;
-}
 .support__heading span {
   display: flex;
-}
-.support__subheading {
-  color: #fff;
-  font-family: fira-sans;
-  font-size: 6rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  text-shadow: 1px 1px 0 #000;
 }
 .support__options {
   display: flex;
@@ -371,24 +410,19 @@ p {
 .support__button {
   background-color: #6e973f;
   color: #fff;
-  border: 1px solid #6e973f;
-  border-radius: 5px;
-  color: #fff;
-  font-family: roboto condensed;
-  padding: 1rem 3rem;
 }
 .footer__layer {
   background-color: #fff;
   height: 100px;
 }
 .footer__container {
-  align-items: center;
   height: 100%;
   justify-content: space-between;
 }
 .footer__item {
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 .footer__item svg {
   width: 60px;
@@ -401,17 +435,13 @@ p {
   font-family: ff-prater-script-web;
   font-size: 2rem;
   padding: 0 0.75rem;
+  text-shadow: none;
 }
 .footer__copyright {
-  color: #392214;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
+  padding-bottom: 0;
 }
 .footer__privacy {
-  color: #392214;
-  font-family: roboto condensed;
-  font-size: 2rem;
-  padding: 0 0.75rem;
+  padding-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
