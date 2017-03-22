@@ -35,14 +35,24 @@
 						    </svg>
 								<span>EarthDance</span>
 							</a>
-					    <p class="header__tagline">organic farm school</p>
+					    <p class="header__tagline"><?php the_field('tagline', 'option'); ?></p>
 						</div>
 						<div class="header__social">
-							<a href="#" class="header__link">233 Dade Ave. Ferguson</a>
-							<a href="#" class="header__link">314-521-1006</a>
-							<a href="#" class="header__icon" data-icon="ei-sc-facebook" data-size="m"></a>
-							<a href="#"class="header__icon" data-icon="ei-sc-twitter" data-size="m"></a>
-							<a href="#" class="header__icon" data-icon="ei-sc-instagram" data-size="m"></a>
+							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link"><?php the_field('address', 'option'); ?></a>
+							<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link"><?php the_field('phone_number', 'option'); ?></a>
+
+							<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-facebook" data-size="m"></div>
+							</a>
+
+							<a href="<?php the_field('twitter_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-twitter" data-size="m"></div>
+							</a>
+
+							<a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-instagram" data-size="m"></div>
+							</a>
+
 						</div>
 				  </div>
 				</div>

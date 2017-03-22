@@ -10,7 +10,7 @@
         <path d="M142.2 45.8C127.4 11.3 84-11.3 46.3 5.9 10.2 16.1-3.1 62.2.6 94.5 6 140.9 58.3 158 102.4 145.4c45-13 54.8-64.2 39.8-99.6zm-67.8 98.5C37 144.3 6.7 114 6.7 76.6 6.7 39.2 37 8.9 74.4 8.9s67.7 30.3 67.7 67.7c0 37.4-30.3 67.7-67.7 67.7z" class="st0"></path>
       </svg>
       <p class="footer__heading">EarthDance</p>
-      <p class="footer__copyright">© 2017</p>
+      <p class="footer__copyright">© <?php echo date("Y"); ?></p>
     </div>
     <div class="footer__item">
       <p class="footer__privacy">Privacy Policy</p>
