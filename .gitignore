@@ -1,9 +1,12 @@
 # Fancy pattern to ignore the stylesheet so CodeShip can build it
 # wp-content/themes/THEME_NAME/style.css
 
-#node
+# node
 node_modules
 *.log
+
+# Sourcemap
+*.map
 
 *.orig
 
@@ -16,6 +19,7 @@ node_modules
 Thumbs.db
 
 images/
+
 
 # wordpress specific
 wp-config.php
