@@ -290,10 +290,6 @@ embed {
 }
 .stats__heading {
   color: #fff;
-  font-family: fira-sans;
-  font-size: 5rem;
-  padding: 5rem;
-  text-align: center;
 }
 .stats__columns {
   display: flex;

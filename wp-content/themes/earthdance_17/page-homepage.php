@@ -51,24 +51,29 @@
     </div>
   </div>
 
-
   <!--stats section-->
   <div class="stats__layer">
     <div class="stats__container">
-      <h2 class="stats__heading">Did you know...</h2>
+      <h2 class="stats__heading"><?php echo get_field( "stats_heading" ); ?></h2>
       <div class="stats__columns">
+
+        <?php if( have_rows('stats_items') ): while ( have_rows('stats_items') ) : the_row();
+
+          // vars
+          $number = get_sub_field('stats_number');
+          $text = get_sub_field('stats_text');
+
+        ?>
+
   			<div class="stats__item">
-  				<h3 class="stats__subheading">28.6 billion</h3>
+  				<h3 class="stats__subheading"><?php echo $number ?></h3>
   				<div class="stats__content">
-  					<p>The U.S. organic industry grew by nearly 8% in 2010, to reach $28.6 billion in sales (Organic Trade Association, 2011 Organic Industry Survey)</p>
+  					<p><?php echo $text ?></p>
   				</div>
   			</div>
-  	    <div class="stats__item">
-  	      <h3 class="stats__subheading">78%</h3>
-  				<div class="stats__content">
-  					<p>78% of U.S. families purchase at least some organic foods (Organic Trade Association, 2011 U.S. Families' Organic Attitudes and Beliefs Study)</p>
-  				</div>
-  	    </div>
+
+        <?php endwhile; else : endif; ?>
+
   		</div>
     </div>
   </div>
@@ -77,16 +82,16 @@
   <div class="believe__layer">
     <div class="believe__container">
       <div class="believe__columns">
-        <h2 class="believe__heading">We believe..</h2>
+        <h2 class="believe__heading"><?php echo get_field( "believe_heading" ); ?></h2>
   			<div class="believe__content">
-  				<p>.. in seeding the change we seek every day.  Here, kids eat greens, beginning farmers learn soil stewardship, biodiversity thrives, and everyone has a hand in producing the food we grow. We prove that skilled growers and concerned consumers can work together to achieve a better food system</p>
+  				<p><?php echo get_field( "believe_text" ); ?></p>
   			</div>
       </div>
       <div class="believe__photo">
   			<div class="believe__image">
   			</div>
         <div class="believe__cta">
-          <a href="#" class="believe__button">check us out</a>
+          <a href="<?php echo get_field( "believe_cta" ); ?>" class="believe__button"><?php echo get_field( "believe_buttontext" ); ?></a>
         </div>
   		</div>
   	</div>
@@ -96,7 +101,7 @@
   <div class="support__layer">
   	<div class="support__container">
   		<div class="support__slogan">
-        <h2 class="support__heading">Planting for<span>a better tomorrow</span></h2>
+        <h2 class="support__heading">Planting for a better tomorrow</h2>
 
         <?php include "svg/earthdance-logo.php" ?>
 

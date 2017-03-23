@@ -25,6 +25,9 @@ body.block-scroll {
 }
 ```
 
+## WP
+- [ ] 404 page
+
 ## Todo pre-launch
 - [ ] Uptime install
 - [ ] Add Google Analytics

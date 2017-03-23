@@ -1,18 +1,19 @@
 <?php
 
 add_action( 'after_setup_theme', 'custom_theme_setup' );
-function custom_theme_setup() {
-  // SUPPORTS - Post Thumbnail, etc.
+function custom_theme_setup()
+{
+// SUPPORTS - Post Thumbnail, etc.
   // WP Supports
   include 'functions/wp-supports.php';
 
 
-  // REGISTRATIONS
+// REGISTRATIONS
    // Menus
   include 'functions/register-menus.php';
 
 
-  // CUSTOM SETTINGS
+// CUSTOM SETTINGS
   // Login Page Styles
   include 'functions/custom-login-page.php';
   // Post Editor Styles
@@ -21,28 +22,28 @@ function custom_theme_setup() {
   include 'functions/get-thumbnail-src.php';
 
 
-  // IMAGE SETTINGS
+// IMAGE SETTINGS
   // Image Upload Settings
   include 'functions/image-upload-settings.php';
   // Image Output Settings
   include 'functions/image-output-settings.php';
 
 
-  // ENQUEUES
+// ENQUEUES
   //Enqueue Scripts
   include 'functions/enqueue-scripts.php';
 
 
-  // ADVANCED CUSTOM FIELDS
+// ADVANCED CUSTOM FIELDS
   //Create Options page
   include 'functions/acf-options.php';
 
 
-  // HOUSEKEEPING
+// HOUSEKEEPING
   //Remove unneeded ui from Admin screen
   include 'functions/remove-menu-items.php';
 
-  // Character Limit
+// Character Limit
   //LImit characters on excerpts
   include 'functions/character-limit.php';
 }
