@@ -13,12 +13,14 @@
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
 			<script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
 
-			<link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" />
+			<!-- <link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" /> -->
       <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
       <!-- Place favicon.ico in the root directory -->
-      <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script>
+      <!-- <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script> -->
+
+			<?php wp_head(); ?>
     </head>
-    <body>
+    <body <?php body_class('page'); ?>>
 
 			<!--header section-->
 			<div class="header__layer">
@@ -35,14 +37,24 @@
 						    </svg>
 								<span>EarthDance</span>
 							</a>
-					    <p class="header__tagline">organic farm school</p>
+					    <p class="header__tagline"><?php the_field('tagline', 'option'); ?></p>
 						</div>
 						<div class="header__social">
-							<a href="#" class="header__link">233 Dade Ave. Ferguson</a>
-							<a href="#" class="header__link">314-521-1006</a>
-							<a href="#" class="header__icon" data-icon="ei-sc-facebook" data-size="m"></a>
-							<a href="#"class="header__icon" data-icon="ei-sc-twitter" data-size="m"></a>
-							<a href="#" class="header__icon" data-icon="ei-sc-instagram" data-size="m"></a>
+							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link"><?php the_field('address', 'option'); ?></a>
+							<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link"><?php the_field('phone_number', 'option'); ?></a>
+
+							<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-facebook" data-size="m"></div>
+							</a>
+
+							<a href="<?php the_field('twitter_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-twitter" data-size="m"></div>
+							</a>
+
+							<a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-sc-instagram" data-size="m"></div>
+							</a>
+
 						</div>
 				  </div>
 				</div>

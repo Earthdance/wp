@@ -15,16 +15,54 @@ Description:	Theme for Earthdance
   font-size: 20px;
 }
 body {
-  color: #392214;
-  font-family: fira-sans;
-  line-height: 1.5;
   position: relative;
+}
+html {
+  font-size: 20px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  color: #392214;
+  font-family: 'fira-sans' , sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
 }
 a {
   text-decoration: none;
+  color: #6e973f;
 }
-p {
-  padding-bottom: 1rem;
+a:hover {
+  color: nightgreen;
+  text-decoration: none;
+}
+[class*='__content'] > * {
+  margin-bottom: 1.5rem;
+}
+[class*='__content'] > * li {
+  margin-bottom: 1.5rem;
+}
+#tinymce {
+  background-color: #fff;
+  line-height: 1.5;
+}
+#tinymce font-family Sans.font,
+#tinymce font-size base-font-size,
+#tinymce background-image: linear-gradient(transparent,
+#tinymce transparent line-height() - 1px,
+#tinymce transparent),
+#tinymce background-size : auto line-height(),
+#tinymce padding 0 1.5em !important,
+#tinymce margin 0 auto,
+#tinymce max-width 650px,
+#tinymce p,
+#tinymce ul,
+#tinymce li {
+  padding: 0;
+}
+#tinymce.wp-autoresize {
+  padding: 0 1.5em !important;
 }
 [class*="__columns"] {
   display: flex;
@@ -56,7 +94,8 @@ p {
 [class*='__subheading'] {
   color: #fff;
   font-family: fira-sans;
-  font-size: 6rem;
+  font-size: 3rem;
+  font-weight: normal;
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
@@ -81,12 +120,16 @@ embed {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='100%' y1='0' x2='0' y2='100%' stroke='{green}' stroke-width='2'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='{green}' stroke-width='2'/></svg>");
 }
 [class*="__button"] {
+  border: 3px solid transparent;
   border-radius: 5px;
   box-shadow: -1px 1px 0 #000;
-  font-family: roboto condensed;
-  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   text-shadow: 1px 1px 0 #000;
+}
+[class*="__button"]:hover {
+  border: 3px solid currentColor;
+  background-color: #fff;
+  color: currentColor;
 }
 .header__bg {
   background-color: #6e973f;
@@ -149,7 +192,10 @@ embed {
   justify-content: space-around;
   padding-top: 1rem;
 }
-.nav__link {
+.nav__container li {
+  list-style: none;
+}
+.nav__container a {
   color: #fff;
   display: flex;
   font-size: 1.5rem;
@@ -189,16 +235,16 @@ embed {
   height: 100vh;
   justify-content: flex-start;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .feature__main {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding-bottom: 8rem;
 }
 .feature__main svg {
-  display: flex;
   margin: 0 auto;
   width: 120px;
   padding-bottom: 2.5rem;
@@ -206,17 +252,14 @@ embed {
 .feature__main svg path {
   fill: #fff;
 }
-.feature__title {
+.feature__heading {
   color: #fff;
   font-family: ff-prater-script-web;
-  font-size: 6rem;
-  text-shadow: 1px 1px 0 #000;
+  padding: 0;
 }
-.feature__tagline {
+.feature__subheading {
   color: #fff;
-  font-family: roboto condensed;
-  font-size: 3rem;
-  text-shadow: 1px 1px 0 #000;
+  font-weight: 400;
 }
 .grow__layer {
   background-color: #fff;
@@ -246,15 +289,6 @@ embed {
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
 }
-.grow__columns:nth-of-type(1) .grow__pic {
-  background-image: url("img/crateVeggies.jpg");
-}
-.grow__columns:nth-of-type(2) .grow__pic {
-  background-image: url("img/groupLockingArms.jpg");
-}
-.grow__columns:nth-of-type(3) .grow__pic {
-  background-image: url("img/kidsLearning.jpg");
-}
 .grow__pic {
   background-position: center center;
   background-repeat: no-repeat;
@@ -282,12 +316,6 @@ embed {
   border: 3px solid #6e973f;
   color: #fff;
 }
-.grow__button:hover {
-  background-color: #fff;
-  box-shadow: none;
-  border: 3px solid #6e973f;
-  color: #6e973f;
-}
 .stats__layer {
   background-color: #392214;
 }
@@ -303,10 +331,6 @@ embed {
 }
 .stats__heading {
   color: #fff;
-  font-family: fira-sans;
-  font-size: 5rem;
-  padding: 5rem;
-  text-align: center;
 }
 .stats__columns {
   display: flex;
@@ -371,14 +395,17 @@ embed {
   background-size: cover;
   display: flex;
   height: 50vh;
+  margin-bottom: 1.5rem;
+  width: 50vw;
+}
+.believe__cta {
+  align-self: flex-end;
+  display: flex;
   width: 50vw;
 }
 .believe__button {
   background-color: #392214;
-  color: #6e973f;
-  padding: 0.5rem 5.5rem;
-  margin-right: 8rem;
-  margin-top: 4rem;
+  color: #fff;
 }
 .support__layer {
   background-image: url("img/girlAndGreens.jpg");
@@ -414,11 +441,6 @@ embed {
 .support__button {
   background-color: #6e973f;
   color: #fff;
-  border: 1px solid #6e973f;
-  border-radius: 5px;
-  color: #fff;
-  font-family: roboto condensed;
-  padding: 1rem 3rem;
 }
 .footer__layer {
   background-color: #fff;
@@ -451,6 +473,83 @@ embed {
 }
 .footer__privacy {
   padding-bottom: 0;
+}
+body.login {
+  min-height: 100%;
+  background-image: url("/wp-content/themes/earthdance_17/img/oldShed.jpg") !important;
+  background-size: cover !important;
+  background-positioncenter: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+body.login:before {
+  background-image: url("/wp-content/themes/earthdance_17/svg/earthdance-logo.svg") !important;
+  content: "";
+  position: absolute;
+  top: 4em;
+  left: 3em;
+  width: 15em;
+  height: 6em;
+  background-repeat: no-repeat;
+}
+body.login h1 a {
+  background: none !important;
+}
+body.login .login form {
+  background: rbga(#392214, 0.5);
+}
+body.login .login label {
+  color: #392214;
+}
+body.login form p label {
+  font-size: 16px;
+}
+body.login #nav,
+body.login #backtoblog {
+  text-shadow: 0 1px 0 #fff;
+  text-shadow: none;
+}
+body.login #backtoblog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  background: none;
+  height: 30px;
+  width: auto;
+}
+body.login #backtoblog a {
+  color: #6e973f !important;
+  display: block;
+  padding: 8px 0 0 15px;
+  text-decoration: none;
+}
+body.login .login #nav a,
+body.login .login #backtoblog a {
+  color: #6e973f !important;
+}
+body.login input.button-primary,
+body.login button.button-primary,
+body.login a.button-primary {
+  background: #6e973f;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-weight: bold;
+}
+body.login #nav {
+  clear: both;
+}
+body.login #nav a {
+  text-shadow: none;
+}
+body.login .login #nav a:hover,
+body.login .login #backtoblog a:hover {
+  background: #6e973f;
+  color: #fff !important;
+}
+body.login #sm2-container {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
