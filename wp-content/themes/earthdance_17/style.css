@@ -15,16 +15,54 @@ Description:	Theme for Earthdance
   font-size: 20px;
 }
 body {
-  color: #392214;
-  font-family: fira-sans;
-  line-height: 1.5;
   position: relative;
+}
+html {
+  font-size: 20px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  color: #392214;
+  font-family: 'fira-sans' , sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
 }
 a {
   text-decoration: none;
+  color: #6e973f;
 }
-p {
-  padding-bottom: 1rem;
+a:hover {
+  color: nightgreen;
+  text-decoration: none;
+}
+[class*='__content'] > * {
+  margin-bottom: 1.5rem;
+}
+[class*='__content'] > * li {
+  margin-bottom: 1.5rem;
+}
+#tinymce {
+  background-color: #fff;
+  line-height: 1.5;
+}
+#tinymce font-family Sans.font,
+#tinymce font-size base-font-size,
+#tinymce background-image: linear-gradient(transparent,
+#tinymce transparent line-height() - 1px,
+#tinymce transparent),
+#tinymce background-size : auto line-height(),
+#tinymce padding 0 1.5em !important,
+#tinymce margin 0 auto,
+#tinymce max-width 650px,
+#tinymce p,
+#tinymce ul,
+#tinymce li {
+  padding: 0;
+}
+#tinymce.wp-autoresize {
+  padding: 0 1.5em !important;
 }
 [class*="__columns"] {
   display: flex;
@@ -154,7 +192,10 @@ embed {
   justify-content: space-around;
   padding-top: 1rem;
 }
-.nav__link {
+.nav__container li {
+  list-style: none;
+}
+.nav__container a {
   color: #fff;
   display: flex;
   font-size: 1.5rem;
@@ -432,6 +473,83 @@ embed {
 }
 .footer__privacy {
   padding-bottom: 0;
+}
+body.login {
+  min-height: 100%;
+  background-image: url("/wp-content/themes/earthdance_17/img/oldShed.jpg") !important;
+  background-size: cover !important;
+  background-positioncenter: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+body.login:before {
+  background-image: url("/wp-content/themes/earthdance_17/svg/earthdance-logo.svg") !important;
+  content: "";
+  position: absolute;
+  top: 4em;
+  left: 3em;
+  width: 15em;
+  height: 6em;
+  background-repeat: no-repeat;
+}
+body.login h1 a {
+  background: none !important;
+}
+body.login .login form {
+  background: rbga(#392214, 0.5);
+}
+body.login .login label {
+  color: #392214;
+}
+body.login form p label {
+  font-size: 16px;
+}
+body.login #nav,
+body.login #backtoblog {
+  text-shadow: 0 1px 0 #fff;
+  text-shadow: none;
+}
+body.login #backtoblog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  background: none;
+  height: 30px;
+  width: auto;
+}
+body.login #backtoblog a {
+  color: #6e973f !important;
+  display: block;
+  padding: 8px 0 0 15px;
+  text-decoration: none;
+}
+body.login .login #nav a,
+body.login .login #backtoblog a {
+  color: #6e973f !important;
+}
+body.login input.button-primary,
+body.login button.button-primary,
+body.login a.button-primary {
+  background: #6e973f;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-weight: bold;
+}
+body.login #nav {
+  clear: both;
+}
+body.login #nav a {
+  text-shadow: none;
+}
+body.login .login #nav a:hover,
+body.login .login #backtoblog a:hover {
+  background: #6e973f;
+  color: #fff !important;
+}
+body.login #sm2-container {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,7 +3,7 @@
 function remove_menu_items()
 {
   global $menu;
-  $restricted = array( __('Comments'));
+  $restricted = array( __('Comments'), __('Links'));
   //$restricted = array(__('Posts'), __('Links'), __('Comments'), __('Media'),__('Plugins'), __('Tools'), __('Users'));
   end ($menu);
   while (prev($menu)){

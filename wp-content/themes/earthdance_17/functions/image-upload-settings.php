@@ -1,5 +1,5 @@
 <?php
-// Kill Automatice Image resizing on upload  - http://www.wpmayor.com/code/remove-image-sizes-in-wordpress/
+// Kill Automatic Image resizing on upload  - http://www.wpmayor.com/code/remove-image-sizes-in-wordpress/
 
 function kill_filter_image_sizes( $sizes) {
 

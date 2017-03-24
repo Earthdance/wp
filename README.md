@@ -27,6 +27,9 @@ body.block-scroll {
 
 ## WP
 - [ ] 404 page
+- [ ] Style login page logo
+- [ ] Revisit WYSIWYG editor spacing
+
 
 ## Todo pre-launch
 - [ ] Uptime install

@@ -13,12 +13,14 @@
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
 			<script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
 
-			<link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" />
+			<!-- <link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" /> -->
       <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
       <!-- Place favicon.ico in the root directory -->
-      <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script>
+      <!-- <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script> -->
+
+			<?php wp_head(); ?>
     </head>
-    <body>
+    <body <?php body_class('page'); ?>>
 
 			<!--header section-->
 			<div class="header__layer">
