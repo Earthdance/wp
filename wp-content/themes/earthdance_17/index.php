@@ -34,7 +34,7 @@
       <h2 class="grow__heading">We grow food,<span>farmers and community</span></h2>
       <div class="grow__columns zipper">
   			<div class="grow__pic">
-  				<h3 class="grow__title">Food</h3>
+  				<h3 class="grow__subheading">Food</h3>
   			</div>
         <div class="grow__content">
           <p>EarthDance grows Certified Organic fare enjoyed by shoppers at the Ferguson Farmers Market, diners at local farm-to-table establishments, and patrons of hunger relief agencies.</p>
@@ -43,7 +43,7 @@
       </div>
       <div class="grow__columns zipper">
   			<div class="grow__pic">
-  				<h3 class="grow__title">Farmers</h3>
+  				<h3 class="grow__subheading">Farmers</h3>
   			</div>
         <div class="grow__content">
   				<p>EarthDance provides beyond-the-basics education to meet the needs of aspiring farmers and enrich the lives of youth and agri-curious community members.</p>
@@ -52,7 +52,7 @@
       </div>
       <div class="grow__columns zipper">
   			<div class="grow__pic">
-  				<h3 class="grow__title">Community</h3>
+  				<h3 class="grow__subheading">Community</h3>
   			</div>
         <div class="grow__content">
           <p>EarthDance Farm is a platform where emerging food leaders learn, connect, and grow the good food movement. Our programs are designed cross-pollinate energy and knowledge, resulting in brand-new possibilities for our local food scene.</p>

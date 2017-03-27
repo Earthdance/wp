@@ -67,6 +67,11 @@ a:hover {
 [class*="__columns"] {
   display: flex;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*="__columns"] {
+    flex-direction: column;
+  }
+}
 [class*="__container"] {
   display: flex;
   margin: 0 auto;
@@ -74,7 +79,7 @@ a:hover {
 }
 @media only screen and (min-width: 400px) and (max-width: 1050px) {
   [class*="__container"] {
-    background-color: #ff0;
+    max-width: 850px;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -91,6 +96,12 @@ a:hover {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*='__heading'] {
+    font-size: 2.5rem;
+    padding: 2.5rem 0;
+  }
+}
 [class*='__subheading'] {
   color: #fff;
   font-family: fira-sans;
@@ -99,12 +110,22 @@ a:hover {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*='__subheading'] {
+    font-size: 2rem;
+  }
+}
 [class*='__title'] {
   color: #fff;
   font-family: fira-sans;
   font-size: 3rem;
   text-align: center;
   text-shadow: -1px 1px 0 #000;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  [class*='__title'] {
+    font-size: 1.5rem;
+  }
 }
 img,
 iframe,
@@ -280,6 +301,11 @@ embed {
 .grow__columns {
   padding-bottom: 5rem;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .grow__columns {
+    padding-bottom: 2.5rem;
+  }
+}
 .grow__columns:nth-of-type(odd) .grow__content {
   padding-left: 2.5rem;
 }
@@ -289,12 +315,26 @@ embed {
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .grow__columns.zipper {
+    flex-direction: column;
+  }
+}
 .grow__pic {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 20px solid #6e973f;
+  flex: 1;
+  height: 100%;
+  padding: 6rem 0;
 }
-.grow__title {
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .grow__pic {
+    padding: 8rem 0;
+  }
+}
+.grow__subheading {
   color: #fff;
 }
 .grow__content {
@@ -304,11 +344,10 @@ embed {
   justify-content: center;
   padding: 0 1.5rem;
 }
-.grow__pic {
-  border: 20px solid #6e973f;
-  flex: 1;
-  height: 100%;
-  padding: 6rem 0;
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .grow__content {
+    align-items: center;
+  }
 }
 .grow__button {
   display: inline-block;
@@ -323,11 +362,6 @@ embed {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
-  width: 70%;
 }
 .stats__heading {
   color: #fff;
@@ -341,12 +375,13 @@ embed {
   display: flex;
   padding: 1rem;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .stats__item {
+    flex-direction: column;
+  }
+}
 .stats__subheading {
-  color: #fff;
-  font-family: fira-sans;
-  font-size: 4.5rem;
   flex: 1;
-  text-align: center;
 }
 .stats__content {
   align-items: center;
@@ -355,8 +390,10 @@ embed {
   flex: 1;
   padding-left: 1rem;
 }
-.stats__content span {
-  display: flex;
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .stats__content {
+    padding-left: 0;
+  }
 }
 .believe__layer {
   height: 100%;
@@ -369,24 +406,32 @@ embed {
   align-items: center;
   padding: 5rem 0;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .believe__columns {
+    padding: 2.5rem 0;
+  }
+}
 .believe__heading {
   color: #392214;
-  font-family: fira-sans;
-  font-size: 4.5rem;
   flex: 1;
-  text-align: center;
 }
 .believe__content {
   align-items: center;
   color: #392214;
   display: flex;
   flex: 1;
+  padding: 1rem;
 }
 .believe__photo {
   align-items: center;
   display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .believe__photo {
+    padding-bottom: 2.5rem;
+  }
 }
 .believe__image {
   align-self: flex-end;
@@ -398,10 +443,20 @@ embed {
   margin-bottom: 1.5rem;
   width: 50vw;
 }
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .believe__image {
+    align-self: center;
+  }
+}
 .believe__cta {
   align-self: flex-end;
   display: flex;
   width: 50vw;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .believe__cta {
+    align-self: center;
+  }
 }
 .believe__button {
   background-color: #392214;

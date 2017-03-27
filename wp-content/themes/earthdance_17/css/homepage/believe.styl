@@ -10,25 +10,29 @@
     align-items center
     padding 5rem 0
 
+    +tablet()
+      padding 2.5rem 0
+
   &__heading
     color brown
-    font-family sans
-    font-size 4.5rem
     flex 1
-    // padding 2rem
-    text-align center
 
   &__content
     align-items center
     color brown
     display flex
     flex 1
+    padding 1rem
 
   &__photo
     align-items center
     display flex
     flex-direction column
     padding-bottom 5rem
+
+    +tablet()
+      padding-bottom 2.5rem
+
 
   &__image
     align-self flex-end
@@ -40,10 +44,16 @@
     margin-bottom 1.5rem
     width 50vw
 
+    +tablet()
+      align-self center
+
   &__cta
     align-self flex-end
     display flex
     width 50vw
+
+    +tablet()
+      align-self center
 
   &__button
     background-color brown
