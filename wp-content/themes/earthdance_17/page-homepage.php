@@ -38,7 +38,7 @@
 
         <div class="grow__columns zipper">
           <div class="grow__pic" style="background-image: url(<?php echo $image?>);">
-            <h3 class="grow__title"><?php echo $heading ?></h3>
+            <h3 class="grow__subheading"><?php echo $heading ?></h3>
           </div>
           <div class="grow__content">
             <p><?php echo $text ?></p>
