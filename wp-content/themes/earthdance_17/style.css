@@ -152,6 +152,17 @@ embed {
   background-color: #fff;
   color: currentColor;
 }
+.responsive-video-embed {
+  width: 100vw;
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.responsive-video-embed iframe {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
 .header__bg {
   background-color: #6e973f;
   border-bottom: 1px solid rgba(0,0,0,0.4);
