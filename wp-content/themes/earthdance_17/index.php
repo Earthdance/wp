@@ -62,6 +62,18 @@
     </div>
   </div>
 
+  <!-- video section -->
+  <h1>hello</h1>
+  <!-- <div class="video__layer">
+    <div class="video__container">
+      <div class="video__feature">
+        <div class="responsive-video-embed">
+          <iframe src="https://player.vimeo.com/video/38762500" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <!--stats section-->
   <div class="stats__layer">
     <div class="stats__container">

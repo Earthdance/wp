@@ -51,6 +51,16 @@
     </div>
   </div>
 
+  <!-- video section -->
+  <div class="video__layer">
+    <div class="video__feature">
+      <h2 class="video__heading">Rooted in Ferguson</h2>
+      <div class="responsive-video-embed">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/HD3L4S5-EzE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <!--stats section-->
   <div class="stats__layer">
     <div class="stats__container">
