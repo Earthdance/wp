@@ -12,6 +12,9 @@
     display flex
     justify-content center
 
+    +below(550px)
+      margin 0 auto
+
   &__item svg
     // margin-right .75rem
     width 60px
@@ -32,4 +35,7 @@
 
   &__privacy
     padding-bottom 0
+
+    +below(550px)
+      display none
     //
