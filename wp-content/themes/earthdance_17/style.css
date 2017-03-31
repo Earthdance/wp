@@ -67,7 +67,7 @@ a:hover {
 [class*="__columns"] {
   display: flex;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*="__columns"] {
     flex-direction: column;
   }
@@ -77,7 +77,7 @@ a:hover {
   margin: 0 auto;
   max-width: 1200px;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*="__container"] {
     max-width: 850px;
   }
@@ -91,10 +91,16 @@ a:hover {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*='__heading'] {
     font-size: 2.5rem;
     padding: 2.5rem 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  [class*='__heading'] {
+    font-size: 1.75rem;
+    padding: 1.75 rem 0;
   }
 }
 [class*='__subheading'] {
@@ -105,9 +111,14 @@ a:hover {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*='__subheading'] {
     font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  [class*='__subheading'] {
+    font-size: 1.75rem;
   }
 }
 [class*='__title'] {
@@ -117,7 +128,7 @@ a:hover {
   text-align: center;
   text-shadow: -1px 1px 0 #000;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*='__title'] {
     font-size: 1.5rem;
   }
@@ -135,14 +146,36 @@ embed {
   height: 100vh;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='100%' y1='0' x2='0' y2='100%' stroke='{green}' stroke-width='2'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='{green}' stroke-width='2'/></svg>");
 }
-[class*="__button"] {
+[class*="__button"],
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit],
+.gform_wrapper .gform_page_footer input.button,
+.gform_wrapper .gform_page_footer input[type=submit] {
   border: 3px solid transparent;
   border-radius: 5px;
   box-shadow: -1px 1px 0 #000;
   padding: 0.5rem 1rem;
   text-shadow: 1px 1px 0 #000;
 }
-[class*="__button"]:hover {
+[class*="__button"]:hover,
+.gform_wrapper .gform_footer input.button:hover,
+.gform_wrapper .gform_footer input[type=submit]:hover,
+.gform_wrapper .gform_page_footer input.button:hover,
+.gform_wrapper .gform_page_footer input[type=submit]:hover {
+  border: 3px solid currentColor;
+  background-color: #fff;
+  color: currentColor;
+}
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit],
+.gform_wrapper .gform_page_footer input.button,
+.gform_wrapper .gform_page_footer input[type=submit] {
+  background-color: #6e973f;
+}
+.gform_wrapper .gform_footer input.button:hover,
+.gform_wrapper .gform_footer input[type=submit]:hover,
+.gform_wrapper .gform_page_footer input.button:hover,
+.gform_wrapper .gform_page_footer input[type=submit]:hover {
   border: 3px solid currentColor;
   background-color: #fff;
   color: currentColor;
@@ -228,12 +261,12 @@ embed {
   font-size: 1.5rem;
   text-shadow: 1px 1px 0 #000;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .nav {
     background-color: #ff0;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .nav {
     background-color: #ffa500;
   }
@@ -307,12 +340,12 @@ embed {
 .grow__columns {
   padding-bottom: 5rem;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .grow__columns {
     padding-bottom: 2.5rem;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .grow__columns {
     align-items: center;
     padding-bottom: 2rem;
@@ -327,7 +360,12 @@ embed {
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .grow__columns.zipper {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
   .grow__columns.zipper {
     flex-direction: column;
   }
@@ -341,12 +379,12 @@ embed {
   height: 100%;
   padding: 6rem 0;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .grow__pic {
     padding: 8rem 0;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .grow__pic {
     padding: 4rem 0;
     width: 65%;
@@ -362,7 +400,12 @@ embed {
   justify-content: center;
   padding: 0 2.5rem;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .grow__content {
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .grow__content {
     align-items: center;
   }
@@ -389,16 +432,16 @@ embed {
   flex-direction: column;
   padding-bottom: 5rem;
 }
-@media only screen and (max-width: 550px) {
-  .stats__columns {
-    padding-bottom: 1rem;
-  }
-}
 .stats__item {
   display: flex;
   padding: 1rem;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .stats__item {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
   .stats__item {
     flex-direction: column;
   }
@@ -411,12 +454,6 @@ embed {
   color: #fff;
   display: flex;
   flex: 1;
-  padding-left: 1rem;
-}
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
-  .stats__content {
-    padding-left: 0;
-  }
 }
 .believe__layer {
   height: 100%;
@@ -429,13 +466,14 @@ embed {
   align-items: center;
   padding: 5rem 0;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .believe__columns {
     padding: 2.5rem 0;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .believe__columns {
+    flex-direction: column;
     padding: 1rem 0;
   }
 }
@@ -456,9 +494,14 @@ embed {
   flex-direction: column;
   padding-bottom: 5rem;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .believe__photo {
     padding-bottom: 2.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .believe__photo {
+    align-self: center;
   }
 }
 .believe__image {
@@ -471,7 +514,7 @@ embed {
   margin-bottom: 1.5rem;
   width: 50vw;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .believe__image {
     align-self: center;
   }
@@ -481,7 +524,7 @@ embed {
   display: flex;
   width: 50vw;
 }
-@media only screen and (min-width: 360px) and (max-width: 1050px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .believe__cta {
     align-self: center;
   }
@@ -495,6 +538,16 @@ embed {
   background-repeat: no-repeat;
   background-size: cover;
   height: 145vh;
+}
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .support__layer {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .support__layer {
+    height: 100vh;
+  }
 }
 .support__container {
   align-items: center;
@@ -536,11 +589,12 @@ embed {
 .footer__item {
   align-items: center;
   display: flex;
-  justify-content: center;
+  padding: 0 1rem;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .footer__item {
     margin: 0 auto;
+    padding: 0 0.5rem;
   }
 }
 .footer__item svg {
@@ -562,7 +616,7 @@ embed {
 .footer__privacy {
   padding-bottom: 0;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .footer__privacy {
     display: none;
   }

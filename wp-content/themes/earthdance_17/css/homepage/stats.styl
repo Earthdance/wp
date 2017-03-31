@@ -15,9 +15,6 @@
     flex-direction column
     padding-bottom 5rem
 
-    +below(550px)
-      padding-bottom 1rem
-
   &__item
     display flex
     padding 1rem
@@ -25,6 +22,8 @@
     +tablet()
       flex-direction column
 
+    +mobile()
+      flex-direction column
 
   &__subheading
     flex 1
@@ -34,7 +33,3 @@
     color white
     display flex
     flex 1
-    padding-left 1rem
-
-    +tablet()
-      padding-left 0
