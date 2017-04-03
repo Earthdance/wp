@@ -1,0 +1,89 @@
+// Vars
+base-font-size = 20px
+base-line-height = 1.5
+
+cursive = ff-prater-script-web
+sans = fira-sans
+
+
+// Typefaces
+Sans = {
+  font: 'fira-sans'\, sans-serif,
+  weight: {
+    light: thin,
+    normal: regular,
+    bold: bold
+  }
+}
+
+Cursive = {
+  font: 'ff-prater-script-web'\, serif,
+  weight: {
+    normal: regular
+  }
+}
+
+
+// Line height function
+line-height-function()
+  base-font-size * base-line-height
+
+// Var must be specified after returning the line-height function
+cal-line-height = line-height-function()
+
+
+html
+  font-size base-font-size
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+
+body
+  color brown
+  font-family: Sans.font
+  font-size base-font-size
+  line-height base-line-height
+  margin 0
+
+
+// Anchor text
+a
+  text-decoration none
+  color green
+
+  &:hover
+    color nightgreen
+    text-decoration none
+
+p
+  // padding-bottom 1rem
+
+
+
+// Content Areas
+[class*='__content']
+  // Add margin bottom to all elements inside this container
+  & > *
+    margin-bottom 1.5rem
+
+    li
+      margin-bottom 1.5rem
+
+
+//TYPOGRAPHY for WP Editor
+//Text editor formatting to match live site
+#tinymce
+  background-color white
+  line-height 1.5
+  font-family Sans.font
+  font-size base-font-size
+  background-image: linear-gradient(transparent, transparent line-height() - 1px, $fog 1px , transparent)
+  background-size : auto line-height()
+  padding 0 1.5em !important
+  margin 0 auto
+  max-width 650px
+
+  p, ul, li
+    padding 0
+
+  &.wp-autoresize
+    padding 0 1.5em !important

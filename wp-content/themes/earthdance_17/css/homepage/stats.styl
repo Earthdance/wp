@@ -9,10 +9,6 @@
 
   &__heading
     color white
-    font-family cursive
-    font-size 5rem
-    padding 5rem
-    text-align center
 
   &__columns
     flex-direction column
@@ -22,17 +18,17 @@
     display flex
     padding 1rem
 
+    +tablet()
+      flex-direction column
+
+    +mobile()
+      flex-direction column
 
   &__subheading
-    color white
-    font-family cursive
-    font-size 4.5rem
     flex 1
-    text-align center
 
   &__content
     align-items center
     color white
     display flex
     flex 1
-    padding-left 1rem

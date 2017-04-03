@@ -25,6 +25,12 @@ body.block-scroll {
 }
 ```
 
+## WP
+- [ ] 404 page
+- [ ] Style login page logo
+- [ ] Revisit WYSIWYG editor spacing
+
+
 ## Todo pre-launch
 - [ ] Uptime install
 - [ ] Add Google Analytics
@@ -123,3 +129,7 @@ You must have these installed first:
 
 ---
 ## Known issues
+
+
+---
+## Notes

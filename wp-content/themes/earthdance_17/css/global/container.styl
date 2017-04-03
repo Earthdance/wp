@@ -1,4 +1,11 @@
 [class*="__container"]
   display flex
   margin 0 auto
-  width 70%
+  max-width 1200px
+
+  +tablet()
+    // background-color yellow
+    max-width 850px
+
+  +mobile()
+    // background-color orange
