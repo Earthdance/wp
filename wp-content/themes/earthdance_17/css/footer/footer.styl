@@ -10,7 +10,11 @@
   &__item
     align-items center
     display flex
-    justify-content center
+    padding 0 1rem
+
+    +mobile()
+      margin 0 auto
+      padding 0 .5rem
 
   &__item svg
     // margin-right .75rem
@@ -28,8 +32,9 @@
 
   &__copyright
     padding-bottom 0
-    //t
 
   &__privacy
     padding-bottom 0
-    //
+
+    +mobile()
+      display none

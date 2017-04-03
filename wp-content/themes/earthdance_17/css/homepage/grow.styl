@@ -18,6 +18,13 @@
   &__columns
     padding-bottom 5rem
 
+    +tablet()
+      padding-bottom 2.5rem
+
+    +mobile()
+      align-items center
+      padding-bottom 2rem
+
     &:nth-of-type(odd)
       .grow__content
         padding-left 2.5rem
@@ -28,12 +35,31 @@
       .grow__content
         padding-right 2.5rem
 
+  &__columns.zipper
+
+    +tablet()
+      flex-direction column
+
+    +mobile()
+      flex-direction column
+
   &__pic
     background-position center center
     background-repeat no-repeat
     background-size cover
+    border: 20px solid green
+    flex 1
+    height 100%
+    padding 6rem 0
 
-  &__title
+    +tablet()
+      padding 8rem 0
+
+    +mobile()
+      padding 4rem 0
+      width 65%
+
+  &__subheading
     color white
 
   &__content
@@ -41,14 +67,13 @@
     display flex
     flex-direction column
     justify-content center
-    padding 0 1.5rem
+    padding 0 2.5rem
 
+    +tablet()
+      align-items center
 
-  &__pic
-    border: 20px solid green
-    flex 1
-    height 100%
-    padding 6rem 0
+    +mobile()
+      align-items center
 
   &__button
     display inline-block

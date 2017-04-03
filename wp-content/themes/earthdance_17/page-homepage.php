@@ -38,7 +38,7 @@
 
         <div class="grow__columns zipper">
           <div class="grow__pic" style="background-image: url(<?php echo $image?>);">
-            <h3 class="grow__title"><?php echo $heading ?></h3>
+            <h3 class="grow__subheading"><?php echo $heading ?></h3>
           </div>
           <div class="grow__content">
             <p><?php echo $text ?></p>
@@ -48,6 +48,16 @@
 
       <?php endwhile; else : endif; ?>
 
+    </div>
+  </div>
+
+  <!-- video section -->
+  <div class="video__layer">
+    <div class="video__feature">
+      <h2 class="video__heading">Rooted in Ferguson</h2>
+      <div class="responsive-video-embed">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/HD3L4S5-EzE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
