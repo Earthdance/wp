@@ -5,7 +5,7 @@
 
   &__layer
     //height 100px
-    position absolute
+    position fixed
     top 0
     left 0
     width 100vw
@@ -14,7 +14,11 @@
   &__container
     align-items center
     justify-content space-between
-    padding .5rem 0
+    padding-bottom .5rem
+    padding-top .5rem
+
+    +mobile()
+      padding .5rem 1.5rem
 
   &__logo-box
     align-items center
@@ -29,11 +33,15 @@
 
     span
       padding 0 .5rem
+      transform translateY(6px)
 
   &__logo svg
 
     margin-right .75rem
     width 60px
+
+    +mobile()
+      margin 0
 
     path
       fill brown
@@ -41,12 +49,18 @@
   &__tagline
     color brown
     font-size 1.5rem
-      font-weight 100
+    font-weight 100
     padding 0 .5rem
+
+    +mobile()
+      display none
 
   &__social
     align-items center
     display flex
+
+    +below(955px)
+      display none
 
   &__link
     color white
@@ -56,3 +70,12 @@
 
   &__icon
     fill white
+
+    &.hamburger
+      display none
+
+      +below(955px)
+        display inline-block
+
+        .icon.icon--ei-navicon
+          fill white
