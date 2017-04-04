@@ -14,10 +14,11 @@
   &__container
     align-items center
     justify-content space-between
-    padding .5rem 0
+    padding-bottom .5rem
+    padding-top .5rem
 
     +mobile()
-      padding .5rem
+      padding .5rem 1.5rem
 
   &__logo-box
     align-items center
@@ -58,7 +59,7 @@
     align-items center
     display flex
 
-    +mobile()
+    +below(955px)
       display none
 
   &__link
@@ -69,3 +70,12 @@
 
   &__icon
     fill white
+
+    &.hamburger
+      display none
+
+      +below(955px)
+        display inline-block
+
+        .icon.icon--ei-navicon
+          fill white

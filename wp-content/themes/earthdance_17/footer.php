@@ -5,6 +5,7 @@
       <?php include "includes/logo.php" ?>
       <p class="footer__heading">EarthDance</p>
       <p class="footer__copyright">© <?php echo date("Y"); ?></p>
+      <p><?php the_field('address', 'option'); ?></p>
     </div>
     <div class="footer__item">
       <p class="footer__privacy">Privacy Policy</p>

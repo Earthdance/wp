@@ -172,11 +172,12 @@ a:hover {
 [class*="__container"] {
   display: flex;
   margin: 0 auto;
+  padding: 0 1.5rem;
   max-width: 1200px;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*="__container"] {
-    max-width: 850px;
+    max-width: 955px;
   }
 }
 [class*='__heading'] {
@@ -302,11 +303,12 @@ embed {
 .header__container {
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 @media only screen and (max-width: 600px) {
   .header__container {
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
   }
 }
 .header__logo-box {
@@ -351,7 +353,7 @@ embed {
   align-items: center;
   display: flex;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 955px) {
   .header__social {
     display: none;
   }
@@ -364,6 +366,28 @@ embed {
 }
 .header__icon {
   fill: #fff;
+}
+.header__icon.hamburger {
+  display: none;
+}
+@media only screen and (max-width: 955px) {
+  .header__icon.hamburger {
+    display: inline-block;
+  }
+  .header__icon.hamburger .icon.icon--ei-navicon {
+    fill: #fff;
+  }
+}
+.nav__layer:after {
+  content: '';
+  display: block;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.6), transparent);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: -1;
 }
 .nav__container {
   justify-content: space-around;
@@ -674,6 +698,9 @@ embed {
 .support__slogan svg path {
   fill: #fff;
 }
+.support__heading {
+  padding-top: 0;
+}
 .support__heading span {
   display: flex;
 }
@@ -722,6 +749,7 @@ embed {
 }
 .footer__copyright {
   padding-bottom: 0;
+  padding-right: 1rem;
 }
 .footer__privacy {
   padding-bottom: 0;

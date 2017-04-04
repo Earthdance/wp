@@ -29,7 +29,7 @@ body.block-scroll {
 - [ ] 404 page
 - [ ] Style login page logo
 - [ ] Revisit WYSIWYG editor spacing
-
+- [ ] Set up Social Media Links
 
 ## Todo pre-launch
 - [ ] Uptime install
