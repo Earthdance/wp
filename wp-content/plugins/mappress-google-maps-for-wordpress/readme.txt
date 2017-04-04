@@ -4,16 +4,18 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google maps,google,map,maps,easy,poi,mapping,mapper,gps,lat,lon,latitude,longitude,geocoder,geocoding,georss,geo rss,geo,v3,marker,mashup,mash,api,v3,buddypress,mashup,geo,wp-geo,geo mashup,simplemap,simple,wpml
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 2.43.10
+Stable tag: 2.44.2
 
 MapPress is the most popular and easiest way to create great-looking Google Maps and driving directions in your blog.
 
 == Description ==
 MapPress adds an interactive map to the wordpress editing screens.  When editing a post or page just enter any addresses you'd like to map.
 
-The plugin will automatically insert a great-looking interactive map into your blog. Your readers can get directions right in your blog and you can even create custom HTML for the map markers (including pictures, links, etc.)!
+The plugin will automatically insert a great-looking interactive map into your blog, with directions and custom map markers.
 
-For even more features, try the [MapPress Pro Version](http://wphostreviews.com/mappress)
+For even more features, try [MapPress Pro](http://wphostreviews.com/mappress)
+
+For the latest updates try the [Development Version](https://wordpress.org/plugins/mappress-google-maps-for-wordpress/developers/)
 
 = Key Features =
 * MapPress is based on the latest Google maps API v3
@@ -95,12 +97,26 @@ See full [installation intructions and Documentation](http://www.wphostreviews.c
 
 == Changelog ==
 
+2.44.2
+* Changed: geocoding module has been updated
+* Changed: the Nominatim geocoder has been removed
+* Changed: when geocoding an 'address' field in format 'lat,lng' the field is used verbatim rather than mapped to the nearest street address
+* Changed: extract removed from helper functions
+
+2.44.1
+* Changed: added 'footer' option for loading scripts in header/footer (for use in AJAX plugins)
+* Fixed: default sort applied to mashup with orderby
+* Fixed: updated widget to use array field names (since WP 4.4)
+
+2.44
+* Changed: version updated to 2.44
+
 2.43.10
 * Changed: show blank container while loading mashups instead of default map
 * Changed: no alerts for admins on missing map container
 * Changed: apply wpautop to POIs when they are saved (wpautop inserts html tags to format carriage returns)
 * Fixed: bug where mashups were limited to 10 POIs
-* Fixed: polys are now allowed again for mashups
+* Fixed: polygons are allowed again in mashup results
 * Fixed: changed Mappress_Updater constructor for PHP 7
 
 2.43.9

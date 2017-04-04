@@ -2,6 +2,98 @@
 Theme Name:		Earthdance 2017
 Description:	Theme for Earthdance
 */
+.headroom {
+  transition: transform 0.25s ease-in-out;
+  will-change: transform;
+}
+.headroom--pinned {
+  transform: translateY(0);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+.header--fixed {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+.animated.slideDown {
+  animation-name: slideDown;
+}
+.animated.slideUp {
+  animation-name: slideUp;
+}
+@-moz-keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-o-keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@-webkit-keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@-o-keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,6 +128,11 @@ a {
 a:hover {
   color: nightgreen;
   text-decoration: none;
+}
+[class*='__content'] {
+  margin: 0 auto;
+  padding-top: 3rem;
+  width: 75%;
 }
 [class*='__content'] > * {
   margin-bottom: 1.5rem;
@@ -196,7 +293,7 @@ embed {
   border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 .header__layer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -206,6 +303,11 @@ embed {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0;
+}
+@media only screen and (max-width: 600px) {
+  .header__container {
+    padding: 0.5rem;
+  }
 }
 .header__logo-box {
   align-items: center;
@@ -220,24 +322,39 @@ embed {
 }
 .header__logo span {
   padding: 0 0.5rem;
+  transform: translateY(6px);
 }
 .header__logo svg {
   margin-right: 0.75rem;
   width: 60px;
+}
+@media only screen and (max-width: 600px) {
+  .header__logo svg {
+    margin: 0;
+  }
 }
 .header__logo svg path {
   fill: #392214;
 }
 .header__tagline {
   color: #392214;
+  font-size: 1.5rem;
+  font-weight: 100;
   padding: 0 0.5rem;
 }
-.header__tagline font-size 1.5rem {
-  font-weight: 100;
+@media only screen and (max-width: 600px) {
+  .header__tagline {
+    display: none;
+  }
 }
 .header__social {
   align-items: center;
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .header__social {
+    display: none;
+  }
 }
 .header__link {
   color: #fff;
@@ -250,7 +367,7 @@ embed {
 }
 .nav__container {
   justify-content: space-around;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .nav__container li {
   list-style: none;
@@ -278,16 +395,6 @@ embed {
   background-size: cover;
   height: 100vh;
   position: relative;
-}
-.feature__layer:after {
-  content: '';
-  display: block;
-  height: 100px;
-  width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4), transparent);
-  position: absolute;
-  top: 80px;
-  left: 0;
 }
 .feature__container {
   align-items: center;
@@ -577,6 +684,9 @@ embed {
 .support__button {
   background-color: #6e973f;
   color: #fff;
+}
+.video__heading {
+  color: #392214;
 }
 .footer__layer {
   background-color: #fff;
