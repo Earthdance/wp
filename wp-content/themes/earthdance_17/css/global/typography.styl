@@ -68,25 +68,28 @@ p
   & > *
     margin-bottom 1.5rem
 
-    li
-      margin-bottom 1.5rem
 
-
-//TYPOGRAPHY for WP Editor
+//TYPOGRAPHY for WP TinyMCE Editor
 //Text editor formatting to match live site
+
 #tinymce
-  background-color white
+  h2
+    font-family: Sans.font
+    font-size 20px
+  h3
+    font-family: Sans.font
+    font-size 20px
+
+.wp-autoresize
   line-height 1.5
-  font-family Sans.font
+  font-family: Sans.font
   font-size base-font-size
-  background-image: linear-gradient(transparent, transparent line-height() - 1px, $fog 1px , transparent)
-  background-size : auto line-height()
   padding 0 1.5em !important
   margin 0 auto
   max-width 650px
 
-  p, ul, li
-    padding 0
+  p
+    margin-bottom 1.5rem
 
-  &.wp-autoresize
-    padding 0 1.5em !important
+  li
+    padding 0
