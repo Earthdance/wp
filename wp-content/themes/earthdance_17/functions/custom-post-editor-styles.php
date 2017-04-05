@@ -125,3 +125,11 @@ function jivedig_remove_tiny_mce_buttons_from_kitchen_sink( $buttons ) {
     }
     return $buttons;
 }
+
+
+// Add TYPEKit to WP Editor
+add_filter( 'mce_external_plugins', 'my_theme_mce_external_plugins' );
+function my_theme_mce_external_plugins( $plugin_array ) {
+	$plugin_array['typekit'] = get_template_directory_uri() . '/js/vendor/typekit.tinymce.js';
+	return $plugin_array;
+}

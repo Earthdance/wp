@@ -137,14 +137,6 @@ a:hover {
 [class*='__content'] > * {
   margin-bottom: 1.5rem;
 }
-#tinymce h2 {
-  font-family: 'fira-sans' , sans-serif;
-  font-size: 20px;
-}
-#tinymce h3 {
-  font-family: 'fira-sans' , sans-serif;
-  font-size: 20px;
-}
 .wp-autoresize {
   line-height: 1.5;
   font-family: 'fira-sans' , sans-serif;
@@ -178,8 +170,8 @@ a:hover {
     max-width: 955px;
   }
 }
-[class*='__heading'],
-color white {
+[class*='__heading'] {
+  color: #fff;
   font-family: fira-sans;
   font-size: 5rem;
   line-height: 1;
@@ -188,21 +180,19 @@ color white {
   text-shadow: -1px 1px 0 #000;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
-  [class*='__heading'],
-  color white {
+  [class*='__heading'] {
     font-size: 2.5rem;
     padding: 2.5rem 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  [class*='__heading'],
-  color white {
+  [class*='__heading'] {
     font-size: 1.75rem;
     padding: 1.75 rem 0;
   }
 }
-[class*='__subheading'],
-color white {
+[class*='__subheading'] {
+  color: #fff;
   font-family: fira-sans;
   font-size: 3rem;
   font-weight: normal;
@@ -210,14 +200,12 @@ color white {
   text-shadow: -1px 1px 0 #000;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
-  [class*='__subheading'],
-  color white {
+  [class*='__subheading'] {
     font-size: 2rem;
   }
 }
 @media only screen and (max-width: 600px) {
-  [class*='__subheading'],
-  color white {
+  [class*='__subheading'] {
     font-size: 1.75rem;
   }
 }
@@ -232,6 +220,12 @@ color white {
   [class*='__title'] {
     font-size: 1.5rem;
   }
+}
+.cpe__heading,
+.cpe__subheading {
+  color: #392214;
+  text-align: left;
+  text-shadow: none;
 }
 img,
 iframe,
