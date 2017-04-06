@@ -387,16 +387,40 @@ embed {
 }
 .nav__container {
   justify-content: space-around;
-  padding-top: 0.5rem;
 }
 .nav__container li {
   list-style: none;
 }
 .nav__container a {
   color: #fff;
-  display: flex;
-  font-size: 1.5rem;
+  display: inline-block;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
   text-shadow: 1px 1px 0 #000;
+}
+.nav__container a:hover {
+  background-color: #6e973f;
+}
+.nav__container .menu-item-has-children {
+  position: relative;
+}
+.nav__container .menu-item-has-children:hover > a + .sub-menu {
+  display: block;
+  background-color: #6e973f;
+}
+.nav__container .menu-item-has-children a {
+  width: 100%;
+  height: 100%;
+}
+.nav__container .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+.nav__container .sub-menu a {
+  width: 400px;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .nav {
