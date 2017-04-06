@@ -53,77 +53,61 @@ add_action( 'init', 'theme_add_editor_styles' );
 
 
 
-
-
-
-
+//Removes buttons from the first row (kitchen sink) of the tiny mce editor
 // http://thestizmedia.com/remove-buttons-items-wordpress-tinymce-editor/
-/**
- * Removes buttons from the first row of the tiny mce editor
- *
- * @link     http://thestizmedia.com/remove-buttons-items-wordpress-tinymce-editor/
- *
- * @param    array    $buttons    The default array of buttons
- * @return   array                The updated array of buttons that exludes some items
- */
 add_filter( 'mce_buttons', 'jivedig_remove_tiny_mce_buttons_from_editor');
 function jivedig_remove_tiny_mce_buttons_from_editor( $buttons ) {
-    $remove_buttons = array(
-        //'bold',
-        //'italic',
-        'strikethrough',
-        //'bullist',
-        //'numlist',
-        'blockquote',
-        'hr', // horizontal line
-        //'alignleft',
-        //'aligncenter',
-        //'alignright',
-        'link',
-        'unlink',
-        //'wp_more', // read more link
-        'spellchecker',
-        //'dfw', // distraction free writing mode
-        'wp_adv', // kitchen sink toggle (if removed, kitchen sink will always display)
-        'formatselect'
-    );
-    foreach ( $buttons as $button_key => $button_value ) {
-        if ( in_array( $button_value, $remove_buttons ) ) {
-            unset( $buttons[ $button_key ] );
-        }
+  $remove_buttons = array(
+    //'bold',
+    //'italic',
+    'strikethrough',
+    //'bullist',
+    //'numlist',
+    'blockquote',
+    //'hr', // horizontal line
+    'alignleft',
+    'aligncenter',
+    'alignright',
+    'link',
+    'unlink',
+    'wp_more', // read more link
+    'spellchecker',
+    //'dfw', // distraction free writing mode
+    'wp_adv', // kitchen sink toggle (if removed, kitchen sink will always display)
+    'formatselect'
+  );
+  foreach ( $buttons as $button_key => $button_value ) {
+    if ( in_array( $button_value, $remove_buttons ) ) {
+      unset( $buttons[ $button_key ] );
     }
-    return $buttons;
+  }
+  return $buttons;
 }
-/**
- * Removes buttons from the second row (kitchen sink) of the tiny mce editor
- *
- * @link     http://thestizmedia.com/remove-buttons-items-wordpress-tinymce-editor/
- *
- * @param    array    $buttons    The default array of buttons in the kitchen sink
- * @return   array                The updated array of buttons that exludes some items
- */
+
+//Removes buttons from the second row (kitchen sink) of the tiny mce editor
+// http://thestizmedia.com/remove-buttons-items-wordpress-tinymce-editor/
 add_filter( 'mce_buttons_2', 'jivedig_remove_tiny_mce_buttons_from_kitchen_sink');
 function jivedig_remove_tiny_mce_buttons_from_kitchen_sink( $buttons ) {
-    $remove_buttons = array(
-        'underline',
-        'alignjustify',
-        //'forecolor', // text color
-        'pastetext', // paste as text
-        'removeformat', // clear formatting
-        'charmap', // special characters
-        //'outdent',
-        //'indent',
-        'undo',
-        'redo',
-        'wp_help', // keyboard shortcuts
-        'formatselect' // format dropdown menu for <p>, headings, etc
-    );
-    foreach ( $buttons as $button_key => $button_value ) {
-        if ( in_array( $button_value, $remove_buttons ) ) {
-            unset( $buttons[ $button_key ] );
-        }
+  $remove_buttons = array(
+    'underline',
+    'alignjustify',
+    //'forecolor', // text color
+    'pastetext', // paste as text
+    'removeformat', // clear formatting
+    'charmap', // special characters
+    //'outdent',
+    //'indent',
+    'undo',
+    'redo',
+    'wp_help', // keyboard shortcuts
+    'formatselect' // format dropdown menu for <p>, headings, etc
+  );
+  foreach ( $buttons as $button_key => $button_value ) {
+    if ( in_array( $button_value, $remove_buttons ) ) {
+      unset( $buttons[ $button_key ] );
     }
-    return $buttons;
+  }
+  return $buttons;
 }
 
 
