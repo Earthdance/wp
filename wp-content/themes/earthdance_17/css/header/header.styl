@@ -26,10 +26,15 @@
 
   &__logo
     align-items center
-    color brown
+    color white
     display flex
     font-family cursive
     font-size 2rem
+    &:hover
+      color brown
+
+      svg path
+        fill brown
 
     span
       padding 0 .5rem
@@ -44,7 +49,7 @@
       margin 0
 
     path
-      fill brown
+      fill white
 
   &__tagline
     color brown
@@ -59,7 +64,7 @@
     align-items center
     display flex
 
-    +below(955px)
+    +tablet()
       display none
 
   &__link
@@ -73,8 +78,9 @@
 
     &.hamburger
       display none
+      z-index 100
 
-      +below(955px)
+      +tablet()
         display inline-block
 
         .icon.icon--ei-navicon

@@ -227,6 +227,15 @@ a:hover {
   text-align: left;
   text-shadow: none;
 }
+.cpe__heading {
+  font-size: 3rem;
+  padding: 1.5rem 0 0 0;
+}
+.cpe__subheading {
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 0.5rem 0 0 0;
+}
 img,
 iframe,
 embed {
@@ -313,10 +322,16 @@ embed {
 }
 .header__logo {
   align-items: center;
-  color: #392214;
+  color: #fff;
   display: flex;
   font-family: ff-prater-script-web;
   font-size: 2rem;
+}
+.header__logo:hover {
+  color: #392214;
+}
+.header__logo:hover svg path {
+  fill: #392214;
 }
 .header__logo span {
   padding: 0 0.5rem;
@@ -332,7 +347,7 @@ embed {
   }
 }
 .header__logo svg path {
-  fill: #392214;
+  fill: #fff;
 }
 .header__tagline {
   color: #392214;
@@ -349,7 +364,7 @@ embed {
   align-items: center;
   display: flex;
 }
-@media only screen and (max-width: 955px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .header__social {
     display: none;
   }
@@ -365,8 +380,9 @@ embed {
 }
 .header__icon.hamburger {
   display: none;
+  z-index: 100;
 }
-@media only screen and (max-width: 955px) {
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
   .header__icon.hamburger {
     display: inline-block;
   }
@@ -385,8 +401,19 @@ embed {
   left: 0;
   z-index: -1;
 }
+.nav__layer.nav--active {
+  background-color: #6e973f;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+}
 .nav__container {
   justify-content: space-around;
+}
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .nav__container {
+    display: block;
+  }
 }
 .nav__container li {
   list-style: none;
@@ -399,10 +426,13 @@ embed {
   text-shadow: 1px 1px 0 #000;
 }
 .nav__container a:hover {
-  background-color: #6e973f;
+  background-color: #53712f;
 }
 .nav__container .menu-item-has-children {
   position: relative;
+}
+.nav__container .menu-item-has-children:hover {
+  background-color: #6e973f;
 }
 .nav__container .menu-item-has-children:hover > a + .sub-menu {
   display: block;
@@ -419,18 +449,15 @@ embed {
   left: 0;
   z-index: 10;
 }
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .nav__container .sub-menu {
+    display: block;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+}
 .nav__container .sub-menu a {
   width: 400px;
-}
-@media only screen and (min-width: 600px) and (max-width: 1050px) {
-  .nav {
-    background-color: #ff0;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .nav {
-    background-color: #ffa500;
-  }
 }
 .feature__layer {
   background-attachment: fixed;
