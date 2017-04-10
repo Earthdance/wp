@@ -401,18 +401,34 @@ embed {
   left: 0;
   z-index: -1;
 }
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .nav__layer:after {
+    display: none;
+  }
+}
 .nav__layer.nav--active {
   background-color: #6e973f;
   overflow-y: scroll;
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  z-index: 1;
+}
+.nav__layer.nav--active:after {
+  content: '';
+  display: block;
+  height: 0px;
+  width: 100%;
+}
+.nav__layer.nav--active .nav__container {
+  display: block;
 }
 .nav__container {
   justify-content: space-around;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .nav__container {
-    display: block;
+    display: none;
   }
 }
 .nav__container li {
@@ -466,6 +482,7 @@ embed {
   background-size: cover;
   height: 100vh;
   position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 .feature__container {
   align-items: center;

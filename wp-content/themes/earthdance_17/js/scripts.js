@@ -14,6 +14,8 @@ var headroom  = new Headroom(headr, {
 headroom.init();
 
 
+// https://www.jamestease.co.uk/blether/add-remove-or-toggle-classes-using-vanilla-javascript
+
 var earthdance = earthdance || {};
 
 // same functions as above
