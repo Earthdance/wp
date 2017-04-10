@@ -23,7 +23,7 @@ function custom_theme_setup() {
 
   // IMAGE SETTINGS
   // Image Upload Settings
-  include 'functions/image-upload-settings.php';
+  // include 'functions/image-upload-settings.php';
   // Image Output Settings
   include 'functions/image-output-settings.php';
 

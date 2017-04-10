@@ -3,10 +3,10 @@
 
 <?php
 
-$args = array(
+  $args = array(
     'category_name' => 'category-slug',
     'post_type' => 'post'
-);
+  );
 
 // Custom query.
 $query = new WP_Query( $args );
