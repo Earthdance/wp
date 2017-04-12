@@ -4,7 +4,8 @@
 <?php
 
   $args = array(
-    'post_type' => 'alumni'
+    'post_type' => 'alumni',
+    'posts_per_page' => -1
   );
 
 // Custom query.

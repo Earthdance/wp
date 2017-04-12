@@ -4,7 +4,8 @@
 <?php
 
   $args = array(
-    'post_type' => 'partners'
+    'post_type' => 'partners',
+    'posts_per_page' => -1
   );
 
 // Custom query.

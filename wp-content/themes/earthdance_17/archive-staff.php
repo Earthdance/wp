@@ -4,7 +4,8 @@
 <?php
 
   $args = array(
-    'post_type' => 'staff'
+    'post_type' => 'staff',
+    'posts_per_page' => -1
   );
 
 // Custom query.
