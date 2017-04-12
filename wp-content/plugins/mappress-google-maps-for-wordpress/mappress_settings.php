@@ -391,7 +391,7 @@ class Mappress_Settings {
 		$image = "<img src='" . Mappress::$baseurl . "/images/%s' style='vertical-align:middle' />";
 
 		$alignments = array(
-			'' => __('Default', 'mappress-google-maps-for-wordpress'),
+			'' => __('Default alignment', 'mappress-google-maps-for-wordpress'),
 			'center' => sprintf($image, 'justify_center.png') . __('Center', 'mappress-google-maps-for-wordpress'),
 			'left' => sprintf($image, 'justify_left.png') . __('Left', 'mappress-google-maps-for-wordpress'),
 			'right' => sprintf($image, 'justify_right.png') . __('Right', 'mappress-google-maps-for-wordpress')
@@ -441,7 +441,7 @@ class Mappress_Settings {
 	}
 
 	function set_sizes() {
-		$headers = array(__('Default', 'mappress-google-maps-for-wordpress'), __('Width', 'mappress-google-maps-for-wordpress'), __('Height', 'mappress-google-maps-for-wordpress'));
+		$headers = array(__('Default size', 'mappress-google-maps-for-wordpress'), __('Width', 'mappress-google-maps-for-wordpress'), __('Height', 'mappress-google-maps-for-wordpress'));
 		$rows = array();
 
 		foreach($this->options->sizes as $i => $size) {
@@ -462,7 +462,7 @@ class Mappress_Settings {
 	*
 	*/
 	function metabox_like() {
-		$rate_link = "<a href='http://wordpress.org/extend/plugins/mappress-easy-google-maps'>" . __('Rate it 5 Stars', 'mappress-google-maps-for-wordpress') . "</a>";
+		$rate_link = "<a href='https://wordpress.org/plugins/mappress-google-maps-for-wordpress/'>" . __('Rate it 5 Stars', 'mappress-google-maps-for-wordpress') . "</a>";
 		echo "<ul>";
 		echo "<li>" . sprintf(__('%s on WordPress.org', 'mappress-google-maps-for-wordpress'), $rate_link) . "</li>";
 		echo "<li>" . __('Thanks for your support!', 'mappress-google-maps-for-wordpress') . "</li>";

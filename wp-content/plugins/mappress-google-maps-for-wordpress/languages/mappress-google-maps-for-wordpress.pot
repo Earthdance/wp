@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MapPress Easy Google Maps package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MapPress Easy Google Maps 2.44.2\n"
+"Project-Id-Version: MapPress Easy Google Maps 2.44.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mappress-google-maps-for-wordpress\n"
-"POT-Creation-Date: 2017-03-27 18:45:39+00:00\n"
+"POT-Creation-Date: 2017-04-05 02:07:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -448,7 +448,6 @@ msgid "Use a specific %s for map controls and geocoding"
 msgstr ""
 
 #: mappress_settings.php:294 mappress_settings.php:300
-#: mappress_settings.php:394 mappress_settings.php:444
 msgid "Default"
 msgstr ""
 
@@ -565,6 +564,10 @@ msgstr ""
 msgid "Show POI titles as a \"tooltip\" on mouse-over"
 msgstr ""
 
+#: mappress_settings.php:394
+msgid "Default alignment"
+msgstr ""
+
 #: mappress_settings.php:395 pro/mappress_widget.php:112
 msgid "Center"
 msgstr ""
@@ -595,6 +598,10 @@ msgstr ""
 
 #: mappress_settings.php:440
 msgid "Load %s"
+msgstr ""
+
+#: mappress_settings.php:444
+msgid "Default size"
 msgstr ""
 
 #: mappress_settings.php:444
