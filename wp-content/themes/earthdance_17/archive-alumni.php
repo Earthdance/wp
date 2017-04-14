@@ -1,45 +1,45 @@
 <?php get_header(); ?>
 
+<!--feature section-->
+<div class="feature__layer" style="background-image: url(/wp-content/themes/earthdance_17/img/twoChickens.jpg);">
+  <div class="feature__container">
+    <div class="feature__main">
 
-<?php
+      <?php include "svg/earthdance-logo.php" ?>
 
-  $args = array(
-    'post_type' => 'alumni',
-    'posts_per_page' => -1
-  );
+      <h1 class="feature__heading">Alumni</h1>
 
-// Custom query.
-$query = new WP_Query( $args );
+    </div>
+  </div>
+</div>
 
-// Check that we have query results.
-if ( $query->have_posts() ) {
 
-    echo '<ul class="category posts">';
+<div class="page">
+	<div class="page__container">
+    <div class="page__content">
 
-        // Start looping over the query results.
-        while ( $query->have_posts() ) {
+      <?php
+        $args = array(
+          'post_type' => 'alumni',
+          'posts_per_page' => -1
+        );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-            $query->the_post();
+        <!--grow section-->
 
-            ?>
+        <div>
+          <div class="grow__pic" style="background-image: url(<?php echo get_field('board_photo'); ?>);"></div>
+          <h3 class="grow__subheading"><?php the_title()?></h3>
+          <h4><?php echo get_field('alumni_years'); ?></h4>
+          <p><?php echo get_field('alumni_bio'); ?></p>
+          <!-- <p><a href="<?php //echo $url ?>" class="grow__button">read more</a></p> -->
+        </div>
 
-            <li <?php post_class( 'left' ); ?>>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </li>
+      <?php endwhile; ?>
 
-            <?php
-
-        }
-
-    echo '</ul>';
-
-}
-
-// Restore original post data.
-wp_reset_postdata();
-
-?>
+    </div>
+  </div>
+</div>
 
 <?php get_footer(); ?>
