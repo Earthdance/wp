@@ -137,6 +137,9 @@ a:hover {
 [class*='__content'] > * {
   margin-bottom: 1.5rem;
 }
+[class*='__subcontent'] > * {
+  margin-bottom: 1.5rem;
+}
 .wp-autoresize {
   line-height: 1.5;
   font-family: 'fira-sans' , sans-serif;
