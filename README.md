@@ -30,6 +30,7 @@ body.block-scroll {
 - [ ] Style login page logo
 - [ ] Revisit WYSIWYG editor spacing
 - [ ] Set up Social Media Links
+- [ ] add post sorting plugin
 
 ## Todo pre-launch
 - [ ] Uptime install

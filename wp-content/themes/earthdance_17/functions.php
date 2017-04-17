@@ -2,6 +2,9 @@
 
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 function custom_theme_setup() {
+
+  //flush_rewrite_rules();
+
   // SUPPORTS - Post Thumbnail, etc.
   // WP Supports
   include 'functions/wp-supports.php';
