@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 <?php get_header(); ?>
 
 <?php // Loop 1
