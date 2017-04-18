@@ -2,7 +2,7 @@
 
 <?php // Loop 1
 $loop1 = new WP_Query(array(
-  'post_type' => 'programs',
+  'post_type' => 'faq',
   'name' => 'landing-page'
 )); // exclude category
 while($loop1->have_posts()) : $loop1->the_post(); ?>
@@ -16,7 +16,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
       <?php include "svg/earthdance-logo.php" ?>
 
-      <h1 class="feature__heading">Programs</h1>
+      <h1 class="feature__heading">FAQ</h1>
 
     </div>
   </div>
@@ -32,11 +32,12 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
       <?php
       // Loop 2
-      $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
+
+      $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'faq' );
       $excludeLandingPage = $getLandingPage->ID;
 
       $args = array(
-        'post_type' => 'programs',
+        'post_type' => 'faq',
         'post__not_in' => array($excludeLandingPage),
         'posts_per_page' => -1
       );
@@ -44,7 +45,6 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
       while($loop2->have_posts()) : $loop2->the_post(); ?>
 
       <div>
-        <div class="grow__pic" style="background-image: url(<?php echo get_full_image_src()?>);"></div>
         <h3 class="grow__subheading"><?php the_title()?></h3>
         <?php the_content(); ?>
         <!-- <p><a href="<?php //echo $url ?>" class="grow__button">read more</a></p> -->
