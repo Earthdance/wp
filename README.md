@@ -36,7 +36,9 @@ body.block-scroll {
 - [ ] Uptime install
 - [ ] Add Google Analytics
 - [ ] Add Google Webmaster tools
-
+- [ ] Huge SEO Issue: You're blocking access to robots.
+- [ ] SEO titles set up
+- [ ] Add xml sitemap and add it to WebmasterTools
 
 ## Technical Overview
 
