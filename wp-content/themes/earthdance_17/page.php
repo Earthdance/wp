@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="page">
+<div class="page__layer">
 	<div class="page__container">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
