@@ -34,6 +34,7 @@
         $heading = get_sub_field('item_heading');
     		$text = get_sub_field('item_text');
     		$url = get_sub_field('item_url');
+        $urlText = get_sub_field('item_url_text');
       ?>
 
         <div class="grow__columns zipper">
@@ -42,7 +43,7 @@
           </div>
           <div class="grow__content">
             <p><?php echo $text ?></p>
-            <p><a href="<?php echo $url ?>" class="grow__button">read more</a></p>
+            <p><a href="<?php echo $url ?>" class="grow__button"><?php echo $urlText ?></a></p>
           </div>
         </div>
 
