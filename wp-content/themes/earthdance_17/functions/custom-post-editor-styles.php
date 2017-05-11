@@ -68,7 +68,7 @@ function jivedig_remove_tiny_mce_buttons_from_editor( $buttons ) {
     'alignleft',
     'aligncenter',
     'alignright',
-    'link',
+    //'link',
     'unlink',
     'wp_more', // read more link
     'spellchecker',
@@ -93,7 +93,7 @@ function jivedig_remove_tiny_mce_buttons_from_kitchen_sink( $buttons ) {
     'alignjustify',
     //'forecolor', // text color
     'pastetext', // paste as text
-    'removeformat', // clear formatting
+    //'removeformat', // clear formatting
     'charmap', // special characters
     //'outdent',
     //'indent',
