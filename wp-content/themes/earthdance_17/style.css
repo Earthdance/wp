@@ -97,8 +97,12 @@ Description:	Theme for Earthdance
 .brownBg {
   background-color: #392214;
 }
-.brownGreen {
-  background-color: #392214;
+.greenBg {
+  background-color: #6e973f;
+}
+a.goldBg {
+  background-color: #fc6;
+  color: #392214;
 }
 * {
   box-sizing: border-box;
@@ -444,7 +448,7 @@ embed {
 .header__link {
   color: #fff;
   fill: #fff;
-  font-weight: 100;
+  font-weight: normal;
   padding: 0 0.5rem;
 }
 .header__icon {
