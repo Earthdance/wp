@@ -1,6 +1,5 @@
 .gallery
   &__layer
-    background-color green
     display flex
     flex-flow row wrap
     width 100%
@@ -12,18 +11,17 @@
       justify-content center
 
   &__item
-    background-size cover
-    //background-blend-mode overlay
-    background-position center center
     border 10px solid white
     color white
     display flex
-    align-items center
-    justify-content center
     height 300px
     width calc(50% - 2rem)
     margin 1rem
-    box-shadow 0 10px 6px -6px charcoal
+    //box-shadow 0 10px 6px -6px charcoal
+    overflow hidden
+
+  &__item
+    border 10px solid #e6e6e8
 
 
   &__heading
@@ -34,20 +32,33 @@
       font-size 2.5rem
 
   &__button
-    color white
+    background-size cover
+    //background-blend-mode overlay
+    background-position center center
+    border none
+    box-shadow none
+    border-radius 0
+    color green
+    display flex
+    align-items flex-end
+    justify-content center
+    height 100%
+    width 100%
+    will-change transform
+    transition transform .3s ease-in-out
 
-    &.white
-      color white
-
-      &::after
-        background-color white
-
-    &::after
-      background-color white
+    span
+      background-color hsla(0, 0, 100%, 1)
+      color green
+      display block
+      padding .5rem 1rem
 
     &:hover
-      color indigo
+      border none
+      cursor pointer
+      transform scale(1.1)
 
-
-.greenBg
-  background-color green
+      span
+        background-color green
+        border none
+        color white
