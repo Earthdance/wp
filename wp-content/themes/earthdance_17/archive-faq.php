@@ -45,7 +45,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
       while($loop2->have_posts()) : $loop2->the_post(); ?>
 
       <div>
-        <h3 class="grow__subheading"><?php the_title()?></h3>
+        <h3 class="cpe__subheading"><?php the_title()?></h3>
         <?php the_content(); ?>
         <!-- <p><a href="<?php //echo $url ?>" class="grow__button">read more</a></p> -->
       </div>

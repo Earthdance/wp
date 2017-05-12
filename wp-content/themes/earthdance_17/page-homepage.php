@@ -34,6 +34,7 @@
         $heading = get_sub_field('item_heading');
     		$text = get_sub_field('item_text');
     		$url = get_sub_field('item_url');
+        $urlText = get_sub_field('item_url_text');
       ?>
 
         <div class="grow__columns zipper">
@@ -42,7 +43,7 @@
           </div>
           <div class="grow__content">
             <p><?php echo $text ?></p>
-            <p><a href="<?php echo $url ?>" class="grow__button">read more</a></p>
+            <p><a href="<?php echo $url ?>" class="grow__button"><?php echo $urlText ?></a></p>
           </div>
         </div>
 
@@ -65,6 +66,7 @@
   <div class="stats__layer">
     <div class="stats__container">
       <h2 class="stats__heading"><?php echo get_field( "stats_heading" ); ?></h2>
+      <h2 class="stats__content"><?php echo get_field( "stats_description" ); ?></h2>
       <div class="stats__columns">
 
         <?php if( have_rows('stats_items') ): while ( have_rows('stats_items') ) : the_row();
@@ -119,8 +121,8 @@
   		<div class="support__slogan">
   			<h2 class="support__heading">Support EarthDance</h2>
   			<div class="support__options">
-  				<a href="#" class="support__button">Donate</a>
-  				<a href="#" class="support__button">Volunteer</a>
+  				<a href="#" class="support__button bigBtn">Donate</a>
+  				<a href="#" class="support__button bigBtn">Volunteer</a>
   			</div>
   		</div>
   	</div>

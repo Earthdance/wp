@@ -94,6 +94,12 @@ Description:	Theme for Earthdance
     transform: translateY(-100%);
   }
 }
+.brownBg {
+  background-color: #392214;
+}
+.brownGreen {
+  background-color: #392214;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -286,6 +292,69 @@ embed {
   background-color: #fff;
   color: currentColor;
 }
+.gallery__layer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+@media only screen and (max-width: 660px) {
+  .gallery__layer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.gallery__item {
+  border: 10px solid #fff;
+  color: #fff;
+  display: flex;
+  height: 300px;
+  width: calc(50% - 2rem);
+  margin: 1rem;
+  overflow: hidden;
+}
+.gallery__item {
+  border: 10px solid #e6e6e8;
+}
+.gallery__heading {
+  font-size: 4rem;
+}
+@media only screen and (max-width: 660px) {
+  .gallery__heading {
+    font-size: 2.5rem;
+  }
+}
+.gallery__button {
+  background-size: cover;
+  background-position: center center;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #6e973f;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.3s ease-in-out;
+}
+.gallery__button span {
+  background-color: #fff;
+  color: #6e973f;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+.gallery__button:hover {
+  border: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.gallery__button:hover span {
+  background-color: #6e973f;
+  border: none;
+  color: #fff;
+}
 .responsive-video-embed {
   width: 100vw;
   position: relative;
@@ -404,18 +473,34 @@ embed {
   left: 0;
   z-index: -1;
 }
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .nav__layer:after {
+    display: none;
+  }
+}
 .nav__layer.nav--active {
   background-color: #6e973f;
   overflow-y: scroll;
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  z-index: 1;
+}
+.nav__layer.nav--active:after {
+  content: '';
+  display: block;
+  height: 0px;
+  width: 100%;
+}
+.nav__layer.nav--active .nav__container {
+  display: block;
 }
 .nav__container {
   justify-content: space-around;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .nav__container {
-    display: block;
+    display: none;
   }
 }
 .nav__container li {
@@ -469,6 +554,7 @@ embed {
   background-size: cover;
   height: 100vh;
   position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 .feature__container {
   align-items: center;
@@ -775,6 +861,7 @@ embed {
 .support__button {
   background-color: #6e973f;
   color: #fff;
+  font-size: 2rem;
 }
 .video__heading {
   color: #392214;
