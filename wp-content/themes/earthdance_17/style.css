@@ -94,6 +94,12 @@ Description:	Theme for Earthdance
     transform: translateY(-100%);
   }
 }
+.brownBg {
+  background-color: #392214;
+}
+.brownGreen {
+  background-color: #392214;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -287,7 +293,6 @@ embed {
   color: currentColor;
 }
 .gallery__layer {
-  background-color: #6e973f;
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -300,17 +305,16 @@ embed {
   }
 }
 .gallery__item {
-  background-size: cover;
-  background-position: center center;
   border: 10px solid #fff;
   color: #fff;
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 300px;
   width: calc(50% - 2rem);
   margin: 1rem;
-  box-shadow: 0 10px 6px -6px charcoal;
+  overflow: hidden;
+}
+.gallery__item {
+  border: 10px solid #e6e6e8;
 }
 .gallery__heading {
   font-size: 4rem;
@@ -321,22 +325,35 @@ embed {
   }
 }
 .gallery__button {
-  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #6e973f;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.3s ease-in-out;
 }
-.gallery__button.white {
-  color: #fff;
-}
-.gallery__button.white::after {
+.gallery__button span {
   background-color: #fff;
-}
-.gallery__button::after {
-  background-color: #fff;
+  color: #6e973f;
+  display: block;
+  padding: 0.5rem 1rem;
 }
 .gallery__button:hover {
-  color: #4b0082;
+  border: none;
+  cursor: pointer;
+  transform: scale(1.1);
 }
-.greenBg {
+.gallery__button:hover span {
   background-color: #6e973f;
+  border: none;
+  color: #fff;
 }
 .responsive-video-embed {
   width: 100vw;

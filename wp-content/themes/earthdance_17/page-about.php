@@ -71,7 +71,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
-<div class="page greenBg">
+<div class="page brownBg">
 	<div class="page__container">
     <div class="page__content">
       <div class="gallery__layer">
@@ -92,13 +92,15 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
           $loop2 = new WP_Query( $args );
           while($loop2->have_posts()) : $loop2->the_post(); ?>
 
-          <div class="gallery__item" style="background-image: url(<?php echo get_full_image_src() ?>);">
-              <a class="gallery__button"><?php the_title()?></a>
+          <div class="gallery__item">
+              <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src() ?>);">
+                <span><?php the_title()?></span>
+              </a>
           </div>
 
         <?php endwhile; wp_reset_postdata(); ?>
 
-    </div>
+      </div>
     </div>
   </div>
 </div>
