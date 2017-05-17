@@ -11,18 +11,11 @@
       justify-content center
 
   &__item
-    border 10px solid white
     color white
     display flex
     height 300px
     width calc(50% - 2rem)
     margin 1rem
-    //box-shadow 0 10px 6px -6px charcoal
-    overflow hidden
-
-  &__item
-    border 10px solid #e6e6e8
-
 
   &__heading
     // color indigo
@@ -35,7 +28,8 @@
     background-size cover
     //background-blend-mode overlay
     background-position center center
-    border none
+    background-repeat no-repeat
+    border 10px solid white
     box-shadow none
     border-radius 0
     color green
@@ -46,19 +40,24 @@
     width 100%
     will-change transform
     transition transform .3s ease-in-out
+    position relative
 
     span
-      background-color hsla(0, 0, 100%, 1)
+      background-color gold
       color green
       display block
       padding .5rem 1rem
 
+      position absolute
+      bottom -30px
+      left -30px
+
     &:hover
-      border none
+      border 10px solid white
       cursor pointer
-      transform scale(1.1)
+      transform scale(1.05)
 
       span
-        background-color green
+        background-color darkGreen
         border none
         color white

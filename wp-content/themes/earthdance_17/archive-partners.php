@@ -22,40 +22,38 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
-<div class="page">
+<div class="page greenBg">
 	<div class="page__container">
     <div class="page__content">
+      <div class="gallery__layer">
 
-      <?php echo get_field('board_bio'); ?>
+        <?php endwhile; wp_reset_postdata(); ?>
 
-<?php endwhile; wp_reset_postdata(); ?>
+          <?php
+          // Loop 2
+          $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'partners' );
+          $excludeLandingPage = $getLandingPage->ID;
 
-      <?php
-      // Loop 2
+          $args = array(
+            'post_type' => 'partners',
+            'post__not_in' => array($excludeLandingPage),
+            'posts_per_page' => -1
+          );
+          $loop2 = new WP_Query( $args );
+          while($loop2->have_posts()) : $loop2->the_post(); ?>
 
-      $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'partners' );
-      $excludeLandingPage = $getLandingPage->ID;
+          <div class="gallery__item">
+            <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_field('partner_logo'); ?>); background-size: contain; background-color: white;">
+              <span><?php the_title()?></span>
+            </a>
+          </div>
 
-      $args = array(
-        'post_type' => 'partners',
-        'post__not_in' => array($excludeLandingPage),
-        'posts_per_page' => -1
-      );
-      $loop2 = new WP_Query( $args );
-      while($loop2->have_posts()) : $loop2->the_post(); ?>
+        <?php endwhile; wp_reset_postdata(); ?>
 
-      <div>
-        <div class="grow__pic" style="background-image: url(<?php echo get_field('partner_logo'); ?>);"></div>
-        <h3 class="grow__subheading"><?php the_title()?></h3>
-        <h4><?php echo get_field('board_postion'); ?></h4>
-        <?php echo get_field('board_bio'); ?>
-        <!-- <p><a href="<?php //echo $url ?>" class="grow__button">read more</a></p> -->
       </div>
-
-      <?php endwhile; wp_reset_postdata(); ?>
-
     </div>
   </div>
 </div>
+
 
 <?php get_footer(); ?>

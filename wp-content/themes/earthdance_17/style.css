@@ -100,10 +100,6 @@ Description:	Theme for Earthdance
 .greenBg {
   background-color: #6e973f;
 }
-a.goldBg {
-  background-color: #fc6;
-  color: #392214;
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -245,7 +241,7 @@ a:hover {
   padding: 1.5rem 0 0 0;
 }
 .cpe__subheading {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 100;
   padding: 0.5rem 0 0 0;
 }
@@ -296,6 +292,14 @@ embed {
   background-color: #fff;
   color: currentColor;
 }
+a.donateBtn {
+  background-color: #fc0;
+  color: #53712f;
+}
+a.donateBtn:hover {
+  background-color: #53712f;
+  color: #fc0;
+}
 .gallery__layer {
   display: flex;
   flex-flow: row wrap;
@@ -309,16 +313,11 @@ embed {
   }
 }
 .gallery__item {
-  border: 10px solid #fff;
   color: #fff;
   display: flex;
   height: 300px;
   width: calc(50% - 2rem);
   margin: 1rem;
-  overflow: hidden;
-}
-.gallery__item {
-  border: 10px solid #e6e6e8;
 }
 .gallery__heading {
   font-size: 4rem;
@@ -331,7 +330,8 @@ embed {
 .gallery__button {
   background-size: cover;
   background-position: center center;
-  border: none;
+  background-repeat: no-repeat;
+  border: 10px solid #fff;
   box-shadow: none;
   border-radius: 0;
   color: #6e973f;
@@ -342,20 +342,24 @@ embed {
   width: 100%;
   will-change: transform;
   transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 .gallery__button span {
-  background-color: #fff;
+  background-color: #fc0;
   color: #6e973f;
   display: block;
   padding: 0.5rem 1rem;
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
 }
 .gallery__button:hover {
-  border: none;
+  border: 10px solid #fff;
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .gallery__button:hover span {
-  background-color: #6e973f;
+  background-color: #53712f;
   border: none;
   color: #fff;
 }
