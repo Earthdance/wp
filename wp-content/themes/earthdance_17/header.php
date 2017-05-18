@@ -34,7 +34,7 @@
 					    <p class="header__tagline"><?php the_field('tagline', 'option'); ?></p>
 						</div>
 						<div class="header__social">
-							<a href="/support/donate" class="header__link" class="donateBtn">Donate</a>
+							<a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
 							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Directions</a>
 							<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
 
