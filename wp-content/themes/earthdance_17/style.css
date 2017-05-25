@@ -292,13 +292,8 @@ embed {
   background-color: #fff;
   color: currentColor;
 }
-a.donateBtn {
-  background-color: #fc0;
-  color: #53712f;
-}
 a.donateBtn:hover {
-  background-color: #53712f;
-  color: #fc0;
+  text-decoration: underline;
 }
 .gallery__layer {
   display: flex;
@@ -345,7 +340,7 @@ a.donateBtn:hover {
   position: relative;
 }
 .gallery__button span {
-  background-color: #fc0;
+  background-color: #fff;
   color: #6e973f;
   display: block;
   padding: 0.5rem 1rem;
