@@ -115,18 +115,18 @@
           <a href="<?php echo get_field( "believe_cta" ); ?>" class="believe__button"><?php echo get_field( "believe_buttontext" ); ?></a>
         </div>
   		</div>
+
+      <div class="believe__container">
+        <h2 class="believe__heading">Planting for a better tomorrow</h2>
+        <p class="believe__slogan"><?php include "svg/earthdance-logo.php" ?></p>
+      </div>
+
   	</div>
   </div>
 
   <!--support section-->
   <div class="support__layer">
   	<div class="support__container">
-  		<div class="support__slogan">
-        <h2 class="support__heading">Planting for a better tomorrow</h2>
-
-        <?php include "svg/earthdance-logo.php" ?>
-
-      </div>
   		<div class="support__slogan">
   			<h2 class="support__heading">Support EarthDance</h2>
   			<div class="support__options">

@@ -97,6 +97,10 @@ Description:	Theme for Earthdance
 .brownBg {
   background-color: #392214;
 }
+.colorBrown {
+  color: #392214;
+  text-shadow: none;
+}
 .greenBg {
   background-color: #6e973f;
 }
@@ -182,7 +186,7 @@ a:hover {
 [class*='__heading'] {
   color: #fff;
   font-family: fira-sans;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
   padding: 5rem 0;
   text-align: center;
@@ -236,14 +240,19 @@ a:hover {
   text-align: left;
   text-shadow: none;
 }
-.cpe__heading {
+.cpe__heading,
+h1,
+h2 {
   font-size: 3rem;
+  line-height: 1;
   padding: 1.5rem 0 0 0;
 }
-.cpe__subheading {
+.cpe__subheading,
+h3 {
   font-size: 2.5rem;
   font-weight: 100;
-  padding: 0.5rem 0 0 0;
+  line-height: 1;
+  padding: 1rem 0 0 0;
 }
 img,
 iframe,
@@ -554,6 +563,9 @@ a.donateBtn:hover {
   height: 100vh;
   position: relative;
   -webkit-transform: translate3d(0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-positon: center center;
 }
 .feature__container {
   align-items: center;
@@ -593,6 +605,7 @@ a.donateBtn:hover {
 .feature__heading {
   color: #fff;
   font-family: ff-prater-script-web;
+  font-size: 5rem;
   padding: 0;
 }
 .feature__subheading {
@@ -897,11 +910,20 @@ a.donateBtn:hover {
   background-color: #392214;
   color: #fff;
 }
+.believe__slogan svg {
+  display: flex;
+  margin: 0 auto;
+  width: 150px;
+}
+.believe__slogan svg path {
+  fill: #392214;
+}
 .support__layer {
   background-image: url("img/girlAndGreens.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 145vh;
+  background-position: center;
+  height: 90vh;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .support__layer {
@@ -917,19 +939,7 @@ a.donateBtn:hover {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  justify-content: space-around;
-}
-.support__slogan {
-  display: flex;
-  flex-direction: column;
-}
-.support__slogan svg {
-  display: flex;
-  margin: 0 auto;
-  width: 150px;
-}
-.support__slogan svg path {
-  fill: #fff;
+  justify-content: flex-end;
 }
 .support__heading {
   padding-top: 0;
@@ -948,6 +958,7 @@ a.donateBtn:hover {
 .support__options {
   display: flex;
   justify-content: space-around;
+  padding: 0 0 5rem 0;
 }
 .support__button {
   background-color: #6e973f;
