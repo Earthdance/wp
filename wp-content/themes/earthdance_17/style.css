@@ -824,8 +824,11 @@ a.donateBtn:hover {
   }
 }
 .stats__number {
+  color: #fff;
   flex: 1;
+  font-weight: bold;
   font-size: 5rem;
+  text-align: center;
 }
 .stats__content {
   align-items: center;
