@@ -831,6 +831,7 @@ a.donateBtn:hover {
   color: #fff;
   display: flex;
   flex: 1;
+  font-size: 1rem;
 }
 .believe__layer {
   height: 100%;
