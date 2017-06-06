@@ -823,8 +823,9 @@ a.donateBtn:hover {
     flex-direction: column;
   }
 }
-.stats__subheading {
+.stats__number {
   flex: 1;
+  font-size: 5rem;
 }
 .stats__content {
   align-items: center;
@@ -832,6 +833,7 @@ a.donateBtn:hover {
   display: flex;
   flex: 1;
   font-size: 1rem;
+  padding-top: 0;
 }
 .believe__layer {
   height: 100%;
