@@ -1,4 +1,11 @@
 <?php
+
+
+// Disable WordPress Responsive Images
+// https://perishablepress.com/disable-wordpress-responsive-images/
+add_filter('max_srcset_image_width', create_function('', 'return 1;'));
+
+
 //----------------------------------------------------------------------------
 	// Tells WP not to hardcode height and width in to output
 /**
