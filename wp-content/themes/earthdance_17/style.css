@@ -274,7 +274,7 @@ embed {
   border: 10px solid #e6e6e6;
 }
 .alignright {
-  float: left;
+  float: right;
   width: 50%;
   margin: 1rem 0 1rem 1rem;
   border: 10px solid #e6e6e6;
