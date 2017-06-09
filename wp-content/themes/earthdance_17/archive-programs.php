@@ -31,14 +31,18 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 <?php endwhile; wp_reset_postdata(); ?>
 
       <?php
-      // Loop 2
-      $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
-      $excludeLandingPage = $getLandingPage->ID;
+        // Loop 2
+        $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
+        $excludeLandingPage = $getLandingPage->ID;
 
-      $args = array(
-        'post_type' => 'programs',
-        'post__not_in' => array($excludeLandingPage),
-        'posts_per_page' => -1
+        $args = array(
+          'post_type' => 'programs',
+          'post__not_in' => array($excludeLandingPage),
+          'posts_per_page' => -1,
+          'taxonomy' => 'program_types',
+          'field'    => 'slug',
+          'terms'    => 'yeah',
+          'operator' => 'NOT IN'
       );
       $loop2 = new WP_Query( $args );
       while($loop2->have_posts()) : $loop2->the_post(); ?>
