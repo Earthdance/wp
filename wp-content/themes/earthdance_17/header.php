@@ -19,6 +19,25 @@
       <!-- <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script> -->
 
 			<?php wp_head(); ?>
+
+			<script>
+			  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+				//
+			  // ga('create', 'UA-16022492-2', 'auto');
+			  // ga('send', 'pageview');
+			</script>
+
+			<script type='text/javascript'>
+				(function (d, t) {
+				  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+				  bh.type = 'text/javascript';
+				  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=4hnuxxxuogylouhp3fnvxq';
+				  s.parentNode.insertBefore(bh, s);
+				  })(document, 'script');
+				</script>
 	    </head>
     <body <?php body_class('page'); ?>>
 
@@ -35,7 +54,7 @@
 						</div>
 						<div class="header__social">
 							<a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
-							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Directions</a>
+							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Location</a>
 							<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
 
 							<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">

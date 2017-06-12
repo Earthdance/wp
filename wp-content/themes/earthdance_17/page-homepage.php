@@ -10,16 +10,25 @@
 
   <!--feature section-->
   <div class="feature__layer">
+
+    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image" ); ?>)"></div>
+
+    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_2" ); ?>)"></div>
+
+    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_3" ); ?>)"></div>
+
     <div class="feature__container">
       <div class="feature__main">
 
         <?php include "svg/earthdance-logo.php" ?>
 
         <h1 class="feature__heading"><?php echo get_field( "featured_heading" ); ?></h1>
+
         <h2 class="feature__subheading"><?php echo get_field( "featured_subheading" ); ?></h2>
 
       </div>
     </div>
+
   </div>
 
   <!--grow section-->
@@ -66,7 +75,7 @@
   <div class="stats__layer">
     <div class="stats__container">
       <h2 class="stats__heading"><?php echo get_field( "stats_heading" ); ?></h2>
-      <h2 class="stats__content"><?php echo get_field( "stats_description" ); ?></h2>
+      <div class="stats__content"><?php echo get_field( "stats_description" ); ?></div>
       <div class="stats__columns">
 
         <?php if( have_rows('stats_items') ): while ( have_rows('stats_items') ) : the_row();
@@ -78,7 +87,7 @@
         ?>
 
   			<div class="stats__item">
-  				<h3 class="stats__subheading"><?php echo $number ?></h3>
+  				<h3 class="stats__number"><?php echo $number ?></h3>
   				<div class="stats__content">
   					<p><?php echo $text ?></p>
   				</div>
@@ -106,18 +115,18 @@
           <a href="<?php echo get_field( "believe_cta" ); ?>" class="believe__button"><?php echo get_field( "believe_buttontext" ); ?></a>
         </div>
   		</div>
+
+      <div class="believe__container">
+        <h2 class="believe__heading">Planting for a better tomorrow</h2>
+        <p class="believe__slogan"><?php include "svg/earthdance-logo.php" ?></p>
+      </div>
+
   	</div>
   </div>
 
   <!--support section-->
   <div class="support__layer">
   	<div class="support__container">
-  		<div class="support__slogan">
-        <h2 class="support__heading">Planting for a better tomorrow</h2>
-
-        <?php include "svg/earthdance-logo.php" ?>
-
-      </div>
   		<div class="support__slogan">
   			<h2 class="support__heading">Support EarthDance</h2>
   			<div class="support__options">

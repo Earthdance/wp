@@ -16,6 +16,10 @@
 
 <div class="page">
 	<div class="page__container">
+    <h1>HELLO</h1>
+
+        <?php echo get_the_term_list( $post->ID, 'program_types', 'People: ', ', ' ); ?>
+
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
