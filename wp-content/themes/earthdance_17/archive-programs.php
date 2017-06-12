@@ -22,42 +22,45 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
-<div class="page">
-	<div class="page__container">
-    <div class="page__content">
-
-      <?php echo get_field('board_bio'); ?>
-
 <?php endwhile; wp_reset_postdata(); ?>
 
-      <?php
-        // Loop 2
-        $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
-        $excludeLandingPage = $getLandingPage->ID;
+<div class="page brownBg">
+	<div class="page__container">
+    <div class="page__content">
+      <div class="gallery__layer">
 
-        $args = array(
-          'post_type' => 'programs',
-          'post__not_in' => array($excludeLandingPage),
-          'posts_per_page' => -1,
-          'taxonomy' => 'program_types',
-          'field'    => 'slug',
-          'terms'    => 'yeah',
-          'operator' => 'NOT IN'
-      );
-      $loop2 = new WP_Query( $args );
-      while($loop2->have_posts()) : $loop2->the_post(); ?>
+        <?php
+          // Loop 2
+          $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
+          $excludeLandingPage = $getLandingPage->ID;
 
-      <div>
-        <div class="grow__pic" style="background-image: url(<?php echo get_full_image_src()?>);"></div>
-        <h3 class="grow__subheading"><?php the_title()?></h3>
-        <?php the_content(); ?>
-        <!-- <p><a href="<?php //echo $url ?>" class="grow__button">read more</a></p> -->
+          $args = array(
+            'post_type' => 'programs',
+            'post__not_in' => array($excludeLandingPage),
+            'posts_per_page' => -1,
+            'tax_query' => array(
+          		array(
+          			'taxonomy' => 'program_types',
+          			'field'    => 'slug',
+          			'terms'    => 'yeah',
+          		),
+          	),
+          );
+          $loop2 = new WP_Query( $args );
+          while($loop2->have_posts()) : $loop2->the_post(); ?>
+
+          <div class="gallery__item">
+              <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src() ?>);">
+                <span><?php the_title()?></span>
+              </a>
+          </div>
+
+        <?php endwhile; wp_reset_postdata(); ?>
+
       </div>
-
-      <?php endwhile; wp_reset_postdata(); ?>
-
     </div>
   </div>
 </div>
+
 
 <?php get_footer(); ?>
