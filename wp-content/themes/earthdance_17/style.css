@@ -223,11 +223,10 @@ a:hover {
   }
 }
 [class*='__title'] {
-  color: #fff;
-  font-family: fira-sans;
-  font-size: 3rem;
-  text-align: center;
-  text-shadow: -1px 1px 0 #000;
+  color: #392214;
+  font-size: 2rem;
+  text-align: left;
+  text-shadow: none;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*='__title'] {
@@ -392,6 +391,9 @@ a.donateBtn:hover {
   position: absolute;
   width: 100% !important;
   height: 100% !important;
+}
+.page__content-padding {
+  padding: 5rem 0 4rem 0;
 }
 .header__bg {
   background-color: #6e973f;
@@ -771,6 +773,9 @@ a.donateBtn:hover {
   flex: 1;
   height: 100%;
   padding: 6rem 0;
+}
+.grow__pic.setHeight {
+  height: 500px;
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .grow {

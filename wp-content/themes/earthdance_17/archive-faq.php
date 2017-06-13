@@ -24,6 +24,16 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
 <div class="page">
 	<div class="page__container">
+    <div class="page__content-padding">
+
+      <?php the_content(); ?>
+
+    </div>
+  </div>
+</div>
+
+<div class="page">
+	<div class="page__container">
     <div class="page__content">
 
       <?php echo get_field('board_bio'); ?>

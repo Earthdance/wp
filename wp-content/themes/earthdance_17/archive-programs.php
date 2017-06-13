@@ -22,6 +22,16 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
+<div class="page">
+	<div class="page__container">
+    <div class="page__content-padding">
+
+      <?php the_content(); ?>
+
+    </div>
+  </div>
+</div>
+
 <?php endwhile; wp_reset_postdata(); ?>
 
 <div class="page brownBg">
