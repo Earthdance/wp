@@ -12,8 +12,6 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   <div class="feature__container">
     <div class="feature__main">
 
-
-
       <?php include "svg/earthdance-logo.php" ?>
 
       <h1 class="feature__heading">Staff</h1>
@@ -26,7 +24,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 	<div class="page__container">
     <div class="page__content-padding">
 
-      <?php the_content(); ?>
+      <?php echo get_field('staff_bio'); ?>
 
     </div>
   </div>

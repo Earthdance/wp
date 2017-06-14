@@ -26,13 +26,13 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 	<div class="page__container">
     <div class="page__content-padding">
 
-      <?php the_content(); ?>
+      <?php echo get_field('board_bio'); ?>
 
     </div>
   </div>
 </div>
 
-<div class="page greenBg">
+<div class="page fogBg">
 	<div class="page__container">
     <div class="page__content">
       <div class="gallery__layer">
