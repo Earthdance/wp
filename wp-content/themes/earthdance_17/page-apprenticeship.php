@@ -1,75 +1,71 @@
 <?php get_header(); ?>
 
-<?php
-  $args = array(
-    'post_type' => 'homepage',
-    'posts_per_page' => 1
-  );
-  $loop = new WP_Query( $args );
-  while ( $loop->have_posts() ) : $loop->the_post(); ?>
+<!--feature section-->
+<div class="feature__layer" style="background-image: url(<?php echo get_full_image_src()?>);">
+  <div class="feature__container">
+    <div class="feature__main">
 
-  <!--feature section-->
-  <div class="feature__layer">
+      <?php include "svg/earthdance-logo.php" ?>
 
-    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image" ); ?>)"></div>
+      <h1 class="feature__heading"><?php the_title( ); ?></h1>
 
-    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_2" ); ?>)"></div>
+    </div>
+  </div>
+</div>
 
-    <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_3" ); ?>)"></div>
 
-    <div class="feature__container">
-      <div class="feature__main">
+<div class="page__layer">
+	<div class="page__container">
 
-        <?php include "svg/earthdance-logo.php" ?>
+  	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <h1 class="feature__heading"><?php echo get_field( "featured_heading" ); ?></h1>
+      <div class="page__content-padding">
+        <?php echo get_field("apprentice_intro");	?>
+      </div>
 
-        <h2 class="feature__subheading"><?php echo get_field( "featured_subheading" ); ?></h2>
+    <?php endwhile; endif; ?>
 
+	</div>
+</div>
+
+
+<div class="grow__layer">
+  <div class="grow__container">
+
+    <?php if( have_rows('apprentice_duties') ): while ( have_rows('apprentice_duties') ) : the_row();
+
+      // vars
+      $image = get_sub_field('duty_image');
+      $title = get_sub_field('duty_title');
+      $description = get_sub_field('duty_description');
+    ?>
+
+    <div class="grow__columns zipper">
+      <div class="grow__pic setHeight" style="background-image: url(<?php echo $image; ?>);"></div>
+      <div class="grow__content">
+        <h2 class="grow__title"><?php echo $title; ?></h2>
+        <p><?php echo $description?></p>
       </div>
     </div>
 
+    <?php endwhile; else : endif; ?>
+
   </div>
+</div>
 
-  <!--grow section-->
-  <div class="grow__layer">
-    <div class="grow__container">
-      <h2 class="grow__heading"><?php echo get_field( "grow_heading" ); ?></h2>
+<div class="page__layer">
+	<div class="page__container">
 
-      <?php if( have_rows('grow_items') ): while ( have_rows('grow_items') ) : the_row();
+  	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        // vars
-    		$image = get_sub_field('item_image');
-        $heading = get_sub_field('item_heading');
-    		$text = get_sub_field('item_text');
-    		$url = get_sub_field('item_url');
-        $urlText = get_sub_field('item_url_text');
-      ?>
-
-        <div class="grow__columns zipper">
-          <div class="grow__pic" style="background-image: url(<?php echo $image?>);">
-            <h3 class="grow__subheading"><?php echo $heading ?></h3>
-          </div>
-          <div class="grow__content">
-            <p><?php echo $text ?></p>
-            <p><a href="<?php echo $url ?>" class="grow__button"><?php echo $urlText ?></a></p>
-          </div>
-        </div>
-
-      <?php endwhile; else : endif; ?>
-
-    </div>
-  </div>
-
-  <!-- video section -->
-  <div class="video__layer">
-    <div class="video__feature">
-      <h2 class="video__heading">Rooted in Ferguson</h2>
-      <div class="responsive-video-embed">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/HD3L4S5-EzE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      <div class="page__content-padding">
+        <?php echo get_field("apprentice_details");	?>
       </div>
-    </div>
-  </div>
+
+    <?php endwhile; endif; ?>
+
+	</div>
+</div>
 
   <!--stats section-->
   <div class="stats__layer">
@@ -78,18 +74,18 @@
       <div class="stats__content"><?php echo get_field( "stats_description" ); ?></div>
       <div class="stats__columns">
 
-        <?php if( have_rows('stats_items') ): while ( have_rows('stats_items') ) : the_row();
+        <?php if( have_rows('apprentice_faq') ): while ( have_rows('apprentice_faq') ) : the_row();
 
           // vars
-          $number = get_sub_field('stats_number');
-          $text = get_sub_field('stats_text');
+          $question = get_sub_field('faq_question');
+          $answer = get_sub_field('faq_answer');
 
         ?>
 
   			<div class="stats__item">
-  				<h3 class="stats__number"><?php echo $number ?></h3>
+  				<h3 class="stats__number"><?php echo $question ?></h3>
   				<div class="stats__content">
-  					<p><?php echo $text ?></p>
+  					<p><?php echo $answer ?></p>
   				</div>
   			</div>
 
@@ -99,44 +95,32 @@
     </div>
   </div>
 
-  <!--believe section-->
-  <div class="believe__layer">
-    <div class="believe__container">
-      <div class="believe__columns">
-        <h2 class="believe__heading"><?php echo get_field( "believe_heading" ); ?></h2>
-  			<div class="believe__content">
-  				<p><?php echo get_field( "believe_text" ); ?></p>
-  			</div>
+
+
+<div class="grow__layer">
+  <div class="grow__container">
+
+    <?php if( have_rows('apprentice_testimonials') ): while ( have_rows('apprentice_testimonials') ) : the_row();
+
+      // vars
+      $image = get_sub_field('testimonial_image');
+      $quote = get_sub_field('testimonial_quote');
+      $name = get_sub_field('testimonial_name');
+      $year = get_sub_field('testimonial_year');
+    ?>
+
+    <div class="grow__columns zipper">
+      <div class="grow__pic setHeight" style="background-image: url(<?php echo $image; ?>);"></div>
+      <div class="grow__content">
+        <h2 class="grow__title"><?php echo $name; ?> class of <?php echo $year; ?></h2>
+        <p><?php echo $quote?></p>
       </div>
-      <div class="believe__photo">
-  			<div class="believe__image">
-  			</div>
-        <div class="believe__cta">
-          <a href="<?php echo get_field( "believe_cta" ); ?>" class="believe__button"><?php echo get_field( "believe_buttontext" ); ?></a>
-        </div>
-  		</div>
+    </div>
 
-      <div class="believe__container">
-        <h2 class="believe__heading">Planting for a better tomorrow</h2>
-        <p class="believe__slogan"><?php include "svg/earthdance-logo.php" ?></p>
-      </div>
+    <?php endwhile; else : endif; ?>
 
-  	</div>
   </div>
+</div>
 
-  <!--support section-->
-  <div class="support__layer">
-  	<div class="support__container">
-  		<div class="support__slogan">
-  			<h2 class="support__heading">Support EarthDance</h2>
-  			<div class="support__options">
-  				<a href="#" class="support__button bigBtn">Donate</a>
-  				<a href="#" class="support__button bigBtn">Volunteer</a>
-  			</div>
-  		</div>
-  	</div>
-  </div>
-
-<?php endwhile;?>
 
 <?php get_footer(); ?>
