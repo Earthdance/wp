@@ -2,6 +2,9 @@
 Theme Name:		Earthdance 2017
 Description:	Theme for Earthdance
 */
+.icon--ei-camera {
+  fill: #00f;
+}
 .headroom {
   transition: transform 0.25s ease-in-out;
   will-change: transform;
