@@ -263,6 +263,10 @@ embed {
   height: auto;
   display: block;
 }
+iframe[src^="https://www.google.com/maps"] {
+  height: 500px;
+  width: 100%;
+}
 .placeholders,
 .ph {
   width: 100vw;
@@ -796,6 +800,7 @@ a.donateBtn:hover {
   flex: 1;
   height: 100%;
   padding: 6rem 0;
+  width: 100%;
 }
 .grow__pic.setHeight {
   height: 500px;
