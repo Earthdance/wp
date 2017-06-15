@@ -263,6 +263,10 @@ embed {
   height: auto;
   display: block;
 }
+iframe[src^="https://www.google.com/maps"] {
+  height: 500px;
+  width: 100%;
+}
 .placeholders,
 .ph {
   width: 100vw;
@@ -339,6 +343,11 @@ a.donateBtn:hover {
   height: 300px;
   width: calc(50% - 2rem);
   margin: 1rem;
+}
+@media only screen and (max-width: 660px) {
+  .gallery__item {
+    width: 80%;
+  }
 }
 .gallery__heading {
   font-size: 4rem;
@@ -732,6 +741,11 @@ a.donateBtn:hover {
 .grow__heading {
   color: #392214;
 }
+@media only screen and (max-width: 600px) {
+  .grow__heading {
+    padding: 2rem;
+  }
+}
 .grow__heading span {
   display: flex;
 }
@@ -752,11 +766,21 @@ a.donateBtn:hover {
 .grow__columns:nth-of-type(odd) .grow__content {
   padding-left: 2.5rem;
 }
+@media only screen and (max-width: 600px) {
+  .grow__columns:nth-of-type(odd) .grow__content {
+    padding-left: 1rem;
+  }
+}
 .grow__columns:nth-of-type(even) {
   flex-direction: row-reverse;
 }
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .grow__columns:nth-of-type(even) .grow__content {
+    padding-right: 0;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   .grow__columns.zipper {
@@ -776,6 +800,7 @@ a.donateBtn:hover {
   flex: 1;
   height: 100%;
   padding: 6rem 0;
+  width: 100%;
 }
 .grow__pic.setHeight {
   height: 500px;
@@ -809,6 +834,8 @@ a.donateBtn:hover {
 @media only screen and (max-width: 600px) {
   .grow__content {
     align-items: center;
+    padding: 0;
+    width: 100%;
   }
 }
 .grow__button {
@@ -949,6 +976,7 @@ a.donateBtn:hover {
 }
 .support__layer {
   background-image: url("img/girlAndGreens.jpg");
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -996,6 +1024,11 @@ a.donateBtn:hover {
 }
 .video__heading {
   color: #392214;
+}
+@media only screen and (max-width: 600px) {
+  .video__heading {
+    padding: 2rem;
+  }
 }
 .footer__layer {
   background-color: #fff;

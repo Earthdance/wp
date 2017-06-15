@@ -21,33 +21,30 @@
   </div>
 </div>
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  <?php if( have_rows('about_sections') ): while ( have_rows('about_sections') ) : the_row();
-      // vars
-      $image = get_sub_field('section_image');
-      $heading = get_sub_field('section_headings');
-      $content = get_sub_field('section_content');
-    ?>
+    <?php if( have_rows('about_sections') ): while ( have_rows('about_sections') ) : the_row();
+        // vars
+        $image = get_sub_field('section_image');
+        $heading = get_sub_field('section_headings');
+        $content = get_sub_field('section_content');
+      ?>
 
-    <div class="feature__layer" style="background-image: url(<?php echo $image?>);">
-      <div class="feature__container">
-        <div class="feature__main">
-          <h3 class="feature__heading"><?php echo $heading ?></h3>
+      <div class="feature__layer" style="background-image: url(<?php echo $image?>);">
+        <div class="feature__container">
+          <div class="feature__main">
+            <h3 class="feature__heading"><?php echo $heading ?></h3>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="page__layer">
-      <div class="page__container">
-        <div class="page__content">
-          <?php echo $content ?>
+      <div class="page__layer">
+        <div class="page__container">
+          <div class="page__content">
+            <?php echo $content ?>
+          </div>
         </div>
       </div>
-    </div>
-
-  <?php endwhile; else : endif; ?>
-
 
 <?php endwhile; endif;  wp_reset_postdata();?>
 
@@ -77,7 +74,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
       <div class="gallery__layer">
 
 
-        <?php endwhile; wp_reset_postdata(); ?>
+    <?php endwhile; else : endif; ?>
 
         <?php
 
@@ -112,5 +109,6 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
+  <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

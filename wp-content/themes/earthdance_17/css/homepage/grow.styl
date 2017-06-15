@@ -12,6 +12,9 @@
   &__heading
     color brown
 
+    +mobile()
+      padding 2rem
+
     span
       display flex
 
@@ -29,11 +32,17 @@
       .grow__content
         padding-left 2.5rem
 
+        +mobile()
+          padding-left 1rem
+
     &:nth-of-type(even)
       flex-direction row-reverse
 
       .grow__content
         padding-right 2.5rem
+
+        +mobile()
+          padding-right 0
 
   &__columns.zipper
 
@@ -43,6 +52,7 @@
     +mobile()
       flex-direction column
 
+
   &__pic
       background-position center center
       background-repeat no-repeat
@@ -51,6 +61,7 @@
       flex 1
       height 100%
       padding 6rem 0
+      width: 100%
 
       &.setHeight
         height 500px
@@ -78,6 +89,8 @@
 
     +mobile()
       align-items center
+      padding 0
+      width 100%
 
   &__button
     display inline-block
