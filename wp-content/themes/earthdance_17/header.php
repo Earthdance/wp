@@ -68,6 +68,11 @@
 							<a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
 								<div data-icon="ei-sc-instagram" data-size="m"></div>
 							</a>
+
+							<a href="<?php the_field('flickr_url', 'option'); ?>" class="header__icon">
+								<div data-icon="ei-camera" data-size="m"></div>
+							</a>
+							
 						</div>
 						<a href="#" class="header__icon hamburger">
 							<div data-icon="ei-navicon" data-size="m"></div>
