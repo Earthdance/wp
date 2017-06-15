@@ -3,7 +3,7 @@
 <?php // Loop 1
 $loop1 = new WP_Query(array(
   'post_type' => 'programs',
-  'name' => 'landing-page'
+  'name' => 'landing-page-yeah'
 )); // exclude category
 while($loop1->have_posts()) : $loop1->the_post(); ?>
 
@@ -22,46 +22,57 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
-<div class="page brownBg">
+<div class="page">
 	<div class="page__container">
-    <div class="page__content">
-      <div class="gallery__layer">
+    <div class="page__content-padding">
 
+      <?php the_content(); ?>
 
-        <?php endwhile; wp_reset_postdata(); ?>
-
-          <?php
-          // Loop 2
-          $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
-          $excludeLandingPage = $getLandingPage->ID;
-
-          $args = array(
-            'post_type' => 'programs',
-            'post__not_in' => array($excludeLandingPage),
-            'posts_per_page' => -1,
-            'tax_query' => array(
-          		array(
-          			'taxonomy' => 'program_types',
-          			'field'    => 'slug',
-          			'terms'    => 'yeah',
-          		),
-          	),
-          );
-          $loop2 = new WP_Query( $args );
-          while($loop2->have_posts()) : $loop2->the_post(); ?>
-
-          <div class="gallery__item">
-              <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src() ?>);">
-                <span><?php the_title()?></span>
-              </a>
-          </div>
-
-        <?php endwhile; wp_reset_postdata(); ?>
-
-      </div>
     </div>
   </div>
 </div>
+
+<?php endwhile; wp_reset_postdata(); ?>
+
+<div class="grow__layer">
+  <div class="grow__container">
+
+    <?php
+      // Loop 2
+      $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
+      $excludeLandingPage = $getLandingPage->ID;
+
+      $args = array(
+        'post_type' => 'programs',
+        'post__not_in' => array($excludeLandingPage),
+        'posts_per_page' => -1,
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'program_types',
+            'field'    => 'slug',
+            'terms'    => 'yeah',
+          ),
+        ),
+      );
+      $loop2 = new WP_Query( $args );
+      while($loop2->have_posts()) : $loop2->the_post(); ?>
+
+      <div class="grow__columns zipper">
+        <div class="grow__pic setHeight" style="background-image: url(<?php echo get_full_image_src(); ?>);">
+
+        </div>
+        <div class="grow__content">
+          <h2 class="grow__title"><?php the_title(); ?></h2>
+          <p><?php echo "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu." ?></p>
+          <p><a href="<?php the_permalink(); ?>" class="grow__button"><?php echo "Read more" ?></a></p>
+        </div>
+      </div>
+
+    <?php endwhile; wp_reset_postdata(); ?>
+
+  </div>
+</div>
+
 
 
 <?php get_footer(); ?>

@@ -12,11 +12,19 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   <div class="feature__container">
     <div class="feature__main">
 
-
-
       <?php include "svg/earthdance-logo.php" ?>
 
-      <h1 class="feature__heading">Programs</h1>
+      <h1 class="feature__heading">Farmers</h1>
+
+    </div>
+  </div>
+</div>
+
+<div class="page">
+	<div class="page__container">
+    <div class="page__content-padding">
+
+      <?php the_content(); ?>
 
     </div>
   </div>

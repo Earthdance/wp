@@ -76,8 +76,8 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
     <?php endwhile; else : endif; ?>
 
-          <?php
-          // Loop 2
+        <?php
+
           $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
           $excludeLandingPage = $getLandingPage->ID;
 

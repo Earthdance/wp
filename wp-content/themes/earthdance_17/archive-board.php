@@ -22,7 +22,17 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   </div>
 </div>
 
-<div class="page greenBg">
+<div class="page">
+	<div class="page__container">
+    <div class="page__content-padding">
+
+      <?php echo get_field('board_bio'); ?>
+
+    </div>
+  </div>
+</div>
+
+<div class="page fogBg">
 	<div class="page__container">
     <div class="page__content">
       <div class="gallery__layer">
