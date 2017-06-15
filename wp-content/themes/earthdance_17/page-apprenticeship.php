@@ -13,21 +13,13 @@
   </div>
 </div>
 
-
 <div class="page__layer">
 	<div class="page__container">
-
-  	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
       <div class="page__content-padding">
         <?php echo get_field("apprentice_intro");	?>
       </div>
-
-    <?php endwhile; endif; ?>
-
 	</div>
 </div>
-
 
 <div class="grow__layer">
   <div class="grow__container">
@@ -55,15 +47,9 @@
 
 <div class="page__layer">
 	<div class="page__container">
-
-  	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-      <div class="page__content-padding">
-        <?php echo get_field("apprentice_details");	?>
+    <div class="page__content-padding">
+      <?php echo get_field("apprentice_details");	?>
       </div>
-
-    <?php endwhile; endif; ?>
-
 	</div>
 </div>
 
@@ -120,6 +106,16 @@
     <?php endwhile; else : endif; ?>
 
   </div>
+</div>
+
+<div class="page__layer">
+	<div class="page__container">
+
+      <div class="page__content-padding">
+        <?php echo get_field("apprentice_application");	?>
+      </div>
+
+	</div>
 </div>
 
 
