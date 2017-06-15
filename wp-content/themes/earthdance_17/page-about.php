@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
 <!--feature section-->
-<div class="feature__layer" style="background-image: url(<?php echo get_full_image_src()?>);">
+<div class="feature__layer" style="background-image: url(<?php echo get_full_image_src(); ?>);">
   <div class="feature__container">
     <div class="feature__main">
 
-      <?php include "svg/earthdance-logo.php" ?>
+      <?php include "svg/earthdance-logo.php"; ?>
 
-      <h1 class="feature__heading"><?php the_title( ); ?></h1>
+      <h1 class="feature__heading"><?php the_title(); ?></h1>
 
     </div>
   </div>
@@ -46,7 +46,7 @@
         </div>
       </div>
 
-<?php endwhile; endif;  wp_reset_postdata();?>
+<?php endwhile; endif;  wp_reset_postdata(); ?>
 
 
 <?php // Loop 1
@@ -56,7 +56,7 @@ $loop1 = new WP_Query(array(
 )); // exclude category
 while($loop1->have_posts()) : $loop1->the_post(); ?>
 
-<div class="feature__layer" style="background-image: url(<?php echo get_full_image_src()?>);">
+<div class="feature__layer" style="background-image: url(<?php echo get_full_image_src(); ?>);">
   <div class="feature__container">
     <div class="feature__main">
 
@@ -97,8 +97,8 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
           while($loop2->have_posts()) : $loop2->the_post(); ?>
 
           <div class="gallery__item">
-              <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src() ?>);">
-                <span><?php the_title()?></span>
+              <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src(); ?>);">
+                <span><?php the_title(); ?></span>
               </a>
           </div>
 
