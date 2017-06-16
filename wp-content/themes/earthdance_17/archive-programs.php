@@ -44,13 +44,14 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
           $args = array(
             'post_type' => 'programs',
-            'post__not_in' => array($excludeLandingPage),
+            'post__not_in' => array($excludeLandingPage, 14692),
             'posts_per_page' => -1,
             'tax_query' => array(
           		array(
           			'taxonomy' => 'program_types',
           			'field'    => 'slug',
           			'terms'    => 'yeah',
+                'operator' => 'NOT IN'
           		),
           	),
           );
