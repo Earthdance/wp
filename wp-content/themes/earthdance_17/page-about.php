@@ -69,46 +69,48 @@
       </div>
     </div>
 
-    <div class="page brownBg">
-    	<div class="page__container">
-        <div class="page__content">
-          <div class="gallery__layer">
-
-
   <?php endwhile; ?>
 
-  <?php
+  <div class="grow__layer">
+    <div class="grow__container">
 
-    $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
-    $excludeLandingPage = $getLandingPage->ID;
+      <?php
+        // Loop 2
+        $getLandingPage = get_page_by_path( 'landing-page', OBJECT, 'programs' );
+        $excludeLandingPage = $getLandingPage->ID;
 
-    $args = array(
-      'post_type' => 'programs',
-      'post__not_in' => array($excludeLandingPage),
-      'posts_per_page' => -1,
-      'tax_query' => array(
-    		array(
-    			'taxonomy' => 'program_types',
-    			'field'    => 'slug',
-    			'terms'    => 'yeah',
-    		),
-    	),
-    );
-    $loop2 = new WP_Query( $args );
-    while($loop2->have_posts()) : $loop2->the_post(); ?>
+        $args = array(
+          'post_type' => 'programs',
+          'post__not_in' => array($excludeLandingPage, 14692),
+          'posts_per_page' => -1,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'program_types',
+              'field'    => 'slug',
+              'terms'    => 'yeah',
+              'operator' => 'NOT IN'
+            ),
+          ),
+        );
+        $loop2 = new WP_Query( $args );
+        while($loop2->have_posts()) : $loop2->the_post(); ?>
 
-            <div class="gallery__item">
-                <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_full_image_src(); ?>);">
-                  <span><?php the_title(); ?></span>
-                </a>
-            </div>
+        <div class="grow__columns zipper">
+          <div class="grow__pic setHeight" style="background-image: url(<?php echo get_full_image_src(); ?>);">
 
-          <?php endwhile; wp_reset_postdata(); ?>
-
+          </div>
+          <div class="grow__content">
+            <h2 class="grow__title"><?php the_title(); ?></h2>
+            <p><?php echo get_field( "program_teaser" ); ?></p>
+            <p><a href="<?php the_permalink(); ?>" class="grow__button"><?php echo "Read more" ?></a></p>
+          </div>
         </div>
-      </div>
+
+      <?php endwhile; wp_reset_postdata(); ?>
+
     </div>
   </div>
+
 
 <?php endwhile; endif; ?>
 

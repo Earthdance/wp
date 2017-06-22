@@ -63,7 +63,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
         </div>
         <div class="grow__content">
           <h2 class="grow__title"><?php the_title(); ?></h2>
-          <p><?php echo "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu." ?></p>
+          <p><?php echo get_field( "program_teaser" ); ?></p>
           <p><a href="<?php the_permalink(); ?>" class="grow__button"><?php echo "Read more" ?></a></p>
         </div>
       </div>

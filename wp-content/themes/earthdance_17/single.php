@@ -13,25 +13,15 @@
   </div>
 </div>
 
-
 <div class="page">
 	<div class="page__container">
-    <h1>HELLO</h1>
+    <div class="page__content-padding">
 
-        <?php echo get_the_term_list( $post->ID, 'program_types', 'People: ', ', ' ); ?>
+      <?php the_content(); ?>
 
-
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-		<h2><?php the_title(); ?></h2>
-
-    <div class="page__content">
-      <?php the_content();	?>
     </div>
-
-    <?php endwhile; endif; ?>
-
-	</div>
+  </div>
 </div>
+
 
 <?php get_footer(); ?>
