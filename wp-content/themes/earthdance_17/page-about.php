@@ -71,7 +71,7 @@
 
   <?php endwhile; ?>
 
-  <div class="grow__layer">
+  <div class="grow__layer padding-top-4-rem">
     <div class="grow__container">
 
       <?php
@@ -83,7 +83,8 @@
           'post_type' => 'programs',
           'post__not_in' => array($excludeLandingPage, 14692),
           'posts_per_page' => -1,
-          'orderby' => 'menu_order',
+          //'orderby' => 'menu_order',
+          'order'     => 'ASC',
           'tax_query' => array(
             array(
               'taxonomy' => 'program_types',
