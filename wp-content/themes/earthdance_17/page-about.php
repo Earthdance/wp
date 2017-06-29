@@ -71,7 +71,7 @@
 
   <?php endwhile; ?>
 
-  <div class="grow__layer">
+  <div class="grow__layer padding-top-4-rem">
     <div class="grow__container">
 
       <?php

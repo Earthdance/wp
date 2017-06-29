@@ -94,6 +94,9 @@ Description:	Theme for Earthdance
     transform: translateY(-100%);
   }
 }
+[class*="mc_embed"] input {
+  font-size: 1.5rem;
+}
 .brownBg {
   background-color: #392214;
 }
@@ -173,6 +176,14 @@ a:hover {
 @media only screen and (min-width: 600px) and (max-width: 1050px) {
   [class*="__columns"] {
     flex-direction: column;
+  }
+}
+.col3 {
+  columns: 3;
+}
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .col3 {
+    columns: 2;
   }
 }
 [class*="__container"] {
@@ -773,6 +784,7 @@ a.donateBtn:hover {
 }
 .grow__columns:nth-of-type(even) {
   flex-direction: row-reverse;
+  width: 100%;
 }
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
@@ -843,6 +855,9 @@ a.donateBtn:hover {
   background-color: #6e973f;
   border: 3px solid #6e973f;
   color: #fff;
+}
+.padding-top-4-rem {
+  padding-top: 4rem;
 }
 .stats__layer {
   background-color: #392214;
