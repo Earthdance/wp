@@ -21,7 +21,7 @@
       <?php
         // Example for adding WP PageNavi to a new WP_Query call
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-        $args = array('post_type' => 'post', 'posts_per_page' => 5, 'paged' => $paged);
+        $args = array('post_type' => 'post', 'posts_per_page' => 10, 'paged' => $paged);
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();?>
 
