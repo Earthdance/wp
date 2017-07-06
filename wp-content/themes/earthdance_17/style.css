@@ -97,8 +97,39 @@ Description:	Theme for Earthdance
     transform: translateY(-100%);
   }
 }
-[class*="mc_embed"] input {
-  font-size: 1.5rem;
+[class*="mc-field"] {
+  display: flex;
+  flex: 1;
+  padding-top: 1rem;
+}
+[class*="mc-field"] input,
+[class*="mc-field"] select,
+[class*="mc-field"] ul {
+  font-size: 1rem;
+  margin-left: 1rem;
+  list-style: none;
+}
+[class*="mc-field"] li label {
+  padding-left: 1rem;
+}
+input#mc-embedded-subscribe.button {
+  background-color: #008000;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  box-shadow: -1px 1px 0 #000;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-shadow: 1px 1px 0 #000;
+}
+input#mc-embedded-subscribe.button:hover {
+  border: 3px solid currentColor;
+  background-color: #fff;
+  color: currentColor;
+}
+[title="View previous campaigns"] {
+  display: none;
 }
 .brownBg {
   background-color: #392214;
@@ -220,6 +251,11 @@ a:hover {
     font-size: 1.75rem;
     padding: 1.75 rem 0;
   }
+}
+.news__heading {
+  font-size: 1.5rem;
+  padding: 0 0 1.5rem 0;
+  text-align: left;
 }
 [class*='__subheading'] {
   color: #fff;
