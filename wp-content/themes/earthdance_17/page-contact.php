@@ -36,6 +36,25 @@
 
     <div class="page__content">
       <?php the_content();	?>
+
+      <div class="header__social">
+        <a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
+        <a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Location</a>
+        <a href="<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
+
+        <a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
+          <div data-icon="ei-sc-facebook" data-size="m"></div>
+        </a>
+
+        <a href="<?php the_field('twitter_url', 'option'); ?>" class="header__icon">
+          <div data-icon="ei-sc-twitter" data-size="m"></div>
+        </a>
+
+        <a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
+          <div data-icon="ei-sc-instagram" data-size="m"></div>
+        </a>
+      </div>
+
     </div>
 
     <?php endwhile; endif; ?>
