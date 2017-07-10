@@ -97,6 +97,40 @@ Description:	Theme for Earthdance
     transform: translateY(-100%);
   }
 }
+[class*="mc-field"] {
+  display: flex;
+  flex: 1;
+  padding-top: 1rem;
+}
+[class*="mc-field"] input,
+[class*="mc-field"] select,
+[class*="mc-field"] ul {
+  font-size: 1rem;
+  margin-left: 1rem;
+  list-style: none;
+}
+[class*="mc-field"] li label {
+  padding-left: 1rem;
+}
+input#mc-embedded-subscribe.button {
+  background-color: #008000;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  box-shadow: -1px 1px 0 #000;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  text-shadow: 1px 1px 0 #000;
+}
+input#mc-embedded-subscribe.button:hover {
+  border: 3px solid currentColor;
+  background-color: #fff;
+  color: currentColor;
+}
+[title="View previous campaigns"] {
+  display: none;
+}
 .brownBg {
   background-color: #392214;
 }
@@ -178,6 +212,14 @@ a:hover {
     flex-direction: column;
   }
 }
+.col3 {
+  columns: 3;
+}
+@media only screen and (min-width: 600px) and (max-width: 1050px) {
+  .col3 {
+    columns: 2;
+  }
+}
 [class*="__container"] {
   display: flex;
   margin: 0 auto;
@@ -209,6 +251,11 @@ a:hover {
     font-size: 1.75rem;
     padding: 1.75 rem 0;
   }
+}
+.news__heading {
+  font-size: 1.5rem;
+  padding: 0 0 1.5rem 0;
+  text-align: left;
 }
 [class*='__subheading'] {
   color: #fff;
@@ -630,6 +677,7 @@ a.donateBtn:hover {
   margin: 0 auto;
   width: 120px;
   padding-bottom: 2.5rem;
+  filter: drop-shadow(-1px 1px 0px rgba(51,51,51,0.8));
 }
 .feature__main svg path {
   fill: #fff;
@@ -776,6 +824,7 @@ a.donateBtn:hover {
 }
 .grow__columns:nth-of-type(even) {
   flex-direction: row-reverse;
+  width: 100%;
 }
 .grow__columns:nth-of-type(even) .grow__content {
   padding-right: 2.5rem;
@@ -846,6 +895,9 @@ a.donateBtn:hover {
   background-color: #6e973f;
   border: 3px solid #6e973f;
   color: #fff;
+}
+.padding-top-4-rem {
+  padding-top: 4rem;
 }
 .stats__layer {
   background-color: #392214;
