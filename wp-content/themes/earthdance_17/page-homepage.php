@@ -130,8 +130,8 @@
   		<div class="support__slogan">
   			<h2 class="support__heading">Support EarthDance</h2>
   			<div class="support__options">
-  				<a href="#" class="support__button bigBtn">Donate</a>
-  				<a href="#" class="support__button bigBtn">Volunteer</a>
+  				<a href="/support/donate/" class="support__button bigBtn">Donate</a>
+  				<a href="/volunteer/" class="support__button bigBtn">Volunteer</a>
   			</div>
   		</div>
   	</div>
