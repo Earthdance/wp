@@ -45,9 +45,8 @@
 
           </div>
           <div class="grow__content">
-            <h2 class="grow__title"><?php the_title();  ?></h2>
+            <h2 class="grow__title"><?php echo get_field( "class_date" ); ?> - <?php the_title();  ?></h2>
             <p><?php echo get_field( "class_description" ); ?></p>
-            <p><?php echo get_field( "class_date" ); ?></p>
             <!-- <p><a href="<?php //the_permalink(); ?>" class="grow__button"><?php //echo "Read more" ?></a></p> -->
           </div>
         </div>
