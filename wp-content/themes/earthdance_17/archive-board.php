@@ -55,7 +55,12 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
           <div class="gallery__item">
               <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_field('board_photo'); ?>);">
-                <span><?php the_title()?> / <?php echo get_field('board_postion'); ?></span>
+                <span><?php the_title()?>
+                <?php if (get_field( "board_postion" ) != "Member-at-Large") {
+                  echo "/ " . get_field('board_postion');
+                } ?>
+
+              </span>
               </a>
           </div>
 
