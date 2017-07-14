@@ -89,7 +89,7 @@
   			<div class="stats__item">
   				<h3 class="stats__number"><?php echo $number ?></h3>
   				<div class="stats__content">
-  					<p><?php echo $text ?></p>
+  					<?php echo $text ?>
   				</div>
   			</div>
 

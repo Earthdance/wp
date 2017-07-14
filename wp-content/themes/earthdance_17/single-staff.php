@@ -32,8 +32,8 @@
 <div class="page">
 	<div class="page__container">
     <div class="page__content-padding">
-      <div class="bio-image" style="background-image: url(<?php echo get_field( "board_photo" ); ?>);"></div>
-      <?php echo get_field( "board_bio" ); ?>
+      <div class="bio-image" style="background-image: url(<?php echo get_field( "staff_photo" ); ?>);"></div>
+      <?php echo get_field( "staff_bio" ); ?>
     </div>
   </div>
 </div>

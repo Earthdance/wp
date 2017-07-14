@@ -56,8 +56,7 @@
   <!--stats section-->
   <div class="stats__layer">
     <div class="stats__container">
-      <h2 class="stats__heading"><?php echo get_field( "stats_heading" ); ?></h2>
-      <div class="stats__content"><?php echo get_field( "stats_description" ); ?></div>
+      <h2 class="__heading" style="padding-bottom: 0">Frequently Asked Questions</h2>
       <div class="stats__columns">
 
         <?php if( have_rows('apprentice_faq') ): while ( have_rows('apprentice_faq') ) : the_row();
@@ -85,6 +84,7 @@
 
 <div class="grow__layer">
   <div class="grow__container">
+    <h2 class="__heading colorBrown">Testimonials</h2>
 
     <?php if( have_rows('apprentice_testimonials') ): while ( have_rows('apprentice_testimonials') ) : the_row();
 
