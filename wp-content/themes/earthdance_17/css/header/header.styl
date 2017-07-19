@@ -17,7 +17,7 @@
     padding-bottom .5rem
     padding-top .5rem
 
-    +mobile()
+    +below(600px)
       padding .5rem 1.5rem
 
   &__logo-box
@@ -45,7 +45,7 @@
     margin-right .75rem
     width 60px
 
-    +mobile()
+    +below(600px)
       margin 0
 
     path
@@ -57,14 +57,14 @@
     font-weight 100
     padding 0 .5rem
 
-    +mobile()
+    +below(950px)
       display none
 
   &__social
     align-items center
     display flex
 
-    +tablet()
+    +below(950px)
       display none
 
   &__link
@@ -79,8 +79,9 @@
     &.hamburger
       display none
       z-index 100
+      margin-top 15px
 
-      +tablet()
+      +below(950px)
         display inline-block
 
         .icon.icon--ei-navicon

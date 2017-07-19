@@ -47,7 +47,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
         'post__not_in' => array($excludeLandingPage),
         'posts_per_page' => -1,
         //'orderby' => 'menu_order',
-        'order'     => 'ASC',
+        'order'     => 'DESC',
         'tax_query' => array(
           array(
             'taxonomy' => 'program_types',
