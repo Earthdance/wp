@@ -7,10 +7,10 @@
     background-position center
     height 90vh
 
-    +tablet()
+    +below(950px)
       height 100vh
 
-    +mobile()
+    +below(600px)
       height 100vh
 
   &__container
@@ -45,3 +45,6 @@
     background-color green
     color white
     font-size 2rem
+
+    +below(600px)
+      font-size 1rem

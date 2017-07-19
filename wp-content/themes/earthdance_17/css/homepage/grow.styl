@@ -12,8 +12,8 @@
   &__heading
     color brown
 
-    +mobile()
-      padding 2rem
+    +below(600px)
+      padding 2rem 0
 
     span
       display flex
@@ -21,10 +21,10 @@
   &__columns
     padding-bottom 5rem
 
-    +tablet()
+    +below(950px)
       padding-bottom 2.5rem
 
-    +mobile()
+    +below(600px)
       align-items center
       padding-bottom 2rem
 
@@ -32,7 +32,7 @@
       .grow__content
         padding-left 2.5rem
 
-        +mobile()
+        +below(600px)
           padding-left 1rem
 
     &:nth-of-type(even)
@@ -42,15 +42,15 @@
       .grow__content
         padding-right 2.5rem
 
-        +mobile()
+        +below(600px)
           padding-right 0
 
   &__columns.zipper
 
-    +tablet()
+    +below(950px)
       flex-direction column
 
-    +mobile()
+    +below(600px)
       flex-direction column
 
 
@@ -58,7 +58,7 @@
       background-position center center
       background-repeat no-repeat
       background-size cover
-      border 20px solid green
+      border 20px solid fog
       flex 1
       height 100%
       padding 6rem 0
@@ -67,10 +67,10 @@
       &.setHeight
         height 500px
 
-    +tablet()
+    +below(950px)
       padding 8rem 0
 
-    +mobile()
+    +below(600px)
       padding 4rem 0
       width 65%
 
@@ -85,10 +85,10 @@
     justify-content center
     padding 0 2.5rem
 
-    +tablet()
+    +below(950px)
       align-items center
 
-    +mobile()
+    +below(600px)
       align-items center
       padding 0
       width 100%

@@ -7,13 +7,15 @@
   text-align center
   text-shadow -1px 1px 0 black
 
-  +tablet()
+
+  +below(950px)
     font-size 2.5rem
     padding 2.5rem 0
 
-  +mobile()
+  +below(600px)
     font-size 1.75rem
     padding 1.75 rem 0
+    text-shadow -1px 1px 0 grey
 
 [class*='__heading'].colorBrown
   color brown
@@ -32,11 +34,12 @@
   text-align center
   text-shadow -1px 1px 0 black
 
-  +tablet()
+  +below(950px)
     font-size 2rem
 
-  +mobile()
+  +below(600px)
     font-size 1.75rem
+    text-shadow -1px 1px 0 grey
 
 [class*='__title']
   color brown
@@ -50,7 +53,7 @@
   // text-align center
   // text-shadow -1px 1px 0 black
 
-  +tablet()
+  +below(950px)
     font-size 1.5rem
 
 

@@ -10,10 +10,10 @@
     align-items center
     padding 5rem 0
 
-    +tablet()
+    +below(950px)
       padding 2.5rem 0
 
-    +mobile()
+    +below(600px)
       flex-direction column
       padding 1rem 0
 
@@ -34,10 +34,10 @@
     flex-direction column
     padding-bottom 5rem
 
-    +tablet()
+    +below(950px)
       padding-bottom 2.5rem
 
-    +mobile()
+    +below(600px)
       align-self center
 
 
@@ -51,15 +51,18 @@
     margin-bottom 1.5rem
     width 50vw
 
-    +tablet()
+    +below(950px)
       align-self center
+
+    +below(600px)
+      width 100vw
 
   &__cta
     align-self flex-end
     display flex
     width 50vw
 
-    +tablet()
+    +below(950px)
       align-self center
 
   &__button

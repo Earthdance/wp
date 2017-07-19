@@ -12,7 +12,7 @@
       left 0
       z-index -1
 
-      +tablet()
+      +below(950px)
         display none
 
     &.nav--active
@@ -37,7 +37,7 @@
   &__container
     justify-content space-around
 
-    +tablet()
+    +below(950px)
       display none
 
     li
@@ -49,6 +49,8 @@
       font-size 1.25rem
       padding .5rem 1rem
       text-shadow 1px 1px 0 black
+      width 100%
+
       &:hover
         background-color darkGreen
 
@@ -76,13 +78,16 @@
       left 0
       z-index 10
 
-      +tablet()
+      +below(950px)
         display block
         padding-left 1.5rem
         position relative
 
       a
         width 400px
+
+        +below(950px)
+          width 100%
 
 // .current-menu-item
 //   &.page-item-4, //home
