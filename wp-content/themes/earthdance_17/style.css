@@ -500,7 +500,7 @@ a.donateBtn:hover {
 }
 @media only screen and (max-width: 600px) {
   .header__container {
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem;
   }
 }
 .header__logo-box {
@@ -513,6 +513,11 @@ a.donateBtn:hover {
   display: flex;
   font-family: ff-prater-script-web;
   font-size: 2rem;
+}
+@media only screen and (max-width: 500px) {
+  .header__logo {
+    font-size: 1.5rem;
+  }
 }
 .header__logo:hover {
   color: #392214;
@@ -542,9 +547,24 @@ a.donateBtn:hover {
   font-weight: 100;
   padding: 0 0.5rem;
 }
+@media only screen and (max-width: 1090px) {
+  .header__tagline {
+    font-size: 1.25rem;
+  }
+}
 @media only screen and (max-width: 950px) {
   .header__tagline {
     display: none;
+  }
+}
+.header__utility {
+  align-items: center;
+  display: flex;
+}
+@media only screen and (max-width: 1060px) {
+  .header__utility {
+    display: flex;
+    flex-direction: column;
   }
 }
 .header__social {
@@ -576,6 +596,11 @@ a.donateBtn:hover {
   }
   .header__icon.hamburger .icon.icon--ei-navicon {
     fill: #fff;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .donateBtn {
+    display: none;
   }
 }
 .nav__layer:after {
