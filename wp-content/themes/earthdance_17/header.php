@@ -74,7 +74,12 @@
 							</div>
 					</div>
 						<a href="#" class="header__icon hamburger">
-							<div data-icon="ei-navicon" data-size="m"></div>
+							<div>
+								<div data-icon="ei-navicon" data-size="m"></div>
+							</div>
+							<div class="hide">
+								<div data-icon="ei-close" data-size="m"></div>
+							</div>
 						</a>
 				  </div>
 				</div>
