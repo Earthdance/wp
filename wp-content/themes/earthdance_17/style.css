@@ -358,6 +358,7 @@ iframe[src^="https://www.google.com/maps"] {
   width: 100%;
 }
 [class*="__button"],
+[class*="__button"]:focus,
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit],
 .gform_wrapper .gform_page_footer input.button,
@@ -369,6 +370,7 @@ iframe[src^="https://www.google.com/maps"] {
   text-shadow: 1px 1px 0 #000;
 }
 [class*="__button"]:hover,
+[class*="__button"]:focus:hover,
 .gform_wrapper .gform_footer input.button:hover,
 .gform_wrapper .gform_footer input[type=submit]:hover,
 .gform_wrapper .gform_page_footer input.button:hover,
@@ -624,7 +626,7 @@ a.donateBtn:hover {
   }
 }
 .nav__layer.nav--active {
-  background-color: #6e973f;
+  background-color: #76a144;
   overflow-y: scroll;
   height: 100vh;
   width: 100vw;
@@ -732,6 +734,7 @@ a.donateBtn:hover {
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  width: 100%;
 }
 .feature__main svg {
   margin: 0 auto;
@@ -742,6 +745,12 @@ a.donateBtn:hover {
 .feature__main svg path {
   fill: #fff;
 }
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  .feature__main svg {
+    padding-top: 2.5rem;
+    width: 80px;
+  }
+}
 .feature__heading {
   color: #fff;
   font-family: ff-prater-script-web;
@@ -749,6 +758,11 @@ a.donateBtn:hover {
   padding: 0;
 }
 @media only screen and (max-width: 600px) {
+  .feature__heading {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 800px) and (orientation: landscape) {
   .feature__heading {
     font-size: 3rem;
   }
@@ -1113,9 +1127,11 @@ a.donateBtn:hover {
   background-color: #392214;
   color: #fff;
 }
+.believe__slogan {
+  text-align: center;
+  width: 100%;
+}
 .believe__slogan svg {
-  display: flex;
-  margin: 0 auto;
   width: 150px;
 }
 .believe__slogan svg path {

@@ -56,7 +56,7 @@
 							<div class="header__links">
 								<a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
 								<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Location</a>
-								<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
+								<a href="tel:<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
 							</div>
 							<div class="header__social">
 								<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
