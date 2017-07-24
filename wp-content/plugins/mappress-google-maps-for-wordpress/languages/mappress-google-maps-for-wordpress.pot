@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MapPress Easy Google Maps package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MapPress Easy Google Maps 2.44.3\n"
+"Project-Id-Version: MapPress Easy Google Maps 2.44.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mappress-google-maps-for-wordpress\n"
-"POT-Creation-Date: 2017-04-05 02:07:12+00:00\n"
+"POT-Creation-Date: 2017-07-18 19:10:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -85,133 +85,133 @@ msgstr ""
 msgid "Insert into post"
 msgstr ""
 
-#: mappress.php:119
+#: mappress.php:117
 msgid "Version"
 msgstr ""
 
-#: mappress.php:127
+#: mappress.php:125
 msgid "Documentation"
 msgstr ""
 
-#: mappress.php:128
+#: mappress.php:126
 msgid "Support"
 msgstr ""
 
-#: mappress.php:131
+#: mappress.php:129
 msgid "Upgrade to MapPress Pro"
 msgstr ""
 
-#: mappress.php:341
+#: mappress.php:339
 msgid "MapPress database tables are missing.  Please deactivate the plugin and activate it again to fix this."
 msgstr ""
 
-#: mappress.php:346
+#: mappress.php:344
 msgid "WARNING: MapPress now requires WordPress 3.2 or higher.  Please upgrade before using MapPress."
 msgstr ""
 
-#: mappress.php:351
+#: mappress.php:349
 msgid "WARNING: MapPress is not compfatible with the WP-Geo plugin.  Please deactivate or uninstall WP-Geo before using MapPress."
 msgstr ""
 
-#: mappress.php:358
+#: mappress.php:356
 msgid "A Google Maps API key is required"
 msgstr ""
 
-#: mappress.php:358
+#: mappress.php:356
 msgid "Please update your"
 msgstr ""
 
-#: mappress.php:358
+#: mappress.php:356
 msgid "MapPress Settings"
 msgstr ""
 
-#: mappress.php:516 templates/map_directions.php:6
+#: mappress.php:514 templates/map_directions.php:6
 msgid "Bicycling"
 msgstr ""
 
-#: mappress.php:517
+#: mappress.php:515
 msgid "Bike"
 msgstr ""
 
-#: mappress.php:518
+#: mappress.php:516
 msgid "One of the addresses could not be found."
 msgstr ""
 
-#: mappress.php:519
+#: mappress.php:517
 msgid "Google cannot return directions between those addresses.  There is no route between them or the routing information is not available."
 msgstr ""
 
-#: mappress.php:520
+#: mappress.php:518
 msgid "Unknown error, unable to return directions.  Status code = "
 msgstr ""
 
-#: mappress.php:521 mappress_poi.php:230 mappress_settings.php:133
+#: mappress.php:519 mappress_poi.php:230 mappress_settings.php:133
 #: pro/mappress_widget.php:104
 msgid "Directions"
 msgstr ""
 
-#: mappress.php:522
+#: mappress.php:520
 msgid "Error reading KML file"
 msgstr ""
 
-#: mappress.php:523
+#: mappress.php:521
 msgid "Loading..."
 msgstr ""
 
-#: mappress.php:524
+#: mappress.php:522
 msgid "No matching address"
 msgstr ""
 
-#: mappress.php:525
+#: mappress.php:523
 msgid "Unable to get your location"
 msgstr ""
 
-#: mappress.php:526 mappress_settings.php:332
+#: mappress.php:524 mappress_settings.php:332
 msgid "Traffic"
 msgstr ""
 
-#: mappress.php:527
+#: mappress.php:525
 msgid "Transit"
 msgstr ""
 
-#: mappress.php:528 mappress_poi.php:272 mappress_settings.php:327
+#: mappress.php:526 mappress_poi.php:272 mappress_settings.php:327
 #: mappress_settings.php:415 pro/mappress_widget.php:120
 msgid "Zoom"
 msgstr ""
 
-#: mappress.php:533 mappress_controls.php:152
+#: mappress.php:531 mappress_controls.php:152
 msgid "Add"
 msgstr ""
 
-#: mappress.php:534
+#: mappress.php:532
 msgid "Click & drag to move"
 msgstr ""
 
-#: mappress.php:535
+#: mappress.php:533
 msgid "Click to change"
 msgstr ""
 
-#: mappress.php:536 mappress_controls.php:137 mappress_map.php:492
+#: mappress.php:534 mappress_controls.php:137 mappress_map.php:492
 msgid "Delete"
 msgstr ""
 
-#: mappress.php:537
+#: mappress.php:535
 msgid "Delete this POI?"
 msgstr ""
 
-#: mappress.php:538
+#: mappress.php:536
 msgid "Delete this map?"
 msgstr ""
 
-#: mappress.php:539
+#: mappress.php:537
 msgid "Please save the map first"
 msgstr ""
 
-#: mappress.php:540
+#: mappress.php:538
 msgid "Shape"
 msgstr ""
 
-#: mappress.php:541
+#: mappress.php:539
 msgid "Untitled"
 msgstr ""
 

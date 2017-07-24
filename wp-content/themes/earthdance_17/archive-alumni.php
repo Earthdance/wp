@@ -26,7 +26,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 	<div class="page__container">
     <div class="page__content-padding">
 
-      <?php the_content(); ?>
+      <?php echo get_field('alumni_bio'); ?>
 
     </div>
   </div>

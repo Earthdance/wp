@@ -152,7 +152,7 @@ class Mappress_Poi extends Mappress_Obj {
 		if (empty($this->postid) || empty($post))
 			return "";
 
-		$old_post = ($post) ? clone($post) : null;
+		$old_post = ($post) ? clone $post : null;
 		setup_postdata($post);
 		$html = get_the_excerpt();
 

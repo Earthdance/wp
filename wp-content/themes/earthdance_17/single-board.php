@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if (get_field( "board_photo" )) { ?>
+<?php if (get_full_image_src()) { ?>
 <!--feature section-->
   <div class="feature__layer" style="background-image: url(<?php echo get_full_image_src(); ?>);">
 
