@@ -22,9 +22,13 @@ var earthdance = earthdance || {};
 earthdance.nav = (function() {
   function mobileMenu() {
 
+    var burgerBtn = document.querySelector('.hamburger');
+    var burgerIcon = burgerBtn.getElementsByTagName('div')[0];
+    var closeIcon = burgerBtn.getElementsByTagName('div')[2];
+
     // querySelector returns the first element it finds with the correct selector
     // addEventListener is roughly analogous to $.on()
-    document.querySelector('.hamburger').addEventListener('click', function(e) {
+    burgerBtn.addEventListener('click', function(e) {
       e.preventDefault();
 
       // querySelectorAll returns all the nodes it finds with the selector
@@ -39,6 +43,8 @@ earthdance.nav = (function() {
         // classes on an element
         el.classList.toggle('nav--active');
       });
+      burgerIcon.classList.toggle('hide');
+      closeIcon.classList.toggle('hide');
     });
   }
 

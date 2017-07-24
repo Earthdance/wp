@@ -594,7 +594,8 @@ a.donateBtn:hover {
   .header__icon.hamburger {
     display: inline-block;
   }
-  .header__icon.hamburger .icon.icon--ei-navicon {
+  .header__icon.hamburger .icon.icon--ei-navicon,
+  .header__icon.hamburger .icon.icon--ei-close {
     fill: #fff;
   }
 }
@@ -602,6 +603,9 @@ a.donateBtn:hover {
   .donateBtn {
     display: none;
   }
+}
+.hide {
+  display: none;
 }
 .nav__layer:after {
   content: '';
