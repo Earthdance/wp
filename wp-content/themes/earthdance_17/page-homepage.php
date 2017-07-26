@@ -12,18 +12,14 @@
   <div class="feature__layer">
 
     <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image" ); ?>)"></div>
-
     <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_2" ); ?>)"></div>
-
     <div class="crossfade" style="background-image: url(<?php echo get_field( "featured_image_3" ); ?>)"></div>
 
     <div class="feature__container">
       <div class="feature__main">
 
         <?php include "svg/earthdance-logo.php" ?>
-
         <h1 class="feature__heading"><?php echo get_field( "featured_heading" ); ?></h1>
-
         <h2 class="feature__subheading"><?php echo get_field( "featured_subheading" ); ?></h2>
 
       </div>

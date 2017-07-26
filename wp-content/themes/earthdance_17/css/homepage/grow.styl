@@ -46,6 +46,7 @@
           padding-right 0
 
   &__columns.zipper
+    width 100%
 
     +below(950px)
       flex-direction column
@@ -53,19 +54,17 @@
     +below(600px)
       flex-direction column
 
-
   &__pic
-      background-position center center
-      background-repeat no-repeat
-      background-size cover
-      border 20px solid fog
-      flex 1
-      height 100%
-      padding 6rem 0
-      width: 100%
+    background-position center center
+    background-repeat no-repeat
+    background-size cover
+    border 20px solid fog
+    flex 1 0 0%
+    height 100%
+    padding 6rem 0
 
-      &.setHeight
-        height 500px
+    &.setHeight
+      height 500px
 
     +below(950px)
       padding 8rem 0

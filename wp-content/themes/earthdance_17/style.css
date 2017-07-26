@@ -505,6 +505,11 @@ a.donateBtn:hover {
     padding: 0.5rem;
   }
 }
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .header__container {
+    height: 80px;
+  }
+}
 .header__logo-box {
   align-items: center;
   display: flex;
@@ -609,6 +614,11 @@ a.donateBtn:hover {
 .hide {
   display: none;
 }
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .header__layer {
+    position: relative;
+  }
+}
 .nav__layer:after {
   content: '';
   display: block;
@@ -623,6 +633,13 @@ a.donateBtn:hover {
 @media only screen and (max-width: 950px) {
   .nav__layer:after {
     display: none;
+  }
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .nav__layer:after {
+    background-color: #7dac48;
+    background-image: none;
+    height: 59px;
   }
 }
 .nav__layer.nav--active {
@@ -721,6 +738,7 @@ a.donateBtn:hover {
   background-color: transparent;
   position: absolute;
   z-index: 1;
+  max-width: 100%;
 }
 .feature__link {
   color: #fff;
@@ -734,13 +752,19 @@ a.donateBtn:hover {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
 }
 .feature__main svg {
   margin: 0 auto;
   width: 120px;
   padding-bottom: 2.5rem;
   filter: drop-shadow(-1px 1px 0px rgba(51,51,51,0.8));
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .feature__main svg {
+    height: 200px;
+    width: 200px;
+  }
 }
 .feature__main svg path {
   fill: #fff;
@@ -913,6 +937,9 @@ a.donateBtn:hover {
     padding-right: 0;
   }
 }
+.grow__columns.zipper {
+  width: 100%;
+}
 @media only screen and (max-width: 950px) {
   .grow__columns.zipper {
     flex-direction: column;
@@ -928,21 +955,20 @@ a.donateBtn:hover {
   background-repeat: no-repeat;
   background-size: cover;
   border: 20px solid #e6e6e6;
-  flex: 1;
+  flex: 1 0 0%;
   height: 100%;
   padding: 6rem 0;
-  width: 100%;
 }
 .grow__pic.setHeight {
   height: 500px;
 }
 @media only screen and (max-width: 950px) {
-  .grow {
+  .grow__pic {
     padding: 8rem 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  .grow {
+  .grow__pic {
     padding: 4rem 0;
     width: 65%;
   }
@@ -992,6 +1018,7 @@ a.donateBtn:hover {
 .stats__columns {
   flex-direction: column;
   padding: 5rem 0;
+  width: 100%;
 }
 @media only screen and (max-width: 950px) {
   .stats__columns {
@@ -1002,6 +1029,7 @@ a.donateBtn:hover {
   display: flex;
   padding: 1rem;
   align-items: center;
+  width: 100%;
 }
 @media only screen and (max-width: 950px) {
   .stats__item {
@@ -1070,6 +1098,11 @@ a.donateBtn:hover {
   color: #392214;
   flex: 1;
 }
+@media only screen and (max-width: 600px) {
+  .believe__heading {
+    flex: none;
+  }
+}
 .believe__content {
   align-items: center;
   color: #392214;
@@ -1081,16 +1114,11 @@ a.donateBtn:hover {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding-bottom: 5rem;
+  padding: 1rem 0 5rem 0;
 }
 @media only screen and (max-width: 950px) {
   .believe__photo {
     padding-bottom: 2.5rem;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .believe__photo {
-    align-self: center;
   }
 }
 .believe__image {
@@ -1131,11 +1159,27 @@ a.donateBtn:hover {
   text-align: center;
   width: 100%;
 }
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .believe__slogan {
+    padding-top: 3rem;
+  }
+}
 .believe__slogan svg {
+  height: 150px;
   width: 150px;
+}
+@media only screen and (max-width: 500px) {
+  .believe__slogan svg {
+    width: 100px;
+  }
 }
 .believe__slogan svg path {
   fill: #392214;
+}
+@media only screen and (max-width: 500px) {
+  .believe__slogan svg path {
+    fill: #fff;
+  }
 }
 .support__layer {
   background-image: url("img/girlAndGreens.jpg");
@@ -1150,9 +1194,9 @@ a.donateBtn:hover {
     height: 100vh;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) and (orientation: landscape) {
   .support__layer {
-    height: 100vh;
+    height: 200vh;
   }
 }
 .support__container {
