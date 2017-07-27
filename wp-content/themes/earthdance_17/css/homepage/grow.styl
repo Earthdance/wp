@@ -78,7 +78,7 @@
 
 
   &__content
-    flex 1
+    flex 1 0 0%
     display flex
     flex-direction column
     justify-content center
@@ -104,6 +104,9 @@
       // border 3px solid green
       // color green
 
-
 .padding-top-4-rem
   padding-top 4rem
+
++ie11()
+  .page-id-14323 .grow__content
+    flex none

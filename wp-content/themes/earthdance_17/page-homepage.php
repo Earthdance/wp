@@ -29,9 +29,8 @@
 
   <!--grow section-->
   <div class="grow__layer">
+    <h2 class="grow__heading"><?php echo get_field( "grow_heading" ); ?></h2>
     <div class="grow__container">
-      <h2 class="grow__heading"><?php echo get_field( "grow_heading" ); ?></h2>
-
       <?php if( have_rows('grow_items') ): while ( have_rows('grow_items') ) : the_row();
 
         // vars
