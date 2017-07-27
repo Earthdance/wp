@@ -4,12 +4,14 @@
     border-bottom 1px solid hsla(0, 0, 0%, .4)
 
   &__layer
-    //height 100px
     position fixed
     top 0
     left 0
     width 100vw
     z-index 1
+
+    +ie11()
+      width 100%
 
   &__container
     align-items center
@@ -19,6 +21,11 @@
 
     +below(600px)
       padding .5rem
+
+    +ie11()
+      height 80px
+      // background-color red
+      // display block
 
   &__logo-box
     align-items center
@@ -30,6 +37,7 @@
     display flex
     font-family cursive
     font-size 2rem
+
     +below(500px)
       font-size 1.5rem
 
@@ -115,3 +123,8 @@
 
 .hide
   display none
+
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)
+  .header__layer
+    position relative
