@@ -26,16 +26,16 @@ body.block-scroll {
 ```
 
 ## WP
-- [ ] 404 page
+- [x] 404 page
 - [ ] Style login page logo
-- [ ] Revisit WYSIWYG editor spacing
-- [ ] Set up Social Media Links
-- [ ] add post sorting plugin
+- [x] Revisit WYSIWYG editor spacing
+- [x] Set up Social Media Links
+- [x] add post sorting plugin
 
 ## Todo pre-launch
-- [ ] Uptime install
+- [x] Uptime install
 - [ ] Add Google Analytics
-- [ ] Add Google Webmaster tools
+- [x] Add Google Webmaster tools
 - [ ] Huge SEO Issue: You're blocking access to robots.
 - [ ] SEO titles set up
 - [ ] Add xml sitemap and add it to WebmasterTools
