@@ -12,8 +12,6 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
   <div class="feature__container">
     <div class="feature__main">
 
-
-
       <?php include "svg/earthdance-logo.php" ?>
 
       <h1 class="feature__heading">Partners</h1>
@@ -35,7 +33,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 <div class="page fogBg">
 	<div class="page__container">
     <div class="page__content">
-      <div class="gallery__layer">
+      <div class="list__layer">
 
         <?php endwhile; wp_reset_postdata(); ?>
 
@@ -52,11 +50,16 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
           $loop2 = new WP_Query( $args );
           while($loop2->have_posts()) : $loop2->the_post(); ?>
 
-          <div class="gallery__item">
-            <a href="<?php the_permalink(); ?>" class="gallery__button" style="background-image: url(<?php echo get_field('partner_logo'); ?>); background-size: contain; background-color: white;">
-              <span><?php the_title()?></span>
-            </a>
+          <div class="list__item">
+            <div class="list__image" style="background-image: url(<?php echo get_field('partner_logo'); ?>);"></div>
+            <div class="list__content">
+              <h2 class="list__heading"><?php the_title()?></h2>
+              <?php the_content(); ?>
+            </div>
           </div>
+
+
+
 
         <?php endwhile; wp_reset_postdata(); ?>
 
