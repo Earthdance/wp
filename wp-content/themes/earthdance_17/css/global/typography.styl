@@ -63,7 +63,10 @@ p
 [class*='__content']
   margin 0 auto
   padding-top 3rem
-  width 75%
+  width 80%
+
+  +below(600px)
+    width 100%
   // Add margin bottom to all elements inside this container
   & > *
     margin-bottom 1.5rem

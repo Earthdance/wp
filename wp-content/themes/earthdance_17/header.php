@@ -52,30 +52,34 @@
 							</a>
 					    <p class="header__tagline"><?php the_field('tagline', 'option'); ?></p>
 						</div>
-						<div class="header__social">
-							<a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
-							<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Location</a>
-							<a href="<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
-
-							<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
-								<div data-icon="ei-sc-facebook" data-size="m"></div>
-							</a>
-
-							<a href="<?php the_field('twitter_url', 'option'); ?>" class="header__icon">
-								<div data-icon="ei-sc-twitter" data-size="m"></div>
-							</a>
-
-							<a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
-								<div data-icon="ei-sc-instagram" data-size="m"></div>
-							</a>
-
-							<a href="<?php the_field('flickr_url', 'option'); ?>" class="header__icon">
-								<div data-icon="ei-camera" data-size="m"></div>
-							</a>
-							
-						</div>
+						<div class="header__utility">
+							<div class="header__links">
+								<a href="/support/donate" class="header__link donateBtn" class="donateBtn">Donate</a>
+								<a href="<?php the_field('google_map_url', 'option'); ?>" class="header__link">Location</a>
+								<a href="tel:<?php the_field('phone_number', 'option'); ?>" class="header__link">Phone</a>
+							</div>
+							<div class="header__social">
+								<a href="<?php the_field('facebook_url', 'option'); ?>" class="header__icon">
+									<div data-icon="ei-sc-facebook" data-size="m"></div>
+								</a>
+								<a href="<?php the_field('twitter_url', 'option'); ?>" class="header__icon">
+									<div data-icon="ei-sc-twitter" data-size="m"></div>
+								</a>
+								<a href="<?php the_field('instagram_url', 'option'); ?>" class="header__icon">
+									<div data-icon="ei-sc-instagram" data-size="m"></div>
+								</a>
+								<a href="<?php the_field('flickr_url', 'option'); ?>" class="header__icon">
+									<div data-icon="ei-camera" data-size="m"></div>
+								</a>
+							</div>
+					</div>
 						<a href="#" class="header__icon hamburger">
-							<div data-icon="ei-navicon" data-size="m"></div>
+							<div>
+								<div data-icon="ei-navicon" data-size="m"></div>
+							</div>
+							<div class="hide">
+								<div data-icon="ei-close" data-size="m"></div>
+							</div>
 						</a>
 				  </div>
 				</div>

@@ -4,9 +4,12 @@
   padding 0 1.5rem
   max-width 1200px
 
-  +tablet()
-    // background-color yellow
+  +ie11()
+    //padding 0
+
+  +below(950px)
     max-width 955px
 
-  +mobile()
+
+  //+below(600px)
     // background-color orange

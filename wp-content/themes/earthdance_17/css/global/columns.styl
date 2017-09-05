@@ -1,11 +1,13 @@
 [class*="__columns"]
   display flex
 
-  +tablet()
+  +below(950px)
     flex-direction column
 
 .col3
   columns 3
+  +ie11()
+    columns unset
 
-  +tablet()
+  +below(950px)
     columns 2

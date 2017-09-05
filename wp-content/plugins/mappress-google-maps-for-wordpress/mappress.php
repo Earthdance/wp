@@ -4,7 +4,7 @@ Plugin Name: MapPress Easy Google Maps
 Plugin URI: http://www.wphostreviews.com/mappress
 Author URI: http://www.wphostreviews.com/mappress
 Description: MapPress makes it easy to insert Google Maps in WordPress posts and pages.
-Version: 2.44.3
+Version: 2.44.5
 Author: Chris Richardson
 Text Domain: mappress-google-maps-for-wordpress
 Thanks to all the translators and to Matthias Stasiak for his wonderful icons (http://code.google.com/p/google-maps-icons/)
@@ -21,7 +21,6 @@ require_once dirname( __FILE__ ) . '/mappress_controls.php';
 require_once dirname( __FILE__ ) . '/mappress_poi.php';
 require_once dirname( __FILE__ ) . '/mappress_map.php';
 require_once dirname( __FILE__ ) . '/mappress_settings.php';
-require_once dirname( __FILE__ ) . '/mappress_updater.php';
 
 if (file_exists(dirname( __FILE__ ) . '/pro/mappress_pro.php')) {
 	include_once dirname( __FILE__ ) . '/pro/mappress_geocoder.php';
@@ -29,20 +28,21 @@ if (file_exists(dirname( __FILE__ ) . '/pro/mappress_pro.php')) {
 	include_once dirname( __FILE__ ) . '/pro/mappress_pro.php';
 	include_once dirname( __FILE__ ) . '/pro/mappress_pro_settings.php';
 	include_once dirname( __FILE__ ) . '/pro/mappress_query.php';
+	include_once dirname( __FILE__ ) . '/pro/mappress_updater.php';
 	include_once dirname( __FILE__ ) . '/pro/mappress_widget.php';
 }
 class Mappress {
-	const VERSION = '2.44.3';
+	const VERSION = '2.44.5';
 
 	static
 		$baseurl,
-
 		$basename,
 		$basedir,
 		$debug,
 		$options,
 		$pages,
-		$updater;
+		$updater
+		;
 
 	var
 		$queue;
@@ -55,10 +55,9 @@ class Mappress {
 
 		$this->debugging();
 
-		// Initialize Pro classes
-		if (class_exists('Mappress_Pro')) {
-			self::$updater = new Mappress_Updater(self::$basename);
-		}
+		// Pro updater
+		if (class_exists('Mappress_Pro'))
+			self::$updater = new Mappress_Updater(self::$basename, 'mappress', self::VERSION, self::$options->license, self::$options->betas, self::$options->autoupdate);
 
 		add_action('admin_menu', array($this, 'admin_menu'));
 		add_action('init', array($this, 'init'));
@@ -80,6 +79,9 @@ class Mappress {
 		// Scripts and stylesheets
 		add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
 		add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
+
+		// Plugin action links
+		add_filter("plugin_action_links_" . self::$basename, array($this, 'plugin_action_links'), 10, 2);
 
 		// Slow heartbeat
 		if (self::$debug)
@@ -113,6 +115,12 @@ class Mappress {
 			ini_set('display_errors','On');
 			$wpdb->show_errors();
 		}
+	}
+
+	function plugin_action_links($links, $file) {
+		$settings_link = "<a href='" . admin_url("admin.php?page=mappress") . "'>" . __('Settings', 'mappress-google-maps-for-wordpress') . "</a>";
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 
 	static function get_version_string() {

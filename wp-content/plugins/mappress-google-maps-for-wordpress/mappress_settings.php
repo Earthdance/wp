@@ -6,9 +6,11 @@ class Mappress_Options extends Mappress_Obj {
 	var $adaptive,
 		$alignment,
 		$autoicons,
+		$autoupdate,
 		$apiKey,
 		$apiKeyServer,
 		$autodisplay = 'top',
+		$betas = false,
 		$bicycling = false,
 		$bigWidth = '100%',
 		$bigHeight = '400px',
@@ -34,6 +36,7 @@ class Mappress_Options extends Mappress_Obj {
 		$iwType = 'iw',                 // iw | ib | none
 		$keyboardShortcuts = true,
 		$language,
+		$license,
 		$mapLinks = array(),            // Links for the map: center | bigger | reset
 		$mapTypeControl = true,
 		$mapTypeControlStyle = 0,   	// 0=default, 1=horizontal, 2=dropdown
@@ -127,15 +130,13 @@ class Mappress_Settings {
 	function admin_init() {
 		register_setting('mappress', 'mappress_options', array($this, 'set_options'));
 
+		add_settings_section('keys', __('API Keys', 'mappress-google-maps-for-wordpress'), array($this, 'section_settings'), 'mappress');
+		add_settings_field('api_key', __('Google API key', 'mappress-google-maps-for-wordpress'), array($this, 'set_api_key'), 'mappress', 'keys');
+
 		add_settings_section('basic_settings', __('Basic Settings', 'mappress-google-maps-for-wordpress'), array($this, 'section_settings'), 'mappress');
 		add_settings_field('postTypes', __('Post types', 'mappress-google-maps-for-wordpress'), array($this, 'set_post_types'), 'mappress', 'basic_settings');
 		add_settings_field('autodisplay', __('Automatic map display', 'mappress-google-maps-for-wordpress'), array($this, 'set_autodisplay'), 'mappress', 'basic_settings');
 		add_settings_field('directions', __('Directions', 'mappress-google-maps-for-wordpress'), array($this, 'set_directions'), 'mappress', 'basic_settings');
-
-		add_settings_field('api_key', __('Browser API key', 'mappress-google-maps-for-wordpress'), array($this, 'set_api_key'), 'mappress', 'basic_settings');
-
-		if (class_exists('Mappress_Pro'))
-			add_settings_field('api_key_server', __('Server API key', 'mappress-google-maps-for-wordpress'), array($this, 'set_api_key_server'), 'mappress', 'basic_settings');
 
 		add_settings_section('controls_settings', __('Map Controls', 'mappress-google-maps-for-wordpress'), array($this, 'section_settings'), 'mappress');
 		add_settings_field('draggable', __('Draggable', 'mappress-google-maps-for-wordpress'), array($this, 'set_draggable'), 'mappress', 'controls_settings');
@@ -215,6 +216,9 @@ class Mappress_Settings {
 		$input['poiLinks'] = (isset($input['poiLinks'])) ? $input['poiLinks'] : array();
 		$input['mapLinks'] = (isset($input['mapLinks'])) ? $input['mapLinks'] : array();
 		$input['postTypes'] = (isset($input['postTypes'])) ? $input['postTypes'] : array();
+
+		foreach(array('apiKey', 'apiKeyServer') as $key)
+			$input[$key] = trim($input[$key]);
 		return $input;
 	}
 
@@ -231,9 +235,8 @@ class Mappress_Settings {
 	}
 
 	function set_api_key() {
-		echo "<input type='text' size='50' name='mappress_options[apiKey]' value='{$this->options->apiKey}' />";
-		$helpurl = "<a href='http://wphostreviews.com/mappress-faq' target='_blank'>" . __('more info', 'mappress-google-maps-for-wordpress') . "</a>";
-		printf("<br/><i>%s (%s)</i>", __("Required to display maps", 'mappress-google-maps-for-wordpress'), $helpurl);
+		echo "<input type='text' size='50' name='mappress_options[apiKey]' value='{$this->options->apiKey}' placeholder='" . __('Required to display maps', 'mappress-google-maps-for-wordpress') . "'/>";
+		echo " <a href='http://wphostreviews.com/mappress-faq' target='_blank'>" . __('more info', 'mappress-google-maps-for-wordpress') . "</a>";
 	}
 
 	function set_footer() {
@@ -531,7 +534,7 @@ class Mappress_Settings {
 	function options_page() {
 		?>
 		<div class="wrap">
-
+			<?php settings_errors();?>
 			<h2>
 				<a target='_blank' href='http://wphostreviews.com/mappress'><img alt='MapPress' title='MapPress' src='<?php echo plugins_url('images/mappress_logo_med.png', __FILE__);?>'></a>
 				<span style='font-size: 12px'><?php echo Mappress::get_support_links(); ?></span>

@@ -26,10 +26,10 @@ function scripts_n_styles() {
 		wp_enqueue_script('modernizr');
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('headroom');
-		wp_enqueue_script('flickity');
-		wp_enqueue_script('magpop');
-		wp_enqueue_script('waypoints');
-		wp_enqueue_script('inview');
+		//wp_enqueue_script('flickity');
+		//wp_enqueue_script('magpop');
+		//wp_enqueue_script('waypoints');
+		//wp_enqueue_script('inview');
 		wp_enqueue_script('script');
 }
 

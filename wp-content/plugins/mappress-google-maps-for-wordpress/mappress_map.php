@@ -25,6 +25,10 @@ class Mappress_Map extends Mappress_Obj {
 
 		// Set the options; they may be passed as individual parameters or an 'options' array
 		$this->options = Mappress_Options::get();
+
+		// License should not be included
+		unset($this->options->license);
+
 		if (isset($atts['options']))
 			$this->options->update($atts['options']);
 		else

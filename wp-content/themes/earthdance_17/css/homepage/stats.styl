@@ -12,24 +12,38 @@
 
   &__columns
     flex-direction column
-    padding-bottom 5rem
+    padding 5rem 0
+    width 100%
+
+    +below(950px)
+      padding 2rem 0 5rem 0
 
   &__item
     display flex
     padding 1rem
+    align-items center
+    width 100%
 
-    +tablet()
+    +below(950px)
       flex-direction column
 
-    +mobile()
+    +below(600px)
       flex-direction column
+      padding 0 0 1rem 0
+
 
   &__number
     color white
     flex 1
     font-weight bold
-    font-size 5rem
-    text-align center
+    font-size 3rem
+    text-align right
+    padding 0 3rem 0 0
+
+    +below(950px)
+      padding 2rem 0 1rem 0
+      text-align center
+
 
   &__content
     align-items center
@@ -38,3 +52,12 @@
     flex 1
     font-size 1rem
     padding-top 0
+
+    +ie11()
+      padding-top 3rem
+
+    +below(950px)
+      text-align center
+
+    p
+      margin 0

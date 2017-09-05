@@ -194,6 +194,17 @@ tr:hover > td > .mapp-e-actions {
 	padding: 5px;
 }
 
+.mapp-yes {
+	vertical-align: middle;
+	color:green;
+}
+
+.mapp-no {
+	vertical-align: middle;
+	color:red;
+}
+
+
 /*
 	-----------------------------------------------------------------------------------
 	Icon Picker
