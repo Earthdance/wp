@@ -6,9 +6,18 @@
     display flex
     margin-bottom 2rem
 
+    +below(750px)
+      background-color white
+      flex-direction column
+      padding 0 2rem
+
   &__content
-    padding-top 0
-    width 66%
+    padding 0 0 0 2rem
+    //width 66%
+
+    +below(750px)
+      padding 0
+      width 100%
 
   &__image
     background-color white
@@ -17,7 +26,10 @@
     background-position center
     border 10px solid white
     height 200px
-    width 200px
+    min-width 200px
+
+    +below(750px)
+      margin 0 auto
 
   &__heading
     color brown
@@ -25,3 +37,7 @@
     font-size 1.5rem
     text-align left
     text-shadow none
+
+    +below(750px)
+      padding-top 1rem
+      // text-align center
