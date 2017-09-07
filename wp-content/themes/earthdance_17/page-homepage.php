@@ -46,7 +46,7 @@
             <h3 class="grow__subheading"><?php echo $heading ?></h3>
           </div>
           <div class="grow__content">
-            <p><?php echo $text ?></p>
+            <?php echo $text ?>
             <p><a href="<?php echo $url ?>" class="grow__button"><?php echo $urlText ?></a></p>
           </div>
         </div>
