@@ -13,9 +13,19 @@
 					<link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
 					<script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
 
-			<!-- <link rel="stylesheet" href="/wp-content/themes/earthdance_17/style.css" /> -->
-	        <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
-	        <!-- Place favicon.ico in the root directory -->
+					<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="<?php get_site_url() ?>/favicon.ico">
+					<link rel="apple-touch-icon" sizes="57x57" href="<?php get_template_directory_uri() ?>/favicons/favicon-57.png">
+					<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php get_template_directory_uri() ?>/favicons/favicon-57.png">
+					<link rel="apple-touch-icon" sizes="72x72" href="<?php get_template_directory_uri() ?>/favicons/favicon-72.png">
+					<link rel="apple-touch-icon" sizes="114x114" href="<?php get_template_directory_uri() ?>/favicons/favicon-114.png">
+					<link rel="apple-touch-icon" sizes="120x120" href="<?php get_template_directory_uri() ?>/favicons/favicon-120.png">
+					<link rel="apple-touch-icon" sizes="144x144" href="<?php get_template_directory_uri() ?>/favicons/favicon-144.png">
+					<link rel="apple-touch-icon" sizes="152x152" href="<?php get_template_directory_uri() ?>/favicons/favicon-152.png">
+					<meta name="application-name" content="EaerthDance">
+					<meta name="msapplication-TileImage" content="<?php get_template_directory_uri() ?>/favicons/favicon-144.png">
+					<meta name="msapplication-TileColor" content="#708f41">
+
+
       <!-- <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script> -->
 
 			<?php wp_head(); ?>
