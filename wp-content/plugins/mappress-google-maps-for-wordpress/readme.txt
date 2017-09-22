@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google maps,google,map,maps,easy,poi,mapping,mapper,gps,lat,lon,latitude,longitude,geocoder,geocoding,georss,geo rss,geo,v3,marker,mashup,mash,api,v3,buddypress,mashup,geo,wp-geo,geo mashup,simplemap,simple,wpml
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 2.44.5
+Stable tag: 2.46.7
 
 MapPress is the most popular and easiest way to create great-looking Google Maps and driving directions in your blog.
 
@@ -14,6 +14,12 @@ MapPress adds an interactive map to the wordpress editing screens.  When editing
 The plugin will automatically insert a great-looking interactive map into your blog, with directions and custom map markers.
 
 For even more features, try [MapPress Pro](http://wphostreviews.com/mappress)
+
+[Home Page](http://www.wphostreviews.com/mappress)
+[Documentation](http://www.wphostreviews.com/mappress-documentation)
+[FAQ](http://www.wphostreviews.com/mappress-faq)
+[Support](http://www.wphostreviews.com/mappress-faq)
+
 
 = Key Features =
 * MapPress is based on the latest Google maps API v3
@@ -35,11 +41,6 @@ For even more features, try [MapPress Pro](http://wphostreviews.com/mappress)
 * Create mashups by taxonomy, tag, category, or post to show multiple locations on a single map
 * Map widget to show a map or a mashup
 
-[Home Page](http://www.wphostreviews.com/mappress) |
-[Documentation](http://www.wphostreviews.com/mappress-documentation) |
-[FAQ](http://www.wphostreviews.com/mappress-faq) |
-[Support](http://www.wphostreviews.com/mappress-faq)
-
 == Screenshots ==
 1. Options screen
 2. More options
@@ -57,17 +58,17 @@ See full [installation intructions and Documentation](http://www.wphostreviews.c
 1. Install and activate the plugin through the 'Plugins' menu in WordPress
 1. You should now see a MapPress meta box in in the 'edit posts' screen
 
-[Home Page](http://www.wphostreviews.com/mappress) |
-[Documentation](http://www.wphostreviews.com/mappress-documentation) |
-[FAQ](http://www.wphostreviews.com/mappress-faq) |
+[Home Page](http://www.wphostreviews.com/mappress)
+[Documentation](http://www.wphostreviews.com/mappress-documentation)
+[FAQ](http://www.wphostreviews.com/mappress-faq)
 [Support](http://www.wphostreviews.com/forums)
 
 == Frequently Asked Questions ==
 Please see the plugin documentation pages:
 
-[Home Page](http://www.wphostreviews.com/mappress) |
-[Documentation](http://www.wphostreviews.com/mappress-documentation) |
-[FAQ](http://www.wphostreviews.com/mappress-faq) |
+[Home Page](http://www.wphostreviews.com/mappress)
+[Documentation](http://www.wphostreviews.com/mappress-documentation)
+[FAQ](http://www.wphostreviews.com/mappress-faq)
 [Support](http://www.wphostreviews.com/forums)
 
 == Upgrade ==
@@ -85,6 +86,88 @@ Please see the plugin documentation pages:
 
 == Changelog ==
 
+= 2.46.7 =
+* Fixed: maps in Jquery tabs control not automatically resizing
+
+= 2.46.6 =
+* Fixed: sorting in editor not working after first re-sort
+
+= 2.46.5 =
+* Fixed: javascript error on settings screen
+* Fixed: improved check for multiple API keys
+* Fixed: custom template not applied for mashup POIs
+
+= 2.46.4 =
+* Fixed: mashup poilist not shown if shortcode enabled and global setting disabled
+* Fixed: default map style not always applied
+
+= 2.46.3 =
+* Fixed: editor not loading properly in 2.46.2
+* Fixed: minZoom not working in shortcodes
+
+= 2.46.2 =
+* Fixed: Pro version automatic updater communications errors
+* Fixed: icon picker was not working on MapPress settings page
+
+= 2.46.1 =
+* Added: updated French translation, thank you to Serge
+* Fixed: directions were showing 'null' if empty
+
+= 2.46 =
+* Added: NEW TEMPLATES - this release includes all new template files - please update any custom templates to match the new versions.
+* Added: mashup results can now be filtered by taxonomies, see the MapPress settings screen
+* Added: setting 'Automatic updates' allows automatic updates for the Pro version
+* Added: new layout with POIs on the left instead of under map, enable with: [mappresss layout="left"]
+* Added: check for multiple Google Maps API loads
+* Changed: template names now use hyphens instead of underscores and some names have changed: map_layout.php => map.php, map_poi_list.php => map-list.php
+* Changed: CSS class names, for example for the POI list class '.mapp-poi-list' is now '.mapp-list'.  Please update any custom CSS.
+* Changed: use the 'hamburger' menu in the map editor to set a map's center & zoom (previously a checkbox was shown in the map editor)
+* Changed: mashups now ignore any center/zoom settings and automatically center to show all POIs
+* Changed: directions now have a Google Maps link.  Transportation modes have been removed
+* Changed: 'my location' shown only for SSL or localhost sites (Google has forbidden geolocation on non-secure sites)
+* Changed: maps automatically recenter on screen resize (previously this was the 'adaptive' setting)
+* Changed: scripts are now loaded in the header if JetPack Infinite Scroll is enabled
+
+= 2.45.4 =
+* Fixed: default custom style not applied when displaying map
+
+= 2.45.3 =
+* Fixed: bug when saving quotes (such as image tags) in POI body
+* Fixed: custom map styles not displayed properly
+
+= 2.45.2 =
+* Removed: directions settings 'from' and 'to'
+* Removed: 'adaptive' setting
+
+= 2.45.1 =
+* Fixed: maps were not saving attributes correctly including title, size and map type
+* Fixed: maps with one POI were not setting zoom correctly
+* Fixed: setting for default poi zoom was not saving
+* Fixed: setting for POI click ('mashupClick') was ignored if used in shortcode
+* Changed: directions 'to' is added by default for all POIs
+* Removed: setting for no directions (directions="none")
+* Removed: POI links ('poiLinks') setting removed
+
+= 2.45 =
+* Added: a new checkbox in the map editor allows you to choose whether to save the center and zoom.  If unchecked, the map will auto-center when displayed.
+* Added: POI list sorting can now be set via the settings screen, the default is no sort
+* Added: POI list can now be clicked anywhere to select a POI (not just the POI title)
+* Added: a new 'hamburger' menu on the map provides map functions including centering and the bicycling, traffic, and transit layers
+* Added: a new 'layers' shortcode attribute enables bicycling/transit/traffic layers when map is initially displayed, for example [mappress layers="bicycling"]
+* Changed: autoicons function simplified: only 1 rule type is allowed, unfortunately you must *re-enter* any existing autoicons settings.
+* Changed: mashup settings are now global including infowindow type ('iwtype'), POI body ('mashupBody'), and POI title ('mashupTtitle') - use the settings screen to set them, NOT the shortcode
+* Changed: obsolete map control settings have been removed, and settings have been simplified to match Google defaults
+* Changed: when centering a map, if the map has a saved center/zoom the viewport will be reset to that center/zoom, otherwise it will autocenter
+* Changed: the 'initialopeninfo' shortcode attribute now accepts only true or false, not a POI index
+* Changed: POI 'directions' links have been removed from the POI list (but still show in the POIs).  This allows display of more POIs in the list.
+* Removed: mashup link ('mashuplink') setting, POI titles now always link to underlying post in mashups
+* Removed: settings 'draggable', 'keyboardshortcuts', 'maptypecontrol', 'maptypecontrolstyle', 'maptypeids', 'overviewmapcontrol', 'overviewmapcontrolopened', 'pancontrol', 'rotatecontrol', 'scalecontrol', 'scrollwheel', 'streetviewcontrol', 'tilt','tooltips','zoomcontrol', 'zoomcontrolstyle'
+* Removed: settings 'template', 'templatedirections', 'templatepoi', 'templatepoilist'
+* Removed: settings 'bicycling', 'traffic', 'transit', 'initialBicycling', 'initialTraffic', 'initialTransit'
+* Removed: 'bigger map' and POI 'zoom' functions
+* Removed: the 'mapLinks' setting is removed (these functions have been replaced by the new map menu)
+
+
 = 2.44.5 =
 * Changed: improved updater
 
@@ -95,7 +178,6 @@ Please see the plugin documentation pages:
 * Changed: plugin repository URL updated
 
 = 2.44.2 =
-=
 * Changed: geocoding module has been updated
 * Changed: the Nominatim geocoder has been removed
 * Changed: when geocoding an 'address' field in format 'lat,lng' the field is used verbatim rather than mapped to the nearest street address

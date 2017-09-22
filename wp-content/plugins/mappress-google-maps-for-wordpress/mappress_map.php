@@ -4,7 +4,7 @@ class Mappress_Map extends Mappress_Obj {
 		$width,
 		$height,
 		$zoom,
-		$center = array('lat' => 0, 'lng' => 0),
+		$center,
 		$mapTypeId = 'roadmap',
 		$title,
 		$metaKey,
@@ -33,10 +33,6 @@ class Mappress_Map extends Mappress_Obj {
 			$this->options->update($atts['options']);
 		else
 			$this->options->update($atts);
-
-		// Set language
-		if (!$this->options->language)
-			$this->options->language = Mappress::get_language();
 
 		// Convert POIs from arrays to objects if needed
 		foreach((array)$this->pois as $index => $poi) {
@@ -100,25 +96,9 @@ class Mappress_Map extends Mappress_Obj {
 	}
 
 	static function meta_box($post) {
-		global $mappress;
+		Mappress::load('editor');
+		$map = new Mappress_Map(array('editable' => true, 'layout' => 'left', 'poiList' => true));
 		require(Mappress::$basedir . '/forms/map_media.php');
-		$mappress->load('editor');
-	}
-
-	static function ajax_create() {
-		ob_start();
-		$map = new Mappress_Map();
-		Mappress::ajax_response('OK', array('map' => $map));
-	}
-
-	static function ajax_get($mapid) {
-		ob_start();
-		$mapid = (isset($_GET['mapid'])) ? $_GET['mapid']  : null;
-		$map = ($mapid) ? self::get($mapid) : null;
-		if (!$map)
-			Mappress::ajax_response(__('Map not found', 'mappress-google-maps-for-wordpress'));
-		else
-			Mappress::ajax_response('OK', array('map' => $map));
 	}
 
 	/**
@@ -192,25 +172,6 @@ class Mappress_Map extends Mappress_Obj {
 		return $this->mapid;
 	}
 
-	static function ajax_save() {
-		ob_start();
-
-		$mapdata = (isset($_POST['map'])) ? json_decode(stripslashes($_POST['map']), true) : null;
-		$postid = (isset($_POST['postid'])) ? $_POST['postid'] : null;
-
-		if (!$mapdata)
-			Mappress::ajax_response('Internal error, your data has not been saved!');
-
-		$map = new Mappress_Map($mapdata);
-		$mapid = $map->save($postid);
-
-		if ($mapid === false)
-			Mappress::ajax_response('Internal error, your data has not been saved!');
-
-		do_action('mappress_map_save', $mapid); 	// Use for your own developments
-		Mappress::ajax_response('OK', array('mapid' => $mapid, 'list' => self::get_map_list($postid)) );
-	}
-
 	/**
 	* Delete a map and all of its post assignments
 	*
@@ -232,19 +193,6 @@ class Mappress_Map extends Mappress_Obj {
 
 		$wpdb->query("COMMIT");
 		return true;
-	}
-
-	static function ajax_delete() {
-		ob_start();
-
-		$mapid = (isset($_POST['mapid'])) ? $_POST['mapid'] : null;
-		$result = Mappress_Map::delete($mapid);
-
-		if (!$result)
-			Mappress::ajax_response("Internal error when deleting map ID '$mapid'!");
-
-		do_action('mappress_map_delete', $mapid); 	// Use for your own developments
-		Mappress::ajax_response('OK', array('mapid' => $mapid));
 	}
 
 	/**
@@ -274,31 +222,6 @@ class Mappress_Map extends Mappress_Obj {
 
 		return true;
 	}
-
-	/**
-	* Find any map for the post that was created automatically from a custom field
-	*
-	* @param mixed $postid
-	* @return Mappress_Map or null if no map available
-	*/
-	static function get_post_meta_map ($postid) {
-		global $wpdb;
-		$posts_table = $wpdb->prefix . 'mappress_posts';
-
-		// Search by meta_key
-		$results = $wpdb->get_results($wpdb->prepare("SELECT mapid FROM $posts_table WHERE postid = %d", $postid));
-
-		if ($results === false)
-			return false;
-
-		// Find which map, if any was generated automatically
-		foreach($results as $key => $result) {
-			$map = Mappress_Map::get($result->mapid);
-			if ($map && $map->metaKey)
-				return $map;
-		}
-	}
-
 
 	/**
 	* Get a list of maps attached to the post
@@ -341,7 +264,6 @@ class Mappress_Map extends Mappress_Obj {
 	*/
 	function display($atts = null) {
 		static $div = 0;
-		global $mappress;
 
 		$this->update($atts);
 		$this->options->update($atts);
@@ -352,32 +274,14 @@ class Mappress_Map extends Mappress_Obj {
 			$div++;
 		}
 
-		// Layout
-		if (class_exists('Mappress_Pro'))
-			$html = $mappress->get_template($this->options->template, array('map' => $this));
-		else
-			$html = $mappress->get_template('map_layout', array('map' => $this));
-
-		// Output map
-		$mappress->load();
+		// Output scripts
+		Mappress::load();
 
 		// For static maps: prepare the pois
 		if (empty($this->query))
 			$this->prepare();
 
-		if ($this->options->directions == 'inline') {
-			$html .= "<div id='{$this->name}_directions_' style='display:none'>";
-			$html .= $mappress->get_template($this->options->templateDirections, array('map' => $this));
-			$html .= "</div>";
-		}
-
-		// For static maps: print the poi list
-		if (empty($this->query) && $this->options->poiList) {
-			$html .= "<div id='{$this->name}_poi_list_' style='display:none'>";
-			$html .= $mappress->get_template($this->options->templatePoiList, array('map' => $this));
-			$html .= "</div>";
-		}
-
+		$html = Mappress::get_template('map', array('map' => $this));
 		$script = "mapp.data.push( " . json_encode($this) . " ); \r\nif (typeof mapp.load != 'undefined') { mapp.load(); };";
 
 		// WP 4.5: queue maps for XHTML compatibility
@@ -387,6 +291,94 @@ class Mappress_Map extends Mappress_Obj {
 			$html .= Mappress::script($script);
 
 		return $html;
+	}
+
+	function check($part) {
+		switch ($part) {
+			case 'directions' :
+				return !$this->options->editable && $this->options->directions == 'inline';
+
+			case 'filters' :
+				return !$this->options->editable && $this->query && $this->options->filter && $this->options->filter;
+
+			case 'header' :
+				return !$this->options->editable && $this->query && ($this->check('filters') || $this->check('search'));
+
+			case 'list-inline' :
+				return $this->options->poiList && $this->options->layout != 'left';
+
+			case 'list-left' :
+				return $this->options->poiList && $this->options->layout == 'left';
+
+			case 'show' :
+				return $this->options->hidden;
+		}
+		return false;
+	}
+
+	function part($part) {
+
+		switch ($part) {
+			case 'controls' :
+				$html = Mappress::get_template('map-controls', array('map' => $this));
+				break;
+
+			case 'directions' :
+				$html = ($this->check($part)) ? Mappress::get_template('map-directions', array('map' => $this)) : '';
+				break;
+
+			case 'filters' :
+				$html = ($this->check($part)) ? Mappress::get_template('map-filters', array('map' => $this)) : '';
+				break;
+
+			case 'header' :
+				$html = ($this->check($part)) ? Mappress::get_template('map-header', array('map' => $this)) : '';
+				break;
+
+			case 'layout-class' :
+				$class = 'mapp-layout';
+				$class .= ($this->options->layout == 'left') ? ' mapp-left' : ' mapp-inline';
+				$class .= (wp_is_mobile()) ? ' mobile' : '';
+				if (!$this->options->editable) {
+					$class .= ($this->options->alignment) ? " mapp-align-{$this->options->alignment}" : '';
+					$class .= ($this->options->hidden) ? ' mapp-hidden' : '';
+				}
+				$html = $class;
+				break;
+
+			case 'layout-style' :
+				$width = (!stripos($this->width, 'px') && !strpos($this->width, '%')) ? $this->width . 'px' : $this->width;
+				$style = "width: $width";
+				$html = $style;
+				break;
+
+			case 'list-inline' :
+			case 'list-left' :
+				$html = ($this->check($part)) ? Mappress::get_template('map-list', array('map' => $this)) : '';
+				break;
+
+			case 'show' :
+				// Should be onclick...
+				$html = ($this->check($part)) ? sprintf("<a href='#' data-mapp-action='show'>%s</a>", __('Show map', 'mappress-google-maps-for-wordpress')) : '';
+				break;
+
+			case 'wrapper-style' :
+				$height = $this->height;
+
+				// Aspect ratio
+				if (stristr($height, ':')) {
+					$parts = explode(':', $height);
+					if (count($parts) == 2 && $parts[0] > 0)
+						$height = round((100 * $parts[1] / $parts[0]), 2) . '%';
+				}
+
+				// Parse px/%
+				$height = (!stripos($height, 'px') && !strpos($height, '%')) ? $height . 'px' : $height;
+				$html = (stristr($height, '%')) ? "padding-bottom: $height;" : "height: $height;";
+				break;
+		}
+
+		return (isset($html)) ? $html : "<!-- unknown part $part -->";
 	}
 
 	/**
@@ -424,14 +416,16 @@ class Mappress_Map extends Mappress_Obj {
 	function autoicons() {
 		global $post;
 
-		foreach ((array) Mappress::$options->autoicons as $rule) {
-			$rule = (object) wp_parse_args($rule, array('key' => null, 'value' => null, 'iconid' => null));
+		// Only 1 rule allowed
+		$rule = (object) wp_parse_args(Mappress::$options->autoicons, array('key' => null, 'values' => array()));
 
+		foreach($rule->values as $value => $iconid) {
+			// Get all post IDs that match the current key & value
 			if ($rule->key == 'post_type') {
-				$wpq = new WP_Query(array('post_type' => $rule->value, 'fields' => 'ids', 'posts_per_page' => -1));
+				$wpq = new WP_Query(array('post_type' => $value, 'fields' => 'ids', 'posts_per_page' => -1));
 				$postids = $wpq->posts;
 			} else {
-				$term = get_term_by('slug', $rule->value, $rule->key);
+				$term = get_term_by('slug', $value, $rule->key);
 				if (!is_object($term))
 					continue;
 
@@ -442,12 +436,12 @@ class Mappress_Map extends Mappress_Obj {
 				$postids = array_keys(array_flip($objects));
 			}
 
-			// Now check each post ID to see if it's in the list of postids
+			// Check each post ID to see if it's in the map's POIs, if so set iconid
 			$current_post = ($post) ? $post->ID : null;
 			foreach($this->pois as &$poi) {
 				$postid = ($poi->postid) ? $poi->postid : $current_post;
 				if (in_array($postid, $postids))
-					$poi->iconid = $rule->iconid;
+					$poi->iconid = $iconid;
 			}
 		}
 
@@ -497,69 +491,62 @@ class Mappress_Map extends Mappress_Obj {
 			. "</div>";
 
 		$html = "<table class='mapp-m-map-list'>";
-		foreach($maps as $map)
-			$html .= "<tr data-mapid='$map->mapid'><td><b><a href='#' class='mapp-maplist-title mapp-maplist-edit'>[$map->mapid] " . esc_html($map->title) . "</a></b>$actions</td></tr>";
+		foreach($maps as $map) {
+			$title = ($map->title) ? $map->title : __('Untitled', 'mappress-google-maps-for-wordpress');
+			$html .= "<tr data-mapid='$map->mapid'><td><b><a href='#' class='mapp-maplist-title mapp-maplist-edit'>[$map->mapid] " . esc_html($title) . "</a></b>$actions</td></tr>";
+		}
 
 		$html .= "</table>";
 		return $html;
 	}
 
-	function get_layout_class() {
-		$class = "mapp-layout";
-		$class .= ($this->options->alignment && $this->options->alignment != 'default') ? " mapp-align-{$this->options->alignment}" : '';
-		$class .= (wp_is_mobile()) ? " mobile" : '';
-		return $class;
+	static function ajax_create() {
+		ob_start();
+		$map = new Mappress_Map();
+		Mappress::ajax_response('OK', array('map' => $map));
 	}
 
-	function get_layout_style() {
-		$style = ($this->options->hidden) ? ' display:none;' : '';
-		return $style;
+	static function ajax_get($mapid) {
+		ob_start();
+		$mapid = (isset($_GET['mapid'])) ? $_GET['mapid']  : null;
+		$map = ($mapid) ? self::get($mapid) : null;
+		if (!$map)
+			Mappress::ajax_response(__('Map not found', 'mappress-google-maps-for-wordpress'));
+		else
+			Mappress::ajax_response('OK', array('map' => $map));
 	}
 
-	function get_show_link() {
-		$text = __('Show map', 'mappress-google-maps-for-wordpress');
+	static function ajax_save() {
+		ob_start();
 
-		if (!$this->options->hidden)
-			return '';
+		$mapdata = (isset($_POST['map'])) ? json_decode(stripslashes($_POST['map']), true) : null;
+		$postid = (isset($_POST['postid'])) ? $_POST['postid'] : null;
 
-		$click = "{$this->name}.show(); return false;";
-		return "<a href='#' onclick='$click'>$text</a>";
+		if (!$mapdata)
+			Mappress::ajax_response('Internal error, your data has not been saved!');
+
+		$map = new Mappress_Map($mapdata);
+		$mapid = $map->save($postid);
+
+		if ($mapid === false)
+			Mappress::ajax_response('Internal error, your data has not been saved!');
+
+		do_action('mappress_map_save', $mapid); 	// Use for your own developments
+		Mappress::ajax_response('OK', array('mapid' => $mapid, 'list' => self::get_map_list($postid)) );
 	}
 
-	function get_center_link($args = '') {
-		$text = __('Center map', 'mappress-google-maps-for-wordpress');
-		$click = "{$this->name}.autoCenter(true); return false;";
-		return "<a href='#' onclick='$click'>$text</a>";
+	static function ajax_delete() {
+		ob_start();
+
+		$mapid = (isset($_POST['mapid'])) ? $_POST['mapid'] : null;
+		$result = Mappress_Map::delete($mapid);
+
+		if (!$result)
+			Mappress::ajax_response("Internal error when deleting map ID '$mapid'!");
+
+		do_action('mappress_map_delete', $mapid); 	// Use for your own developments
+		Mappress::ajax_response('OK', array('mapid' => $mapid));
 	}
 
-	function get_reset_link($args = '') {
-		$text = __('Reset map', 'mappress-google-maps-for-wordpress');
-		$click = "{$this->name}.reset(); return false;";
-		return "<a href='#' onclick='$click'>$text</a>";
-	}
-
-	function get_bigger_link($args = '') {
-		$big_text = "&raquo;&nbsp;" . __('Bigger map', 'mappress-google-maps-for-wordpress');
-		$small_text = "&laquo;&nbsp;" . __('Smaller map', 'mappress-google-maps-for-wordpress');
-		$click = "{$this->name}.bigger(this, \"$big_text\", \"$small_text\"); return false;";
-		return "<a href='#' onclick='$click'>$big_text</a>";
-	}
-
-	function get_links() {
-		$links = (array) $this->options->mapLinks;
-		$a = array();
-
-		if (in_array('center', $links))
-			$a[] = $this->get_center_link();
-		if (in_array('reset', $links))
-			$a[] = $this->get_reset_link();
-		if (in_array('bigger', $links))
-			$a[] = $this->get_bigger_link();
-
-		if (empty($a))
-			return "";
-
-		return implode('', $a);
-	}
 }
 ?>

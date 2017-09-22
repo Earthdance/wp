@@ -29,6 +29,10 @@ class Redirection_Admin {
 		add_action( 'redirection_save_options', array( $this, 'flush_schedule' ) );
 		add_filter( 'set-screen-option', array( $this, 'set_per_page' ), 10, 3 );
 
+		if ( defined( 'REDIRECTION_FLYING_SOLO' ) && REDIRECTION_FLYING_SOLO ) {
+			add_filter( 'script_loader_src', array( $this, 'flying_solo' ), 10, 2 );
+		}
+
 		register_deactivation_hook( REDIRECTION_FILE, array( 'Redirection_Admin', 'plugin_deactivated' ) );
 		register_uninstall_hook( REDIRECTION_FILE, array( 'Redirection_Admin', 'plugin_uninstall' ) );
 
@@ -56,6 +60,33 @@ class Redirection_Admin {
 		delete_option( 'redirection_options' );
 	}
 
+	// So it finally came to this... some plugins include their JS in all pages, whether they are needed or not. If there is an error
+	// then this can prevent Redirection running, it's a little sensitive about that. We use the nuclear option here to disable
+	// all other JS while viewing Redirection
+	public function flying_solo( $src, $handle ) {
+		if ( isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], 'page=redirection.php' ) !== false ) {
+			if ( substr( $src, 0, 4 ) === 'http' && $handle !== 'redirection' && strpos( $src, 'plugins' ) !== false ) {
+				if ( $this->ignore_this_plugin( $src ) ) {
+					return false;
+				}
+			}
+		}
+
+		return $src;
+	}
+
+	private function ignore_this_plugin( $src ) {
+		if ( strpos( $src, 'mootools' ) !== false ) {
+			return true;
+		}
+
+		if ( strpos( $src, 'wp-seo-' ) !== false ) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public function flush_schedule() {
 		Red_Flusher::schedule();
 	}
@@ -65,7 +96,7 @@ class Redirection_Admin {
 
 		Red_Flusher::schedule();
 
-		if ( $version !== REDIRECTION_VERSION ) {
+		if ( $version !== REDIRECTION_DB_VERSION ) {
 			include_once dirname( REDIRECTION_FILE ).'/models/database.php';
 
 			$database = new RE_Database();
@@ -74,7 +105,7 @@ class Redirection_Admin {
 				$database->install();
 			}
 
-			return $database->upgrade( $version, REDIRECTION_VERSION );
+			return $database->upgrade( $version, REDIRECTION_DB_VERSION );
 		}
 
 		return true;
@@ -97,9 +128,14 @@ class Redirection_Admin {
 	function redirection_head() {
 		global $wp_version;
 
+		$build = REDIRECTION_VERSION.'-'.REDIRECTION_BUILD;
 		$options = red_get_options();
-		$version = get_plugin_data( REDIRECTION_FILE );
-		$version = $version['Version'];
+		$versions = array(
+			'Plugin: '.REDIRECTION_VERSION,
+			'WordPress: '.$wp_version,
+			'PHP: '.phpversion(),
+			'Browser: '.Redirection_Request::get_user_agent(),
+		);
 
 		$this->inject();
 
@@ -108,12 +144,12 @@ class Redirection_Admin {
 		}
 
 		if ( defined( 'REDIRECTION_DEV_MODE' ) && REDIRECTION_DEV_MODE ) {
-			wp_enqueue_script( 'redirection', 'http://localhost:3312/redirection.js', array(), $version );
+			wp_enqueue_script( 'redirection', 'http://localhost:3312/redirection.js', array(), $build, true );
 		} else {
-			wp_enqueue_script( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'redirection.js', array(), $version );
+			wp_enqueue_script( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'redirection.js', array(), $build, true );
 		}
 
-		wp_enqueue_style( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'admin.css', $version );
+		wp_enqueue_style( 'redirection', plugin_dir_url( REDIRECTION_FILE ).'redirection.css', array(), $build );
 
 		wp_localize_script( 'redirection', 'Redirectioni10n', array(
 			'WP_API_root' => admin_url( 'admin-ajax.php' ),
@@ -125,7 +161,8 @@ class Redirection_Admin {
 			'localeSlug' => get_locale(),
 			'token' => $options['token'],
 			'autoGenerate' => $options['auto_target'],
-			'versions' => implode( ', ', array( 'Plugin '.$version, 'WordPress '.$wp_version, 'PHP '.phpversion() ) ),
+			'versions' => implode( "\n", $versions ),
+			'version' => REDIRECTION_VERSION,
 		) );
 	}
 
@@ -157,19 +194,63 @@ class Redirection_Admin {
 	function admin_screen() {
 	  	Redirection_Admin::update();
 
+		$version = get_plugin_data( REDIRECTION_FILE );
+		$version = $version['Version'];
 ?>
 <div id="react-ui">
-	<h1><?php _e( 'Loading the bits, please wait...', 'redirection' ); ?></h1>
 	<div class="react-loading">
-		<span class="react-loading-spinner" />
+		<h1><?php _e( 'Loading, please wait...', 'redirection' ); ?></h1>
+
+		<span class="react-loading-spinner"></span>
 	</div>
 	<noscript>Please enable JavaScript</noscript>
+
+	<div class="react-error" style="display: none">
+		<h1><?php _e( 'An error occurred loading Redirection', 'redirection' ); ?></h1>
+		<p><?php _e( "This may be caused by another plugin - look at your browser's error console for more details.", 'redirection' ); ?></p>
+		<p><?php _e( "If you think Redirection is at fault then create an issue.", 'redirection' ); ?></p>
+		<p class="versions"></p>
+		<p>
+			<a class="button-primary" target="_blank" href="https://github.com/johngodley/redirection/issues/new?title=Problem%20starting%20Redirection%20<?php echo esc_attr( $version ) ?>">
+				<?php _e( 'Create Issue', 'redirection' ); ?>
+			</a>
+		</p>
+	</div>
 </div>
 
 <script>
-	addLoadEvent( function() {
-		redirection.show( 'react-ui' );
-	} );
+	var prevError = window.onerror;
+	var errors = [];
+	var timeout = 0;
+	var timer = setInterval( function() {
+		if ( isRedirectionLoaded() ) {
+			resetAll();
+		} else if ( errors.length > 0 || timeout++ === 5 ) {
+			showError();
+			resetAll();
+		}
+	}, 5000 );
+
+	function isRedirectionLoaded() {
+		return typeof redirection !== 'undefined';
+	}
+
+	function showError() {
+		document.querySelector( '.react-loading' ).style.display = 'none';
+		document.querySelector( '.react-error' ).style.display = 'block';
+		document.querySelector( '.versions' ).innerHTML = Redirectioni10n.versions.replace( /\n/g, '<br />' );
+		document.querySelector( '.react-error .button-primary' ).href += '&body=' + encodeURIComponent( "```\n" + errors.join( ',' ) + "\n```\n\n" ) + encodeURIComponent( Redirectioni10n.versions );
+	}
+
+	function resetAll() {
+		clearInterval( timer );
+		window.onerror = prevError;
+	}
+
+	window.onerror = function( error, url, line ) {
+		console.error( error );
+		errors.push( error + ' ' + url + ' ' + line );
+	};
 </script>
 <?php
 	}
