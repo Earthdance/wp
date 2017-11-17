@@ -54,9 +54,9 @@
 </script>
 
 <script type='text/template' id='mapp-tmpl-poi-list'>
-	<div class='mapp-pois'>
+	<div class='mapp-items'>
 	<# _.forEach(pois, function(poi, i) { #>
-		<div class='mapp-poi' data-mapp-action='open' data-mapp-poi='{{{i}}}'>
+		<div class='mapp-item' data-mapp-action='open' data-mapp-poi='{{{i}}}'>
 			<img class='mapp-icon' src='<# print(mapp.Icons.getUrl(poi.iconid)); #>'>
 			<div class='mapp-title'>{{poi.title}}</div>
 		</div>

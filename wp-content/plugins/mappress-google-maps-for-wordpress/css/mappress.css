@@ -71,7 +71,7 @@
 	background-color: white;
 	border: 1px solid gray;
 	border-radius: 5px;
-	display:none;
+	display: none;
 	left: 50%;
 	padding: 10px 10px 10px 0px;
 	position: absolute;
@@ -80,16 +80,70 @@
 	z-index: 1;
 }
 
+.mapp-dialog .mapp-spinner {
+	display: inline-block;
+}
+
 /*
 	-----------------------------------------------------------------------------------
 	Header
 	-----------------------------------------------------------------------------------
 */
 .mapp-header {
+	background-color: #eee;
 	border-bottom: 1px solid lightgray;
-	height: 29px;
+	height: 40px;
 	overflow: hidden;
-	padding: 5px 10px 5px 10px;
+}
+
+
+.mapp-header .mapp-filters-toggle {
+	line-height: 34px;
+	margin-left: 5px;
+	padding-left: 10px;
+}
+
+.mapp-search-wrapper {
+	max-width: 450px;
+	padding: 2px;
+}
+/*
+	-----------------------------------------------------------------------------------
+	Search
+	-----------------------------------------------------------------------------------
+*/
+
+.mapp-search {
+	overflow: hidden;
+	position: relative;
+}
+
+.mapp-search input {
+	background: white !important;			/* 2016 */
+	border: 1px solid lightgray !important;
+	box-shadow: none !important;
+	color: black !important;
+	line-height: 22px;
+	margin: 0px !important;
+	padding: 5px 28px 5px 5px !important;
+	vertical-align: middle;
+	width: 100%;
+}
+
+
+/* Error messages, e.g. invalid address */
+.mapp-search input.mapp-error {
+	outline: 1px solid red !important;
+}
+
+.mapp-search .mapp-geolocate {
+	background: white url('../images/geolocate-2x.png') no-repeat center center;
+	background-size: 18px 18px;
+	height: 18px;
+	margin: -9px 10px;
+	position: absolute;
+	top: 50%; right:0;
+	width: 18px;
 }
 
 /*
@@ -247,19 +301,18 @@
 	POI List (new)
 	Structure:
 		.mapp-list
-			.mapp-pois
-				.mapp-poi (one for each POI)
+			.mapp-items
+				.mapp-item (one for each POI)
 	-----------------------------------------------------------------------------------
 */
 
 .mapp-list {
 	background-color: white;
-	overflow: auto;
 	position: relative;		/* Needed to scroll list for selection */
 	z-index: 1;
 }
 
-.mapp-inline .mapp-list {
+.mapp-inline .mapp-list .mapp-items {
 	border-top: 1px solid lightgray;
 	max-height: 300px;
 }
@@ -272,28 +325,71 @@
 	width: 35%;
 }
 
-.mapp-pois .mapp-poi {
+.mapp-list .mapp-items {
+	height: 100%;
+	overflow: auto;
+}
+
+.mapp-list .mapp-item {
 	border-bottom: 1px solid lightgray;
+	cursor: pointer;
 	overflow: hidden;
 	padding: 5px;
 }
 
-.mapp-poi:hover, .mapp-poi.mapp-selected {
+.mapp-list .mapp-item:hover, .mapp-list .mapp-item.mapp-selected {
 	background-color: #fafafa;
 }
 
 
-.mapp-poi .mapp-title {
+.mapp-list .mapp-item .mapp-title {
 	overflow: hidden;
 	vertical-align: middle;
 }
 
-.mapp-poi .mapp-icon {
+.mapp-list .mapp-item .mapp-icon {
 	float: left;
 	margin-right: 5px;
 	max-width: 24px !important; 	/* 2012 tries to override */
 	max-height: 24px;
 }
+
+.mapp-list .mapp-item .mapp-actions {
+	visibility: hidden;
+}
+
+.mapp-list .mapp-item:hover .mapp-actions {
+	color: black;
+	visibility: visible;
+}
+
+.mapp-list .dashicons {
+	color: #82878c;
+}
+
+.mapp-list-footer {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.mapp-list .mapp-next, .mapp-list .mapp-prev {
+	background-color: #f7f7f7;
+	border: 1px solid #ccc;
+	color: gray;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+	margin: 0 10px 0 10px;
+	padding: 5px;
+	text-align: center;
+	user-select: none;
+}
+
+.mapp-list .mapp-next.mapp-active, .mapp-list .mapp-prev.mapp-active {
+	background-color: #e8e8e8;
+	color: black;
+}
+
 
 /*
 	-----------------------------------------------------------------------------------
@@ -441,10 +537,13 @@
 */
 .mapp-table {
 	display: table;
+	width: 100%;
 }
 
 .mapp-table > div { display: table-row; }
-.mapp-table > div > div, .mapp-table > div > label { display: table-cell; }
+.mapp-table > div > div, .mapp-table > div > label {
+	display: table-cell;
+}
 
 /*
 	-----------------------------------------------------------------------------------
@@ -499,12 +598,11 @@ img.mapp-icon {
 }
 
 .mapp-spinner {
-	display: inline-block;
+	background: transparent url(../images/loading.gif) no-repeat center center;
 	height:16px;
 	width: 16px;
 	margin-left: 10px;
 	margin-right: 10px;
-	background: transparent url(../images/loading.gif) no-repeat center center;
 }
 
 *[data-mapp-action] {

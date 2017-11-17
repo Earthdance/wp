@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google maps,google,map,maps,easy,poi,mapping,mapper,gps,lat,lon,latitude,longitude,geocoder,geocoding,georss,geo rss,geo,v3,marker,mashup,mash,api,v3,buddypress,mashup,geo,wp-geo,geo mashup,simplemap,simple,wpml
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 2.46.7
+Stable tag: 2.47.5
 
 MapPress is the most popular and easiest way to create great-looking Google Maps and driving directions in your blog.
 
@@ -85,6 +85,42 @@ Please see the plugin documentation pages:
 4. Get directions from any map marker
 
 == Changelog ==
+
+= 2.47.5 =
+* Added: filter labels can now include an icon in braces, for example [blue-dot]
+* Added: filter 'mappress_query_filter' for post-query filtering
+* Fixed: workaround for older versions of WordPress which have error in underscore library
+
+= 2.47.4 =
+* Added: setting to open POIs in a new tab/window.  For shortcodes use [mashup mashupClick="postnew"]
+* Fixed: mashups for custom post types were displaying all post types
+* Fixed: maps saved from custom fields in older versions were not auto-centering properly
+
+= 2.47.3 =
+* Fixed: Pro version updater bug fixes
+
+= 2.47.2 =
+* Fixed: Pro version automatic updater was not notifying about new updates (it may be necessary to update to the current version manually).
+
+= 2.47.1 =
+* Changed: the settings for mashup POI title and body display have been combined.  Select either poi title + body or post title + excerpt.  For shortcodes use [mashup mashupbody="poi"] for poi title + body, or [mashup mashupbody="post"] for post title + excerpt
+
+= 2.47 =
+* Added: filter dropdown now includes icons from the 'automatic icons' setting (for use as a map legend)
+* Fixed: editor spawner multiple icon color pickers, so popups were sometimes in the wrong position
+* Changed: 'directions' and 'mashupClick' (POI click behavior for mashups) are now global, set them from the settings screen instead of the shortcode
+* Changed: templates 'map.php' and 'map-list.php' were updated, please update any custom templates
+* Changed: list CSS class 'mapp-pois'/'mapp-poi' were changed to 'mapp-items'/'mapp-item'
+
+= 2.46.10 =
+* Changed: pro updater cache name changed to 'mappress_updater_[action]'
+
+= 2.46.9 =
+* Fixed: POI editor error if tinyMCE is disabled in user settings
+
+= 2.46.8 =
+* Fixed: default style not being applied
+* Fixed: infoWindow displaying even when type = 'none'
 
 = 2.46.7 =
 * Fixed: maps in Jquery tabs control not automatically resizing

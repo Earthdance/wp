@@ -11,5 +11,4 @@
 	</div>
 	<?php echo $map->part('directions'); ?>
 	<?php echo $map->part('list-inline'); ?>
-	<?php echo $map->part('footer'); ?>
 </div>
