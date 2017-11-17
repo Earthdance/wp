@@ -34,6 +34,8 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 	<div class="page__container">
     <div class="page__content">
       <h2 class="page__headding">Program Partners</h2>
+      <?php echo term_description( '159', 'partner_types' ) ?>
+
       <div class="list__layer">
 
         <?php endwhile; wp_reset_postdata(); ?>
@@ -74,6 +76,8 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
       </div>
 
       <h2 class="page__headding">Resource Partners</h2>
+      <?php echo term_description( '160', 'partner_types' ) ?>
+
       <div class="list__layer">
 
         <?php

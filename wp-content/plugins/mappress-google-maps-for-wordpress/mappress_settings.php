@@ -15,28 +15,18 @@ class Mappress_Options extends Mappress_Obj {
 		$defaultIcon,
 		$directions = 'google',
 		$directionsServer = 'https://maps.google.com',
-		$editable,
 		$filter,
 		$footer = true,
-		$hidden,
-		$hideEmpty,
+		$geolocate,
 		$iconScale,
-		$initialOpenDirections,
 		$initialOpenInfo,
 		$iwType = 'iw',
 		$language,
-		$layers,
-		$layout,
 		$license,
-		$mashupTitle = 'poi',
 		$mashupBody = 'poi',
 		$mashupClick = 'poi',
-		$maxZoom,
-		$minZoom,
-		$metaKey,
 		$metaKeys = array(),
 		$metaSyncSave = true,
-		$name,
 		$poiList = false,
 		$poiZoom = 15,
 		$postTypes = array('post', 'page'),
@@ -61,10 +51,6 @@ class Mappress_Options extends Mappress_Obj {
 	static function get() {
 		$options = get_option('mappress_options');
 		return new Mappress_Options($options);
-	}
-
-	static function get_defaults() {
-		return (object) get_class_vars(__CLASS__);
 	}
 
 	function save() {
@@ -221,9 +207,9 @@ class Mappress_Settings {
 
 	function set_footer($name) {
 		// Disable if jetpack infinite scroll is used
-		if (Mappress::infinite_scroll()) {
+		if (get_option('infinite_scroll')) {
 			echo Mappress_Controls::checkmark($name, false, __('Output scripts in footer', 'mappress-google-maps-for-wordpress'), array('disabled' => true));
-			printf("<br/><i>(%s)</i>", __('disabled for Jetpack Infinite Scroll', 'mappress-google-maps-for-wordpress'));
+			printf("<br/><i>%s</i>", __('Disabled because Jetpack Infinite Scroll is active', 'mappress-google-maps-for-wordpress'));
 		} else {
 			echo Mappress_Controls::checkmark($name, $this->options->footer, __('Output scripts in footer', 'mappress-google-maps-for-wordpress'));
 			printf("<br/><i>(%s)</i>", __('disable if maps are output using AJAX', 'mappress-google-maps-for-wordpress'));
@@ -311,6 +297,7 @@ class Mappress_Settings {
 			add_meta_box('metabox_' . $section['id'], $section['title'], array($this, 'metabox_settings'), $hook_suffix, 'normal', 'high', array('page' => 'mappress', 'section' => $section));
 		?>
 		<div class="wrap mapp-settings-screen">
+			<h1><?php _e('MapPress', 'mappress-google-maps-for-wordpress'); ?></h1>
 			<?php echo Mappress::get_support_links(); ?>
 			<div id="poststuff">
 				<?php // Print demo box early because directions has its own form tag ?>

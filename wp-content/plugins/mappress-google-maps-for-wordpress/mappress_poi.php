@@ -90,7 +90,7 @@ class Mappress_Poi extends Mappress_Obj {
 		$map = $this->map();
 
 		// Set title
-		if (Mappress::$options->mashupTitle == 'post') {
+		if (Mappress::$options->mashupBody == 'post') {
 			$post = get_post($this->postid);
 			$this->title = $post->post_title;
 		}
@@ -119,14 +119,15 @@ class Mappress_Poi extends Mappress_Obj {
 				break;
 
 			case 'directions' :
-				$html = ($map->options->directions != 'none') ? sprintf("<a href='#' data-mapp-action='dir'>%s</a>", __('Directions', 'mappress-google-maps-for-wordpress')) : '';
+				$html = (Mappress::$options->directions != 'none') ? sprintf("<a href='#' data-mapp-action='dir'>%s</a>", __('Directions', 'mappress-google-maps-for-wordpress')) : '';
 				break;
 
 			case 'icon' :
-				$html = sprintf("<img class='mapp-icon' src='%s' />", Mappress_Icons::get($this->iconid));
+				$html = (Mappress::$pro) ? sprintf("<img class='mapp-icon' src='%s' />", Mappress_Icons::get($this->iconid)) : '';
 				break;
 
 			case 'thumbnail' :
+				$html = '';
 				if ($this->postid && Mappress::$options->thumbs) {
 					$size = (Mappress::$options->thumbSize) ? Mappress::$options->thumbSize : null;
 					$style = (Mappress::$options->thumbWidth && Mappress::$options->thumbHeight) ? sprintf("width: %spx; height : %spx;", Mappress::$options->thumbWidth, Mappress::$options->thumbHeight) : null;
