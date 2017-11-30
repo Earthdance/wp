@@ -13,7 +13,7 @@ function scripts_n_styles() {
 
     wp_register_script('modernizr', get_template_directory_uri().'/js/vendor/modernizr-custom.js');
 
-		wp_register_script('script', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ),'0.1', true );
+		wp_register_script('script', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ),'0.2', true );
 
 		wp_register_script('headroom', get_template_directory_uri().'/js/vendor/headroom.js');
 

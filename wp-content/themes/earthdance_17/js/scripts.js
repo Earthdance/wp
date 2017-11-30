@@ -25,6 +25,7 @@ earthdance.nav = (function() {
     var burgerBtn = document.querySelector('.hamburger');
     var burgerIcon = burgerBtn.getElementsByTagName('div')[0];
     var closeIcon = burgerBtn.getElementsByTagName('div')[2];
+    var manageScroll = document.getElementById('manageScroll');
 
     // querySelector returns the first element it finds with the correct selector
     // addEventListener is roughly analogous to $.on()
@@ -45,6 +46,7 @@ earthdance.nav = (function() {
       });
       burgerIcon.classList.toggle('hide');
       closeIcon.classList.toggle('hide');
+      manageScroll.classList.toggle('manageScroll');
     });
   }
 

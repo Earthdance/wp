@@ -1,3 +1,17 @@
+.single-post .feature__layer
+  height 50vh
+
+.single-board .feature__layer,
+.single-board .feature__container
+  height 30vh
+
+.single-board .feature__heading
+  transform translateY(60px)
+
+  +below(600px)
+    transform: translateY(45px)
+
+
 .feature
   &__layer
     height 100vh
@@ -64,7 +78,7 @@
     padding 0
 
     +below(600px)
-      font-size 3rem
+      font-size 2rem
 
     +below(800px)
       +landscape()

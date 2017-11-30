@@ -96,3 +96,5 @@
 
 			  <?php include 'nav.php'; ?>
 			</header>
+
+			<div id="manageScroll">
