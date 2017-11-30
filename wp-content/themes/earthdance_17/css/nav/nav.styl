@@ -26,7 +26,7 @@
       //transform translateY(-300%)
       background-color lighten(green, 5%)
       // overflow-y scroll
-      height 87vh
+
       width  100vw
       position fixed
 
@@ -38,6 +38,9 @@
       overflow scroll
 
       z-index 1
+
+      +below(950px)
+        height 87vh
 
       &:after
         content: ''
