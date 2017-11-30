@@ -14,7 +14,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
 
       <?php include "svg/earthdance-logo.php" ?>
 
-      <h1 class="feature__heading">Classes Hello</h1>
+      <h1 class="feature__heading">Classes</h1>
 
     </div>
   </div>
