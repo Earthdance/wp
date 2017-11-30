@@ -7,8 +7,6 @@
     <div class="feature__container">
       <div class="feature__main">
 
-        <?php include "svg/earthdance-logo.php" ?>
-
         <h1 class="feature__heading"><?php the_title( ); ?></h1>
 
       </div>
@@ -19,8 +17,6 @@
   <div class="feature__layer" style="background-image: url(/wp-content/uploads/2009/12/oldShed.jpg);">
     <div class="feature__container">
       <div class="feature__main">
-
-        <?php include "svg/earthdance-logo.php" ?>
 
         <h1 class="feature__heading"><?php the_title( ); ?></h1>
 
