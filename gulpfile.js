@@ -34,7 +34,7 @@ gulp.task('stylusProd', function () {
 
 gulp.task('serve', ['stylus'], function() {
     browserSync.init({
-        proxy: "earthdance.dev",
+        proxy: "earthdance.local",
         browser: "google chrome canary"
     });
     gulp.watch(themePath + 'css/**/*.styl', ['stylus']);
