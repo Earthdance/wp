@@ -58,9 +58,9 @@
 						<div class="header__logo-box">
 							<a href="/" class="header__logo">
 						    <?php include "includes/logo.php" ?>
-								<span>EarthDance</span>
+								<span><?php include "includes/earthdance-letters.php" ?></span>
 							</a>
-					    <p class="header__tagline"><?php the_field('tagline', 'option'); ?></p>
+					    <p class="header__tagline"><?php include "includes/farm-school.php" ?></p>
 						</div>
 						<div class="header__utility">
 							<div class="header__links">
