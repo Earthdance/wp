@@ -28,6 +28,32 @@
 
       <!-- <script src="/wp-content/themes/earthdance_17/js/vendor/modernizr-custom.js"></script> -->
 
+			<!--
+			/**
+			 * @license
+			 * MyFonts Webfont Build ID 3531594, 2018-02-23T07:24:53-0500
+			 *
+			 * The fonts listed in this notice are subject to the End User License
+			 * Agreement(s) entered into by the website owner. All other parties are
+			 * explicitly restricted from using the Licensed Webfonts(s).
+			 *
+			 * You may obtain a valid license at the URLs below.
+			 *
+			 * Webfont: ZapfinoExtraLTPro by Linotype
+			 * URL: https://www.myfonts.com/fonts/linotype/zapfino-extra/one/
+			 * Copyright: Copyright (c) 2003, 2004 Linotype Library GmbH, www.linotype.com. All
+			 * rights reserved. This software may not be reproduced, used, displayed, modified,
+			 * disclosed or transferred without the express written approval of Linotype Library
+			 * GmbH. Zapfino is a tra
+			 * Licensed pageviews: 250,000
+			 *
+			 *
+			 * License: https://www.myfonts.com/viewlicense?type=web&buildid=3531594
+			 *
+			 * © 2018 MyFonts Inc
+			*/
+		-->
+
 			<?php wp_head(); ?>
 
 			<script>
