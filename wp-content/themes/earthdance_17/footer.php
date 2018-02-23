@@ -3,7 +3,7 @@
   <div class="footer__container">
     <div class="footer__item">
       <?php include "includes/logo.php" ?>
-      <p class="footer__heading">EarthDance</p>
+      <p class="footer__heading"><span><?php include "includes/earthdance-letters.php" ?></span></p>
       <p class="footer__copyright">© <?php echo date("Y"); ?></p>
       <p class="footer__address"><?php the_field('address', 'option'); ?></p>
     </div>

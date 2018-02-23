@@ -61,18 +61,24 @@
 
   &__main svg
     margin 0 auto
-    width 120px
+    //width 120px
+    width 500px
     padding-bottom 2.5rem
     filter drop-shadow(-1px 1px 0px charcoal)
 
-    +below(800px)
+    +below(820px)
+      width 250px
+
       +landscape()
         padding-top 2.5rem
-        width 80px
+        //width 80px
+        width 320px
 
     +ie11()
-      height 200px
-      width 200px
+      // height 200px
+      // width 200px
+      height 400px
+      width 400px
 
     path
       fill white
@@ -80,7 +86,7 @@
   &__heading
     color white
     font-family cursive
-    font-size 5rem
+    font-size 10rem
     padding 0
 
     +below(600px)

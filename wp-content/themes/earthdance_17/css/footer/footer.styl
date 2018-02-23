@@ -26,12 +26,25 @@
     path
       fill brown
 
+  // &__heading
+  //   color brown
+  //   font-family cursive
+  //   font-size 2rem
+  //   padding 0 .75rem
+  //   text-shadow none
+
   &__heading
-    color brown
-    font-family cursive
-    font-size 2rem
-    padding 0 .75rem
-    text-shadow none
+    padding 0 0 15px 15px
+
+    svg.earthdance-letters
+      margin-right .75rem
+      width 220px
+
+      +below(850px)
+        width 135px
+
+      +below(600px)
+        margin 0
 
   &__copyright
     display none
