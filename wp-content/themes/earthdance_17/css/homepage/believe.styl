@@ -48,7 +48,7 @@
 
 
   &__image
-    align-self flex-end
+    align-self center
     background-image url(img/groupJump.jpg)
     background-repeat no-repeat
     background-size cover
@@ -64,12 +64,14 @@
       width 100vw
 
   &__cta
-    align-self flex-end
+    //align-self flex-end
     display flex
     width 50vw
 
     +below(950px)
-      align-self center
+      display block
+      width inherit
+      //align-self center
 
   &__button
     background-color brown
