@@ -28,8 +28,10 @@
 <div class="page">
 	<div class="page__container">
     <div class="page__content-padding">
-      <div class="bio-image" style="background-image: url(<?php echo get_field( "staff_photo" ); ?>);"></div>
       <?php echo get_field( "staff_bio" ); ?>
+      <div class="frame-border">
+        <div class="frame-inset" style="background-image: url(<?php echo get_field( "staff_photo" ); ?>);"></div>
+      </div>
     </div>
   </div>
 </div>
