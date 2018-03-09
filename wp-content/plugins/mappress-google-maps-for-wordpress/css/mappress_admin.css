@@ -149,6 +149,11 @@ tr:hover > td > .mapp-m-actions {
 	Settings
 	-----------------------------------------------------------------------------------
 */
+
+.mapp-settings-screen #mapp0 {
+	max-width: 600px;
+}
+
 .mapp-settings-screen label {
 	margin-right: 10px;
 	white-space: nowrap;
