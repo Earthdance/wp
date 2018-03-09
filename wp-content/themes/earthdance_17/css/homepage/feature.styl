@@ -62,23 +62,23 @@
   &__main svg
     margin 0 auto
     //width 120px
-    width 400px
+    width 250px
     padding-bottom 2.5rem
     filter drop-shadow(-1px 1px 0px charcoal)
 
     +below(820px)
-      width 220px
+      width 120px
 
       +landscape()
         padding-top 2.5rem
         //width 80px
-        width 300px
+        width 150px
 
     +ie11()
       // height 200px
       // width 200px
-      height 400px
-      width 400px
+      height 200px
+      width 200px
 
     path
       fill white
@@ -90,15 +90,39 @@
     padding 0
 
     +below(600px)
-      font-size 2rem
+      font-size 5rem
 
-    +below(800px)
+    +below(880px)
       +landscape()
-        font-size 3rem
+        font-size 5rem
 
   &__subheading
     color white
     font-weight 400
+
+.home .feature&__main svg
+  margin 0 auto
+  //width 120px
+  width 400px
+  padding-bottom 2.5rem
+  filter drop-shadow(-1px 1px 0px charcoal)
+
+  +below(820px)
+    width 220px
+
+    +landscape()
+      padding-top 2.5rem
+      //width 80px
+      width 300px
+
+  +ie11()
+    // height 200px
+    // width 200px
+    height 400px
+    width 400px
+
+  path
+    fill white
 
 
 .crossfade
