@@ -52,7 +52,7 @@ while($loop1->have_posts()) : $loop1->the_post(); ?>
             array(
               'taxonomy' => 'partner_types',
               'field'    => 'slug',
-              'terms'    => 'resource-partners',
+              'terms'    => 'misson-partners',
             ),
           ),
         );
