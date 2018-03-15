@@ -8,8 +8,8 @@
       <p class="footer__address"><?php the_field('address', 'option'); ?></p>
     </div>
     <div class="footer__item">
-      <p class="footer__privacy">Privacy Policy</p>
-      <p class="footer__privacy">Legal</p>
+      <!-- <p class="footer__privacy">Privacy Policy</p>
+      <p class="footer__privacy">Legal</p> -->
     </div>
   </div>
 </div>
