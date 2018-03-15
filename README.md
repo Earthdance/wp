@@ -34,11 +34,11 @@ body.block-scroll {
 
 ## Todo pre-launch
 - [x] Uptime install
-- [ ] Add Google Analytics
+- [x] Add Google Analytics
 - [x] Add Google Webmaster tools
-- [ ] Huge SEO Issue: You're blocking access to robots.
-- [ ] SEO titles set up
-- [ ] Add xml sitemap and add it to WebmasterTools
+- [x] Huge SEO Issue: You're blocking access to robots.
+- [x] SEO titles set up
+- [x] Add xml sitemap and add it to WebmasterTools
 
 ## Technical Overview
 
@@ -123,11 +123,6 @@ You must have these installed first:
 ### :smiley: Developer(s)
 - Ben Gandhi-Shepard
 - Michael Shepard
-
-
-
----
-## Passwords
 
 
 ---
